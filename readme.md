@@ -36,3 +36,6 @@ $ npm run build
 - It minifies the CSS and JS. This can be turned off if needed by configuring `webpack.prod.js`.
 - It builds the twig templates into HTML
 - It also builds the SVG icon sprite map for all the icons placed in the icons folder
+
+
+Developer/s should create their working branches and work in the branch. After completing the development in the branch, you have to merge to the MAIN branch. MAIN branch will act as the center branch for all of your branches.
