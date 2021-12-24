@@ -1,0 +1,385 @@
+@import "node_modules/swiper/swiper.scss";
+
+.carousel.variant-hero {
+    .slide-layout {
+        height: calc(100vh - 200px); // minus top pane, minue half a button, then minus the pagination
+        min-height: 500px;
+
+        @include angelines-laptop {
+            height: calc(100vh - 150px)
+        }
+
+        .slide-background {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            position: absolute;
+            z-index: 1;
+            bottom: -30px;
+            width: 100%;
+            color: #fff;
+
+            p {
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 60%;
+            }
+        }
+    }
+
+    .swiper-pagination {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .swiper-button-next {
+        svg {
+            transform: rotate(180deg)
+        }
+    }
+
+    .carousel-controls {
+        display: flex;
+        justify-content: flex-end;
+        padding: 50px;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            height: 20px;
+            cursor: pointer;
+            
+            svg {
+                width: 100px;
+                height: 100%;
+                fill: $gray-400;
+                transition: 0.2s ease;
+            }
+
+            &:not(.swiper-button-disabled) {
+                svg {
+                    fill: $p1;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            width: 100px;
+            text-align: center;
+        }
+    }
+}
+
+.carousel.variant-products {
+    .card {
+        width: calc(100vw - 3rem);
+        // flex-shrink: 0;
+
+        @include media-breakpoint-up(md) {
+            width: 350px;
+        }
+    }
+
+    .swiper-pagination {
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .swiper-button-next {
+        svg {
+            transform: rotate(180deg)
+        }
+    }
+
+    .carousel-controls {
+        display: flex;
+        justify-content: flex-end;
+        padding: 50px;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            height: 20px;
+            cursor: pointer;
+            
+            svg {
+                width: 100px;
+                height: 100%;
+                fill: $gray-400;
+                transition: 0.2s ease;
+            }
+
+            &:not(.swiper-button-disabled) {
+                svg {
+                    fill: $p1;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            width: 100px;
+            text-align: center;
+        }
+    }
+}
+
+.carousel.variant-timeline {
+    .swiper-scrollbar {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        &::before {
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            background-color: $gray-300;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .swiper-scrollbar-drag {
+            background-color: $p1;
+            height: 24px;
+            width: 100px;
+        }
+    }
+}
+
+.carousel.variant-media {
+    .swiper-button-next {
+        right: 0;
+        
+        svg {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            svg {
+                transform: rotate(180deg) translateX(-5px);
+            }
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+
+        &:hover {
+            svg {
+                transform: translateX(-5px);
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        height: 40px;
+        width: 100px;
+        background-color: $p1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            fill: $p2;
+            height: calc(100% - 25px);
+            width: 100%;
+            transition: 0.3s ease;
+        }
+
+        @include media-breakpoint-up (md) {
+            width: 140px;
+
+            svg {
+                height: calc(100% - 20px);
+            }
+        }
+    }
+
+    .swiper-pagination {
+        width: 100px;
+        height: 70px;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        right: 6rem;
+        z-index: 2;
+        position: absolute;
+
+        .swiper-pagination-current {
+            margin-right: 3px;
+        }
+
+        .swiper-pagination-total {
+            margin-left: 3px;
+        }
+    }
+
+    .slide-layout {
+        height: 45vh; // minus top pane, minue half a button, then minus the pagination
+
+        .slide-background {
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            min-height: 500px;
+            height: 100vh;
+        }
+    }
+}
+
+.carousel.variant-group-structure {
+    .swiper-button-next {
+        right: 0;
+        
+        svg {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            svg {
+                transform: rotate(180deg) translateX(-5px);
+            }
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+
+        &:hover {
+            svg {
+                transform: translateX(-5px);
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        height: 40px;
+        width: 100px;
+        background-color: $p1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            fill: $p2;
+            height: calc(100% - 25px);
+            width: 100%;
+            transition: 0.3s ease;
+        }
+
+        @include media-breakpoint-up (md) {
+            width: 140px;
+
+            svg {
+                height: calc(100% - 20px);
+            }
+        }
+    }
+
+    .swiper-pagination {
+        width: 100px;
+        height: 70px;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        right: 6rem;
+        z-index: 2;
+        position: absolute;
+
+        .swiper-pagination-current {
+            margin-right: 3px;
+        }
+
+        .swiper-pagination-total {
+            margin-left: 3px;
+        }
+    }
+
+    .swiper-slide {
+        width: 100%;
+        padding: 0 1rem;
+
+        @include media-breakpoint-up (md) {
+            padding: 0;
+            width: calc(100% / 2.5);
+        }
+    }
+}
+
+.carousel.variant-client-logos {
+    height: 300px;
+    width: 100%;
+
+    .swiper-slide {
+        height: calc(100% / 3);
+    }
+
+    .img-aspect-ratio {
+        // width: calc(100% / 3);
+        align-content: center;
+        justify-items: center;
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        &-bullet {
+            width: 20px;
+            height: 2px;
+            margin: 0 .15rem;
+            background-color: $gray-500;
+
+            &-active {
+                background-color: $p1;
+            }
+        }
+    }
+
+    @include media-breakpoint-up (md) {
+        height: 500px;
+    }
+}

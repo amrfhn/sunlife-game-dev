@@ -1,0 +1,27 @@
+.icon {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+
+    $smallSizes: "xxs", "xs", "s";
+    $largeSizes: "m", "l", "xl", "xxl", "3xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl";
+    $offset: .5rem;
+    fill: currentColor;
+
+    /* Smaller than 1rem icons */
+    @for $i from length($smallSizes) through 1 {
+        &.icon-#{nth($smallSizes, $i)} {
+            height: (1rem - ($offset * $i));
+            width: (1rem - ($offset * $i));
+        }
+    }
+
+    /* Larger than 1rem icons */
+    @for $i from 1 through length($largeSizes) {
+        &.icon-#{nth($largeSizes, $i)} {
+            height: (1rem + ($offset * $i));
+            width: (1rem + ($offset * $i));
+        }
+    }
+
+}
