@@ -1,7 +1,8 @@
-$p1:                            #0070C0;
-$p2:                            #E7C27B;
+$p1:                            #f0b836;
+$p2:                            #c7633c;
+$p3:                            #801416;
 
-$s1:                            #175079;
+$s1:                            #181b3b;
 
 /** COLORS **/
 $gray-100:                      #EEEEEE;
@@ -55,13 +56,13 @@ $spacers: map-merge(
 );
 
 /** TYPOGRAPHY **/
-$font-family-base:              "Montserrat", "Noto Sans SC";
+$font-family-base:              "HelveticaNeue", "Myriad";
 
 $font-weight-normal:            400;
 $font-weight-bold:              700;
 
 $headings-font-weight:          700;
-$headings-font-family:          "Montserrat", "Noto Sans SC";
+$headings-font-family:          "Bungee";
 $headings-line-height:          1;
 
 $h1-font-size:                  $font-size-base * 4.5;
