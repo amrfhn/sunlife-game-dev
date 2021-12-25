@@ -1,3 +1,138 @@
+.start-page-container {
+  width: 100%;
+  position: relative;
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      height: 100%;
+
+      @include media-breakpoint-down(md) {
+        height: 385px;
+      }
+    }
+  }
+  .content {
+    position: relative;
+    margin-top: -40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    @include media-breakpoint-down(md) {
+      margin-top: -160%;
+    }
+    .wrapper {
+      .curvy-text {
+        color: $s1;
+        display: inline-block;
+
+        &.w {
+          transform: translate(37px, 0px) rotate(-8deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(32px, 0px) rotate(-8deg);
+          }
+        }
+
+        &.e {
+          transform: translate(22px, -5px) rotate(-4deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(23px, -5px) rotate(-4deg);
+          }
+        }
+
+        &.l {
+          transform: translate(7px, -7px) rotate(-3deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(13px, -7px) rotate(-3deg);
+          }
+        }
+
+        &.c {
+          transform: translate(-6px, -9px) rotate(-2deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(4px, -9px) rotate(-2deg);
+          }
+        }
+
+        &.o {
+          transform: translate(-19px, -10px) rotate(0deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(-5px, -10px) rotate(0deg);
+          }
+        }
+
+        &.m {
+          transform: translate(-32px, -9px) rotate(2deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(-15px, -9px) rotate(2deg);
+          }
+        }
+
+        &.e1 {
+          transform: translate(-48px, -8px) rotate(3deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(-25px, -8px) rotate(3deg);
+          }
+        }
+
+        &.t {
+          transform: translate(-50px, -2px) rotate(9deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(-37px, -6px) rotate(9deg);
+          }
+        }
+
+        &.o2 {
+          transform: translate(-64px, 5px) rotate(13deg);
+
+          @include media-breakpoint-down(md) {
+            transform: translate(-47px, -1px) rotate(13deg);
+          }
+        }
+      }
+    }
+    .hero-image {
+      width: 500px;
+      margin: 0 auto;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+
+        @include media-breakpoint-down(md) {
+          width: 80%;
+        }
+      }
+    }
+    .fb-btn {
+      width: 250px;
+    }
+  }
+}
+
 .start-page {
   background: #fff;
   width: 500px;
@@ -8,6 +143,7 @@
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
   top: 120px;
   position: relative;
+  // background-image: url(assets/img/signin-page-yellow-bg.jpg);
 
   .start-title {
     padding: 35px 35px 0 35px;
