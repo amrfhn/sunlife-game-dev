@@ -1,44 +1,53 @@
 .btn {
-    text-transform: uppercase;
-    
-    &.btn-primary {
-        min-width: 210px;
+  text-transform: uppercase;
+
+  &.btn-primary {
+    min-width: 210px;
+  }
+
+  &.btn-secondary {
+    color: #fff;
+    min-width: 210px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+      box-shadow: none;
+    }
+  }
+
+  &.btn-arrow {
+    display: flex;
+    min-width: 210px;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      color: #fff;
+    }
+  }
+
+  &.btn-link.variant-back {
+    font-weight: bold;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 1rem;
     }
 
-    &.btn-secondary {
-        color: #fff;
-        min-width: 210px;
-
-        &:hover,
-        &:active,
-        &:focus {
-            color: #fff;
-        }
+    &.p1 {
+      color: $p1;
     }
+  }
 
-    &.btn-arrow {
-        display: flex;
-        min-width: 210px;
-        justify-content: space-between;
-        align-items: center;
-
-        svg {
-            color: #fff;
-        }
-    }
-
-    &.btn-link.variant-back {
-        font-weight: bold;
-        padding: 1rem 0;
-        display: flex;
-        align-items: center;
-
-        svg {
-            margin-right: 1rem;
-        }
-
-        &.p1 {
-            color: $p1
-        }
-    }
+  &:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  &:focus {
+    box-shadow: none !important;
+  }
 }

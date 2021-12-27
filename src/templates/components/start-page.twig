@@ -1,7 +1,8 @@
-<div class="start-page-container">
-	<div class="background">
-		<img src="assets/img/signin-page-yellow-bg.jpg" alt="main-background">
-	</div>
+<div class="start-page-container game-page-bg">
+
+	{% include "./background.twig" with {
+        imgSrc: 'signin-page-yellow-bg.jpg'   
+    }%}
 
 	<div class="content">
 
@@ -27,27 +28,31 @@
 		</div>
 
 		<div class="mt-4">
-			<a class="btn pb-md-1 pb-2" href="/">
+			<a class="btn pb-md-1 pb-2" href="/auth/facebook">
 				<img class="fb-btn" src="assets/img/facebook-button.png" alt="facebook-login">
 			</a>
 
-            <p class="bt-1">New player? <a class="bt-1-link" href="/">Register here</a></p>
+			<p class="bt-1">New player?
+				<a class="bt-1-link" href="/">Register here</a>
+			</p>
+
+			{# <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> #}
 		</div>
 
 	</div>
 
 
 	{# <div class="start-page">
-				        <form action="http://localhost:8080/game.html">
-				            <h2 class="start-title">Register Player</h2>
-				            <div class="content">
-				                <div class="input-field">
-				                    <input required type="name" placeholder="Nickname" autocomplete="nope">
-				                </div>
-				            </div>
-				            <div class="action">
-				                <button>Start Game</button>
-				            </div>
-				        </form>
-				    </div> #}
+							        <form action="http://localhost:8080/game.html">
+							            <h2 class="start-title">Register Player</h2>
+							            <div class="content">
+							                <div class="input-field">
+							                    <input required type="name" placeholder="Nickname" autocomplete="nope">
+							                </div>
+							            </div>
+							            <div class="action">
+							                <button>Start Game</button>
+							            </div>
+							        </form>
+							    </div> #}
 </div>

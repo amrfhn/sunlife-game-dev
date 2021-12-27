@@ -1,0 +1,59 @@
+{% extends "templates/partials/base.twig" %}
+
+{% block main %}
+
+	<div class="container-fluid">
+		<div class="row">
+
+			{% include "templates/components/background.twig" with {
+                imgSrc: 'registrationform-bg.jpg'   
+            }%}
+
+			<div class="register-page-container">
+				<div class="content">
+
+					<div class="form-wrapper">
+						<div class="form-header-img">
+							<img src="assets/img/almost-done.png" alt="">
+						</div>
+						<form action="http://localhost:8080/game.html">
+							<div class="form-group">
+								<label for="nameInputControl">Name as per IC</label>
+								<input type="text" class="form-control" id="nameInputControl">
+
+								<label for="ICInputControl">IC</label>
+								<input type="text" class="form-control" id="ICInputControl">
+
+								<label for="contactInputControl">Contact number</label>
+								<input type="text" class="form-control" id="contactInputControl">
+
+								<label for="emailInputControl">Email</label>
+								<input type="email" class="form-control" id="emailInputControl">
+								<div class="form-check">
+									<label class="custom-control material-checkbox">
+										<input type="checkbox" class="material-control-input">
+										<span class="material-control-indicator"></span>
+										<span class="material-control-description">
+											I have read, understood and accepted the
+											<a class="" href="/">Data Protection Notice</a>
+											and
+											<a href="/">Terms and Conditions</a>.
+										</span>
+									</label>
+								</div>
+
+								<div class="form-action text-center mt-3">
+									<a class="btn p-0" href="#">
+										<img src="assets/img/register.png" alt="register-btn">
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
