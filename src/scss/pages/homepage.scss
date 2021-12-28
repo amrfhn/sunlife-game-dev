@@ -12,6 +12,9 @@
     text-align: center;
 
     @include media-breakpoint-down(md) {
+      margin-top: -110%;
+    }
+    @include media-breakpoint-down(sm) {
       margin-top: -160%;
     }
     .wrapper {
@@ -31,7 +34,7 @@
           transform: translate(22px, -5px) rotate(-4deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(23px, -5px) rotate(-4deg);
+            transform: translate(23px, -5px) rotate(-7deg);
           }
         }
 
@@ -39,7 +42,7 @@
           transform: translate(7px, -7px) rotate(-3deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(13px, -7px) rotate(-3deg);
+            transform: translate(13px, -7px) rotate(-6deg);
           }
         }
 
@@ -104,6 +107,9 @@
         width: 100%;
 
         @include media-breakpoint-down(md) {
+          width: 65%;
+        }
+        @include media-breakpoint-down(sm) {
           width: 80%;
         }
       }

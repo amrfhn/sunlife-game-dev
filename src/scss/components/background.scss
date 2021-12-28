@@ -15,9 +15,9 @@
       transform: translateY(-50%);
       height: 100%;
 
-      @include media-breakpoint-down(md) {
-        height: 385px;
-      }
+      // @include media-breakpoint-down(m) {
+      //   height: 385px;
+      // }
     }
   }
 }

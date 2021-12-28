@@ -5,10 +5,18 @@
 .howtoplay-modal {
   // top: unset !important;
   // margin-top: -28%;
-  background-color: rgba(0,0,0,.1);
-  
+  background-color: rgba(0, 0, 0, 0.1);
+
   .modal-dialog {
     margin-top: 2.5rem;
+
+    @include media-breakpoint-down(md) {
+      max-width: 90%;
+      margin-top: -0.5rem;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-top: 1rem;
+    }
   }
   .modal-content {
     background-color: $p4;
@@ -17,6 +25,14 @@
     border-radius: 25px;
     position: relative;
     min-height: 450px;
+
+    @include media-breakpoint-down(md) {
+      min-height: 475px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      min-height: 300px;
+    }
     .modal-header {
       position: absolute;
       margin-left: auto;
@@ -29,26 +45,25 @@
       border-bottom: 0;
 
       @include media-breakpoint-down(md) {
-        width: 250px;
+        top: -7%;
+        width: 275px;
       }
 
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(sm) {
         top: -7%;
+        width: 200px;
       }
       img {
         width: 100%;
       }
     }
-    .modal-body {
-    }
     .modal-footer {
       border-top: 0;
       padding: 0;
       margin: auto;
-        img {
-          width: 150px;
-        }
+      img {
+        width: 150px;
+      }
     }
-    
   }
 }

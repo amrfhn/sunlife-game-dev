@@ -7,11 +7,15 @@ fraction.textContent = `1 / ${slideCount}`;
 $(function () {
   $(".modal").on("show.bs.modal", function () {
     setTimeout(function () {
-      const steosCarousel = new Swiper(".carousel.steps-to-play", {
+      const stepsCarousel = new Swiper(".carousel.steps-to-play", {
+        effect: 'coverflow',
+        coverflowEffect: {
+          rotate: 70,
+          slideShadows: false,
+        },
         slidesPerView: 1,
         pagination: {
           el: ".carousel-controls .swiper-pagination",
-          // type: "fraction",
           // clickable: true,
         },
         navigation: {
@@ -20,7 +24,7 @@ $(function () {
         },
         on: {
           slideChange: () => {
-            fraction.textContent = `${steosCarousel.realIndex + 1}/${slideCount}`;
+            fraction.textContent = `${stepsCarousel.realIndex + 1}/${slideCount}`;
           },
         },
         loop: false,

@@ -12,7 +12,11 @@
     text-align: center;
 
     @include media-breakpoint-down(md) {
-      margin-top: -160%;
+      margin-top: -110%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: -165%;
     }
 
     .form-wrapper {
@@ -34,13 +38,16 @@
         top: -10%;
         text-align: center;
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
           top: -7%;
         }
 
         img {
           width: 360px;
           @include media-breakpoint-down(md) {
+            width: 300px;
+          }
+          @include media-breakpoint-down(sm) {
             width: 250px;
           }
         }
