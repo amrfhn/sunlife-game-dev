@@ -1,0 +1,54 @@
+.modal-open .modal {
+  overflow-y: hidden !important;
+}
+
+.howtoplay-modal {
+  // top: unset !important;
+  // margin-top: -28%;
+  background-color: rgba(0,0,0,.1);
+  
+  .modal-dialog {
+    margin-top: 2.5rem;
+  }
+  .modal-content {
+    background-color: $p4;
+    padding: 32px 15px 0px;
+    border: 3px solid $p3;
+    border-radius: 25px;
+    position: relative;
+    min-height: 450px;
+    .modal-header {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 360px;
+      top: -13%;
+      padding: 0;
+      border-bottom: 0;
+
+      @include media-breakpoint-down(md) {
+        width: 250px;
+      }
+
+      @include media-breakpoint-down(md) {
+        top: -7%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .modal-body {
+    }
+    .modal-footer {
+      border-top: 0;
+      padding: 0;
+      margin: auto;
+        img {
+          width: 150px;
+        }
+    }
+    
+  }
+}

@@ -1,0 +1,23 @@
+<div class="swiper-container carousel steps-to-play">
+	<div class="swiper-wrapper">
+		{% for item in 1..3 %}
+			<div class="swiper-slide">
+				<div class="slide-layout">
+					<div class="img-steps">
+						<img src="assets/img/signin-page-yellow-bg.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="carousel-controls">
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next arrow-next">
+		<img src="assets/img/arrow.png" alt="arrow">
+	</div>
+	<div class="swiper-button-next btn button-next">
+		<img src="assets/img/next.png" alt="next">
+	</div>
+	<div id="fraction" class="swiper-fraction"></div>
+</div>

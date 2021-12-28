@@ -33,8 +33,15 @@
 			</a>
 
 			<p class="bt-1">New player?
-				<a class="bt-1-link" href="/">Register here</a>
+				<a class="bt-1-link" href="/register.html">Register here</a>
 			</p>
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				Launch demo modal
+			</button>
+
+			{% include "./how-to-play.twig" %}
 
 			{# <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> #}
 		</div>
@@ -43,16 +50,16 @@
 
 
 	{# <div class="start-page">
-							        <form action="http://localhost:8080/game.html">
-							            <h2 class="start-title">Register Player</h2>
-							            <div class="content">
-							                <div class="input-field">
-							                    <input required type="name" placeholder="Nickname" autocomplete="nope">
-							                </div>
-							            </div>
-							            <div class="action">
-							                <button>Start Game</button>
-							            </div>
-							        </form>
-							    </div> #}
+										        <form action="http://localhost:8080/game.html">
+										            <h2 class="start-title">Register Player</h2>
+										            <div class="content">
+										                <div class="input-field">
+										                    <input required type="name" placeholder="Nickname" autocomplete="nope">
+										                </div>
+										            </div>
+										            <div class="action">
+										                <button>Start Game</button>
+										            </div>
+										        </form>
+										    </div> #}
 </div>
