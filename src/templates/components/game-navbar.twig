@@ -1,5 +1,9 @@
+<div class="d-lg-none d-block">
+	{% include "./mobile-nav.twig" %}
+</div>
+
 <div class="game-navbar bg-gradient">
-	<div class="nav-menu w">
+	<div class="nav-menu d-lg-flex d-none">
 		<a class="btn btn-link p-0 mr-4" href="/">
 			HOW TO PLAY
 		</a>
@@ -18,9 +22,9 @@
 			</svg>
 		</a>
 	</div>
-	<div class="d-flex justify-content-around w-100">
-		<div class="nav-wrapper">
-			<div class="countdown-container mx-auto d-flex justify-content-start align-items-center">
+	<div class="d-flex justify-content-around flex-lg-row flex-column w-100 mt-lg-0 mt-6">
+		<div class="nav-wrapper mb-4 mb-lg-0">
+			<div class="countdown-container mx-auto d-flex justify-content-lg-start justify-content-center align-items-center">
 				<div class="w text-nav var-small mr-3">WEEK 1</div>
 				<div class="w text-nav mr-3">03
 					<span class="count-unit">DAYS</span>
@@ -42,8 +46,9 @@
 		</div>
 
 		<div class="nav-wrapper">
-			<div class="score-container mx-auto d-flex justify-content-end align-items-center mr-1">
-				<div class="w text-nav var-small mr-3">YOUR SCORE</div>
+			<div class="d-block d-lg-none text-center mb-2 w text-nav var-small mr-3">YOUR SCORE</div>
+			<div class="score-container mx-auto d-flex justify-content-lg-end justify-content-center align-items-center mr-1">
+				<div class="d-none d-lg-block w text-nav var-small mr-3">YOUR SCORE</div>
 				<div class="score-tile d-flex justify-content-between mr-3">
 					<img src="assets/img/orange.png" alt="sticker">
 					<span class="text-nav ml-1 w var-small">X109</span>
@@ -56,7 +61,7 @@
 					<img src="assets/img/caligraphy.png" alt="sticker">
 					<span class="text-nav ml-1 w var-small">X252</span>
 				</div>
-				<a class="ml-2 text-center" href="/">
+				<a class="ml-2 text-center d-none d-lg-block" href="/">
 					<svg class="icon d-block icon-s mb-1 mx-auto">
 						<use xlink:href="assets/icons/icons.svg#sprite-fb-share" href="assets/icons/icons.svg#sprite-fb-share"></use>
 					</svg>

@@ -3,12 +3,14 @@ import Swiper from "swiper";
 var fraction = document.getElementById("fraction");
 var slides = document.querySelectorAll(".swiper-slide");
 var slideCount = slides.length;
-fraction.textContent = `1 / ${slideCount}`;
+if (fraction) {
+  fraction.textContent = `1 / ${slideCount}`;
+}
 $(function () {
   $(".modal").on("show.bs.modal", function () {
     setTimeout(function () {
       const stepsCarousel = new Swiper(".carousel.steps-to-play", {
-        effect: 'coverflow',
+        effect: "coverflow",
         coverflowEffect: {
           rotate: 70,
           slideShadows: false,
@@ -24,7 +26,12 @@ $(function () {
         },
         on: {
           slideChange: () => {
-            fraction.textContent = `${stepsCarousel.realIndex + 1}/${slideCount}`;
+            debugger;
+            if (fraction) {
+              fraction.textContent = `${
+                stepsCarousel.realIndex + 1
+              }/${slideCount}`;
+            }
           },
         },
         loop: false,
