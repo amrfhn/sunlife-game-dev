@@ -10,9 +10,11 @@
 
 </head>
 <body>
-    {# <header> #}
-        {# {% include "../components/navigation.twig" %} #}
-    {# </header> #}
+    <header>
+        {% if showNav %}    
+            {% include "../components/game-navbar.twig" %} 
+        {% endif %}
+     </header>
     <main>
         {% block main %}{% endblock %}
     </main>
