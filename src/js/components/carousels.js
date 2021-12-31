@@ -26,7 +26,6 @@ $(function () {
         },
         on: {
           slideChange: () => {
-            debugger;
             if (fraction) {
               fraction.textContent = `${
                 stepsCarousel.realIndex + 1

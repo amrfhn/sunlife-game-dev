@@ -1,0 +1,9 @@
+.game-container {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-50%);
+    top: 55%;
+    .canvas {
+        width: 100%;
+    }
+}

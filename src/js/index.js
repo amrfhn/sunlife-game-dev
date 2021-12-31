@@ -21,4 +21,10 @@ import "./components/carousels";
 import "./components/forms";
 import "./components/game";
 import "./components/mobile-nav";
+import "./components/game-main";
+import "./components/game-scenes";
+import "./components/game-phaser";
+
+
+
 
