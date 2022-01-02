@@ -3,18 +3,31 @@ import gameScenes from "./game-scenes";
 import Game from "./game-phaser";
 
 const config = {
-  width: 800,
-  height: 500,
-  parent: "game-container",
-  "transparent": true,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    parent: "game-container",
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 1024,
+    height: 450,
+    min: {
+      width: 740,
+      height: 360
+    },
+    // max: {
+    //   width: 1280,
+    //   height: 800
+    // }
+  },
+  
+  transparent: true,
   type: Phaser.AUTO,
   physics: {
-      default: 'arcade',
-      arcade: {
-          gravity: {y:0},
-          debug: false
-      }
-  }
+    default: "arcade",
+    arcade: {
+      gravity: { y: 0 },
+      debug: false,
+    },
+  },
 };
 
 const game = new Phaser.Game(config);

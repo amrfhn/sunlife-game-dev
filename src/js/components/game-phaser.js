@@ -17,7 +17,7 @@ export default class Game extends Phaser.Scene {
     this.createBall();
     this.createCircle();
 
-    this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000000'})
+    this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '18px', fill: '#000000'})
    
     //create keyboard cursors
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -30,12 +30,12 @@ export default class Game extends Phaser.Scene {
 
   createContainer () {
     this.graphics = this.add.graphics({ lineStyle: { width: 2, color: 0xfd0000, alpha: 0 }});
-    this.container = new Phaser.Geom.Rectangle(40, 100, 700, 300);
+    this.container = new Phaser.Geom.Rectangle(100, 100, 850, 450);
     this.graphics.strokeRectShape(this.container);
   }
 
   createBall () {
-    this.movingBall = this.physics.add.image(400, 250, "ball");
+    this.movingBall = this.physics.add.image(500, 250, "ball");
     this.movingBall.setCircle(60, 300, 300)
     this.movingBall.setScale(0.3); //resize the image
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
@@ -44,7 +44,7 @@ export default class Game extends Phaser.Scene {
   }
 
   createCircle () {
-    this.circle = this.physics.add.image(400, 250, 'circle');
+    this.circle = this.physics.add.image(500, 250, 'circle');
     this.circle.setCircle(20, 310, 320)
     this.circle.setScale(0.3); //resize the image
     this.test = this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this)
