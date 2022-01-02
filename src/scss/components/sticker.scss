@@ -1,0 +1,39 @@
+@include media-breakpoint-up(md) {
+    .comment-box {
+        background: url(../../assets/img/comment-box.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 3rem 0;
+    
+        .sticker-text {
+            padding: 0.5rem 10rem;
+        }
+    
+        img {
+            width: 75%;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .comment-box {
+        border-radius: 1rem;
+        border: 1px solid #000;
+        padding: 1rem 2rem;
+        background-color: #fffad1;
+
+        img {
+            width: 100%;
+            padding-top: 1rem;
+        }
+    }
+}
+
+.comment-box-img {
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+        width: 75%;
+    }
+}
