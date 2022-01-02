@@ -1,10 +1,15 @@
+canvas {
+    display: none;
+}
+
 #game-container {
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
     left: 0;
-    .canvas {
+    canvas {
         // width: 100%;
+        display: block;
     }
 }
 // position: absolute;
