@@ -1,0 +1,21 @@
+{% extends "templates/partials/base.twig" %}
+{% set showNav = true %}
+
+{% block main %}
+	<div class="container-fluid collections-container">
+		<div class="text-center">
+
+			{# {% include "templates/components/background.twig" with {
+                imgSrc: 'landing-bg.jpg'
+            }%} #}
+
+			<div class="collections-wrapper pt-3">
+        <div class="collections-heading">
+          <h5 class="collections-header">Your Collection</h5>
+          <p class="collections-description">Click to discover interesting facts about every object</p>
+        </div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
