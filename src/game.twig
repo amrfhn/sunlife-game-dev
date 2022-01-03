@@ -2,7 +2,16 @@
 {% set showNav = true %}
 
 {% block main %}
+	<div class="container-fluid">
+		<div class="row">
 
-    {# {% include "templates/components/catch-ball.twig" %} #}
+			{% include "templates/components/background.twig" with {
+                imgSrc: 'landing-bg.jpg'   
+            }%}
+			<div class="relative">
+				<div id="game-container"></div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

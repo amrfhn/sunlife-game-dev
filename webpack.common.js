@@ -30,6 +30,7 @@ module.exports = {
                 filename: "assets/icons/icons.svg",
             }
         }),
+        new CopyPlugin([ { from: 'src/assets/img', to: 'assets/img' } ]),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: 'jquery',
