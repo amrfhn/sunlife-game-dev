@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import gameScenes from "./game-scenes";
-import Game from "./game-phaser";
+import Game from "./game";
 
 const config = {
   scale: {

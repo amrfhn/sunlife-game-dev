@@ -23,7 +23,7 @@ import "./components/game-prototype";
 import "./components/mobile-nav";
 import "./components/game-main";
 import "./components/game-scenes";
-import "./components/game-phaser";
+import "./components/game";
 
 
 
