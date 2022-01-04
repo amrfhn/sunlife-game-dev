@@ -8,8 +8,9 @@ export default class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("ball", "assets/img/game-ball.png");
+    this.load.image("ball", "assets/img/sun.png");
     this.load.image("circle", "assets/img/circle.png");
+    this.load.image("stopButton", "assets/img/stop.png");
   }
 
   create() {
@@ -26,6 +27,13 @@ export default class Game extends Phaser.Scene {
     );
     
     this.spaceKey.on("down", this.togglePause, this);
+
+    this.stopButton = this.add.image(500, 400, 'stopButton');
+    this.stopButton.setScale(0.5);
+    this.stopButton.setInteractive();  
+    this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
+      console.log('tekan tekan')
+    })
   }
 
   createContainer () {
@@ -36,10 +44,10 @@ export default class Game extends Phaser.Scene {
 
   createBall () {
     this.movingBall = this.physics.add.image(500, 250, "ball");
-    this.movingBall.setCircle(60, 300, 300)
-    this.movingBall.setScale(0.3); //resize the image
+    this.movingBall.setCircle(40, 205, 210)
+    this.movingBall.setScale(0.4); //resize the image
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
-    this.movingBall.body.setVelocity(-400, 0); //make the ball bounced, adjust speed
+    this.movingBall.body.setVelocity(-700, 0); //make the ball bounced, adjust speed
     this.movingBall.body.setBoundsRectangle(this.container)
   }
 
@@ -51,7 +59,8 @@ export default class Game extends Phaser.Scene {
   }
 
   togglePause() {
-    this.movingBall.body.moves = this.movingBall.body.moves ? false : true; //toggle pause and resume of the moving ball
+    // this.movingBall.body.moves = this.movingBall.body.moves ? false : true; //toggle pause and resume of the moving ball
+    this.movingBall.body.moves = false; //toggle pause and resume of the moving ball
   } 
 
   inZone(ball, circle) {
@@ -64,7 +73,6 @@ export default class Game extends Phaser.Scene {
         this.resetPlayer();
       }, 500);
     } 
-    
   }
 
   resetPlayer() {
@@ -79,6 +87,14 @@ export default class Game extends Phaser.Scene {
       } else {
         this.movingBall.body.enable = false;
       }
+    }
+
+
+    p = this.movingBall.intersects(this.circle, true);
+    if (p) {
+      console.log('kenaaaa')
+    } else {
+      console.log('xx')
     }
   }
 }
