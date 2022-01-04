@@ -14,6 +14,8 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
+   
+    this.isOverlapped = false;
     this.createContainer();
     this.createBall();
     this.createCircle();
@@ -26,14 +28,14 @@ export default class Game extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.SPACE
     );
     
-    this.spaceKey.on("down", this.togglePause, this);
-
+    //create stop button image
     this.stopButton = this.add.image(500, 400, 'stopButton');
     this.stopButton.setScale(0.5);
-    this.stopButton.setInteractive();  
-    this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, () => {
-      console.log('tekan tekan')
-    })
+    this.stopButton.setInteractive({cursor: 'pointer'});
+    
+    //set event to the cursor and button
+    this.spaceKey.on("down", this.togglePause, this);
+    this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, this.togglePause, this)
   }
 
   createContainer () {
@@ -43,40 +45,48 @@ export default class Game extends Phaser.Scene {
   }
 
   createBall () {
-    this.movingBall = this.physics.add.image(500, 250, "ball");
+    this.movingBall = this.physics.add.image(110, 250, "ball");
     this.movingBall.setCircle(40, 205, 210)
     this.movingBall.setScale(0.4); //resize the image
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
-    this.movingBall.body.setVelocity(-700, 0); //make the ball bounced, adjust speed
-    this.movingBall.body.setBoundsRectangle(this.container)
+    this.movingBall.body.setVelocity(-740, 0); //make the ball bounced, adjust speed
+    this.movingBall.body.setBoundsRectangle(this.container) //create container so that the ball does not move outside of the bound (when innerbound is small & centered)
   }
 
   createCircle () {
     this.circle = this.physics.add.image(500, 250, 'circle');
-    this.circle.setCircle(20, 310, 320)
+    this.circle.setCircle(20, 310, 320) //set innerbound of the image
     this.circle.setScale(0.3); //resize the image
-    this.test = this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this)
+    this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this) //overlap between two images
   }
 
   togglePause() {
     // this.movingBall.body.moves = this.movingBall.body.moves ? false : true; //toggle pause and resume of the moving ball
-    this.movingBall.body.moves = false; //toggle pause and resume of the moving ball
+    this.movingBall.body.moves = false; //toggle pause
+
+    //toggle if moving ball is paused and is not overlapped, the game will restart. 
+    //set time out so that player can have a moment to see where they stopped at.
+    setTimeout(() => {
+      if(!this.movingBall.body.moves && !this.isOverlapped) {
+        this.scene.start()
+        return
+      }
+    }, 300);
   } 
 
   inZone(ball, circle) {
     if(!this.movingBall.body.moves) {
+      this.isOverlapped = true; //set overlap is true
       console.log("Player in the circle");
       this.score += 1;
       this.scoreText.setText('Score: ' + this.score);
       
-      setTimeout(() => {
-        this.resetPlayer();
-      }, 500);
+      this.resetPlayer();
     } 
   }
 
   resetPlayer() {
-    this.movingBall.destroy();
+    this.scene.destroy() //kill the game config
   }
 
   update() {
@@ -88,13 +98,5 @@ export default class Game extends Phaser.Scene {
         this.movingBall.body.enable = false;
       }
     }
-
-
-    // p = this.movingBall.intersects(this.circle, true);
-    // if (p) {
-    //   console.log('kenaaaa')
-    // } else {
-    //   console.log('xx')
-    // }
   }
 }
