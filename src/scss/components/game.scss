@@ -1,3 +1,7 @@
+canvas {
+    display: none;
+}
+
 #game-container {
     position: absolute;
     transform: translateY(-50%);
@@ -6,6 +10,7 @@
     z-index: 3;
     .canvas {
         // width: 100%;
+        display: block;
     }
 }
 // position: absolute;
