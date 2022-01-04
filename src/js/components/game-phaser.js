@@ -4,7 +4,15 @@ export default class Game extends Phaser.Scene {
   constructor() {
     super('game')
     
+    //detect device
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
+
     this.score = 0;
+    this.isMobile ? this.speedVelocity = -200 : this.speedVelocity = -1000;
   }
 
   preload() {
@@ -49,7 +57,7 @@ export default class Game extends Phaser.Scene {
     this.movingBall.setCircle(40, 205, 210)
     this.movingBall.setScale(0.4); //resize the image
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
-    this.movingBall.body.setVelocity(-740, 0); //make the ball bounced, adjust speed
+    this.movingBall.body.setVelocity(this.speedVelocity, 0); //make the ball bounced, adjust speed
     this.movingBall.body.setBoundsRectangle(this.container) //create container so that the ball does not move outside of the bound (when innerbound is small & centered)
   }
 
