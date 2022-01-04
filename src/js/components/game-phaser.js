@@ -90,11 +90,11 @@ export default class Game extends Phaser.Scene {
     }
 
 
-    p = this.movingBall.intersects(this.circle, true);
-    if (p) {
-      console.log('kenaaaa')
-    } else {
-      console.log('xx')
-    }
+    // p = this.movingBall.intersects(this.circle, true);
+    // if (p) {
+    //   console.log('kenaaaa')
+    // } else {
+    //   console.log('xx')
+    // }
   }
 }
