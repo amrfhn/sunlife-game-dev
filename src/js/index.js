@@ -24,7 +24,4 @@ import "./components/mobile-nav";
 import "./components/game-main";
 import "./components/game-scenes";
 import "./components/game";
-
-
-
-
+import "./components/fb-login";
