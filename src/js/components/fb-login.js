@@ -41,7 +41,7 @@ $(function () {
       console.log("Successful login for: " + response.name);
       
       var userData = new Array();
-      loginInfo = new Object();
+      var loginInfo = new Object();
 
       loginInfo = {
         name:  response.name,
