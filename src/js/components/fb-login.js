@@ -53,7 +53,7 @@ $(function () {
 
       console.log('userData', userData)
 
-      sessionStorage.setItem('fbUserData', userData);
+      sessionStorage.setItem('fbUserData', JSON.stringify(userData));
 
       // var profile = `<h1>Welcome ${response.name}<h1>
       // <h2>Your email is ${response.email}</h2>`;
