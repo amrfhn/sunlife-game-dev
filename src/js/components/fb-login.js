@@ -3,12 +3,12 @@ $(function () {
     facebookLogin();
   });
 
-  $("#logoutBtn").on("click", function () {
-    $("#logoutBtn").hide();
-    $("#fbLoginBtn").show();
-    $("#status").empty();
-    facebookLogout();
-  });
+  // $("#logoutBtn").on("click", function () {
+  //   $("#logoutBtn").hide();
+  //   $("#fbLoginBtn").show();
+  //   $("#status").empty();
+  //   facebookLogout();
+  // });
 
   function facebookLogin() {
     //fb check status whether its login or not from SDK
@@ -18,18 +18,14 @@ $(function () {
     });
   }
 
-  function facebookLogout() {
-    FB.logout(function (response) {
-      statusChangeCallback(response);
-    });
-  }
+  // function facebookLogout() {
+  //   FB.logout(function (response) {
+  //     statusChangeCallback(response);
+  //   });
+  // }
 
   function statusChangeCallback(response) {
     if (response.status == "connected") {
-      //user is logged in
-      $("#fbLoginBtn").hide();
-      //show the logout btn
-      $("#logoutBtn").show();
       // fethc info
       fetchUserProfile();
     } else {
@@ -40,12 +36,13 @@ $(function () {
   //fetch info from api
   function fetchUserProfile() {
     console.log("Welcome!  Fetching your information.... ");
-    FB.api("/me?fields=id,name,email,gender,birthday", function (response) {
+    FB.api("/me?fields=id,name,email", function (response) {
       console.log(response);
       console.log("Successful login for: " + response.name);
+
+
       var profile = `<h1>Welcome ${response.name}<h1>
-      <h2>Your email is ${response.email}</h2>
-      <h3>Your Birthday is ${response.birthday}</h3>`;
+      <h2>Your email is ${response.email}</h2>`;
       $("#status").append(profile);
     });
   }

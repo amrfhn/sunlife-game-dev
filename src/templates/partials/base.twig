@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Game Development</title>
-    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
-    
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-            appId            : '672101130483714',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v12.0'
-            });
-        };
-    </script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Game Development</title>
+		<script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
 
-</head>
-<body>
-    <header>
-        {% if showNav %}    
-            {% include "../components/game-navbar.twig" %} 
-        {% endif %}
-     </header>
-    <main>
-        {% block main %}{% endblock %}
-    </main>
-    {# <footer>
-        {% include "../components/footer.twig" %}
-    </footer> #}
-    {% block extras %}{% endblock %}
+		<script>
+			window.fbAsyncInit = function () {
+        FB.init({appId: '672101130483714', autoLogAppEvents: true, xfbml: true, version: 'v12.0'});
+      };
+		</script>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
-</body>
+	</head>
+	<body>
+		<header>
+			{% if showNav %}
+				{% include "../components/game-navbar.twig" %}
+			{% endif %}
+		</header>
+		<main>
+			{% block main %}{% endblock %}
+		</main>
+		{# <footer>
+				        {% include "../components/footer.twig" %}
+				    </footer> #}
+		{% block extras %}{% endblock %}
+
+	</body>
 </html>
