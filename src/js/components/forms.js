@@ -4,9 +4,9 @@
 // import VueRecaptcha from 'vue-recaptcha';
 
 $(function () {
-    if ($('#registerPlayer')){
+    if ($('#registerPlayer').length){
         console.log('register form page')
-        var userData = JSON.parse(sessionStorage.getItem("user-info"));
+        var userData = JSON.parse(sessionStorage.getItem("fbUserData"));
         console.log(userData)
     }
 })
