@@ -39,11 +39,22 @@ $(function () {
     FB.api("/me?fields=id,name,email", function (response) {
       console.log(response);
       console.log("Successful login for: " + response.name);
+      
+      var userData = new Array();
+      loginInfo = new Object();
 
+      loginInfo = {
+        name:  response.name,
+        email: response.email
+      }
 
-      var profile = `<h1>Welcome ${response.name}<h1>
-      <h2>Your email is ${response.email}</h2>`;
-      $("#status").append(profile);
+      userData.push(loginInfo);
+
+      console.log('userData', userData)
+
+      // var profile = `<h1>Welcome ${response.name}<h1>
+      // <h2>Your email is ${response.email}</h2>`;
+      // $("#status").append(profile);
     });
   }
 
