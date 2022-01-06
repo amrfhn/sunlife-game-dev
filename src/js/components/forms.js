@@ -6,8 +6,8 @@
 $(function () {
     if ($('#registerPlayer')){
         console.log('register form page')
-        JSON.parse(sessionStorage.getItem("user-info"));
-
+        var userData = JSON.parse(sessionStorage.getItem("user-info"));
+        console.log(userData)
     }
 })
 
