@@ -46,14 +46,19 @@ $(function () {
       loginInfo = {
         id: response.id,
         name:  response.name,
-        email: response.email
+        email: response.email,
+        status: 'authorized from facebook'
       }
 
       userData.push(loginInfo);
 
-      console.log('userData', userData)
-
       sessionStorage.setItem('fbUserData', JSON.stringify(userData));
+
+      setTimeout(() => {
+        window.location.href = '/register.html';
+      }, 250);
+
+
 
       // var profile = `<h1>Welcome ${response.name}<h1>
       // <h2>Your email is ${response.email}</h2>`;

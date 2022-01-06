@@ -3,6 +3,14 @@
 // import _ from 'lodash';
 // import VueRecaptcha from 'vue-recaptcha';
 
+$(function () {
+    if ($('#registerPlayer')){
+        console.log('register form page')
+        JSON.parse(sessionStorage.getItem("user-info"));
+
+    }
+})
+
 // $(function() {
     
 //     const contactForm = new Vue({
