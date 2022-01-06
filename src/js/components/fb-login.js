@@ -44,6 +44,7 @@ $(function () {
       var loginInfo = new Object();
 
       loginInfo = {
+        id: response.id,
         name:  response.name,
         email: response.email
       }
@@ -51,6 +52,8 @@ $(function () {
       userData.push(loginInfo);
 
       console.log('userData', userData)
+
+      sessionStorage.setItem('fbUserData', userData);
 
       // var profile = `<h1>Welcome ${response.name}<h1>
       // <h2>Your email is ${response.email}</h2>`;
