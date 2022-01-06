@@ -40,17 +40,17 @@ $(function () {
       console.log(response);
       console.log("Successful login for: " + response.name);
       
-      // var userData = new Array();
-      // var loginInfo = new Object();
+      var userData = new Array();
+      var loginInfo = new Object();
 
-      // loginInfo = {
-      //   name:  response.name,
-      //   email: response.email
-      // }
+      loginInfo = {
+        name:  response.name,
+        email: response.email
+      }
 
-      // userData.push(loginInfo);
+      userData.push(loginInfo);
 
-      // console.log('userData', userData)
+      console.log('userData', userData)
 
       // var profile = `<h1>Welcome ${response.name}<h1>
       // <h2>Your email is ${response.email}</h2>`;
