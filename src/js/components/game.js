@@ -36,13 +36,19 @@ export default class Game extends Phaser.Scene {
     );
     
     //create stop button image
-    this.stopButton = this.add.image(500, 400, 'stopButton');
+    this.stopButton = this.add.image(520, 400, 'stopButton');
     this.stopButton.setScale(0.5);
     this.stopButton.setInteractive({cursor: 'pointer'});
     
     //set event to the cursor and button
     this.spaceKey.on("down", this.togglePause, this);
     this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, this.togglePause, this)
+    
+    $('#btnRestartGame').on("click", function () {
+      $('#rewardModal').modal('hide');
+      // this.scene.start()
+      location.reload(); //the easiest way to restart the game. Not the best approach!
+    })
   }
 
   createContainer () {
@@ -53,7 +59,7 @@ export default class Game extends Phaser.Scene {
 
   createBall () {
     this.movingBall = this.physics.add.image(110, 250, "ball");
-    this.movingBall.setCircle(40, 205, 210)
+    this.movingBall.setCircle(40, 210, 210)
     this.movingBall.setScale(0.4); //resize the image
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
     this.movingBall.body.setVelocity(this.speedVelocity, 0); //make the ball bounced, adjust speed
@@ -61,7 +67,7 @@ export default class Game extends Phaser.Scene {
   }
 
   createCircle () {
-    this.circle = this.physics.add.image(500, 250, 'circle');
+    this.circle = this.physics.add.image(515, 250, 'circle');
     this.circle.setCircle(20, 310, 320) //set innerbound of the image
     this.circle.setScale(0.3); //resize the image
     this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this) //overlap between two images
@@ -89,6 +95,11 @@ export default class Game extends Phaser.Scene {
       this.scoreText.setText('Score: ' + this.score);
       
       this.resetPlayer();
+
+      setTimeout(() => {
+        $('#rewardModal').modal('show'); 
+      }, 250);
+
     } 
   }
 
