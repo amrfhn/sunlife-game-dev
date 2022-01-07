@@ -78,7 +78,11 @@ ol.roman {
   line-height: 12px;
 
   &:hover {
-      text-decoration: none;
-      color: $gray-900;
+    text-decoration: none;
+    color: $gray-900;
   }
+}
+
+[v-cloak] {
+  display: none;
 }
