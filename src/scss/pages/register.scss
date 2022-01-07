@@ -4,7 +4,7 @@
 
   .content {
     position: relative;
-    margin-top: -40%;
+    margin-top: -42%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
         }
 
         img {
-          width: 360px;
+          width: 330px;
           @include media-breakpoint-down(md) {
             width: 300px;
           }
@@ -55,7 +55,7 @@
 
       .form-group {
         background-color: $p4;
-        padding: 50px 36px 10px;
+        padding: 34px 36px 10px;
         border: 3px solid $p3;
         border-radius: 25px;
 
@@ -81,7 +81,6 @@
           border: 3px solid $p3;
           border-radius: 6px;
           background-color: $p4;
-          margin-bottom: 14px;
           color: black;
 
           &:focus {
@@ -137,4 +136,11 @@
       }
     }
   }
+}
+//change bg color to yellow if autocomplete
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $p4 inset !important;
 }

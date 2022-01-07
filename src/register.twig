@@ -9,46 +9,90 @@
                 imgSrc: 'registrationform-bg.jpg'   
             }%}
 
-			<div id="registerPlayer" class="register-page-container">
+			<div id="register-form" class="register-page-container">
 				<div class="content">
 
 					<div class="form-wrapper">
 						<div class="form-header-img">
 							<img src="assets/img/almost-done.png" alt="">
 						</div>
-						<form action="http://localhost:8080/game.html">
-							<div class="form-group">
-								<label for="nameInputControl">Name as per IC</label>
-								<input type="text" class="form-control" id="nameInputControl">
+						<validation-observer ref="registerForm" v-slot="{ handleSubmit }">
 
-								<label for="ICInputControl">IC</label>
-								<input type="text" class="form-control" id="ICInputControl">
+							<form ref="theForm" @submit.prevent="handleSubmit(onSubmit)">
+								<div class="form-group">
+									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+										<div class="form-input-wrapper mb-2">
+											<label for="nameInputControl">Name as per IC</label>
+											<input type="text" class="form-control" id="nameInputControl" v-model="formData.Fullname">
+											<div class="text-danger" v-if="errors.length > 0">
+												<small class="error-message" v-if="failedRules.required">This field is required</small>
+											</div>
+										</div>
+									</validation-provider>
 
-								<label for="contactInputControl">Contact number</label>
-								<input type="text" class="form-control" id="contactInputControl">
+									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+										<div class="form-input-wrapper mb-2">
+											<label for="ICInputControl">IC</label>
+											<input type="text" class="form-control" id="ICInputControl" v-model="formData.IcNumber">
+											<div class="text-danger" v-if="errors.length > 0">
+												<small class="error-message" v-if="failedRules.required">This field is required</small>
+											</div>
+										</div>
+									</validation-provider>
 
-								<label for="emailInputControl">Email</label>
-								<input type="email" class="form-control" id="emailInputControl">
-								<div class="form-check">
-									<label class="custom-control material-checkbox">
-										<input type="checkbox" class="material-control-input">
-										<span class="material-control-indicator"></span>
-										<span class="material-control-description">
-											I have read, understood and accepted the
-											<a class="" href="/">Data Protection Notice</a>
-											and
-											<a href="/">Terms and Conditions</a>.
-										</span>
-									</label>
+									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+										<div class="form-input-wrapper mb-2">
+											<label for="contactInputControl">Contact number</label>
+											<input type="text" class="form-control" id="contactInputControl" v-model="formData.ContactNumber">
+											<div class="text-danger" v-if="errors.length > 0">
+												<small class="error-message" v-if="failedRules.required">This field is required</small>
+											</div>
+										</div>
+									</validation-provider>
+
+									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+										<div class="form-input-wrapper mb-2">
+											<label for="emailInputControl">Email</label>
+											<input type="email" class="form-control" id="emailInputControl" v-model="formData.Email">
+											<div class="text-danger" v-if="errors.length > 0">
+												<small class="error-message" v-if="failedRules.required">This field is required</small>
+											</div>
+										</div>
+									</validation-provider>
+
+									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+										<div class="form-input-wrapper mb-2">
+											<div class="form-check">
+												<label class="custom-control material-checkbox">
+													<input type="checkbox" class="material-control-input" v-model="formData.IsCheckedTNC">
+													<span class="material-control-indicator"></span>
+													<span class="material-control-description">
+														I have read, understood and accepted the
+														<a class="" href="/">Data Protection Notice</a>
+														and
+														<a href="/">Terms and Conditions</a>.
+													</span>
+												</label>
+											</div>
+											<div class="text-danger" v-if="errors.length > 0">
+												<small class="error-message" v-if="failedRules.required">This field is required</small>
+											</div>
+										</div>
+									</validation-provider>
+
+									<div class="error-message text-danger text-center" v-if="generalSubmitError !== ''">
+										<small></small>
+									</div>
+
+									<div class="form-action text-center mt-3">
+										<button class="btn p-0" type="submit">
+											<img src="assets/img/register.png" alt="register-btn">
+										</a>
+									</div>
 								</div>
+							</form>
+						</validation-observer>
 
-								<div class="form-action text-center mt-3">
-									<a class="btn p-0" href="#">
-										<img src="assets/img/register.png" alt="register-btn">
-									</a>
-								</div>
-							</div>
-						</form>
 					</div>
 
 				</div>
