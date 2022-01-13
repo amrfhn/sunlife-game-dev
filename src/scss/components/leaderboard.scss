@@ -1,0 +1,105 @@
+
+.leaderboards {
+  &--fixedbar {
+    bottom: 0;
+    width: 100%;
+    z-index: $zindex-fixed;
+  }
+  &-collapsible {
+    &__header {
+      background-color: #801416;
+      // @include media-breakpoint-up(md) {
+      // }
+
+      .leaderboards-collapsible__button {
+        @include media-breakpoint-down(md) {
+          background-color: #f3b800;
+        }
+        &.collapsed {
+          @include media-breakpoint-down(md) {
+            background-color: #801416;
+          }
+        }
+      }
+    }
+    &__button {
+      &:focus {
+        text-decoration: none !important;
+      }
+      &.collapsed {
+        .leaderboards-collapsible__heading-arrow {
+          transform: rotate(180deg);
+          @include media-breakpoint-down(md) {
+            background-color: #801416;
+          }
+        }
+      }
+    }
+    &__heading-text {
+      font-size: 18px;
+      color: #ffffff;
+      @include media-breakpoint-up(md) {
+        font-size: 24px;
+      }
+    }
+    &__heading-arrow {
+      color: #ffffff;
+      font-size: 24px;
+      position: absolute;
+      left: 45%;
+      // right: 25%;
+      top: -25px;
+      background-color: #f3b800;
+      width: 50px;
+      @include media-breakpoint-up(md) {
+        right: 10px;
+        top: 10px;
+        left: auto;
+        background-color: transparent;
+        width: auto;
+      }
+    }
+    &__card-body {
+      max-width: 1366px;
+      margin: 0 auto;
+    }
+  }
+  &-users {
+    &__listing {
+      list-style: none;
+      counter-reset: ranking-counter;
+      column-count: 2;
+      font-family: "Bungee";
+      color: #ffffff;
+      padding-left: 0;
+      li {
+        counter-increment: ranking-counter;
+        font-size: 14px;
+        display: flex;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+        &::before {
+          content: '#' counter(ranking-counter);
+          margin-right: 25px;
+          width: 20px;
+        }
+      }
+    }
+    &__img {
+      img {
+        width: 52px;
+        height: auto;
+        @include media-breakpoint-up(md) {
+          width: 72px;
+        }
+      }
+    }
+  }
+  &-collapsible__body {
+    background-color: #f3b800;
+    @include media-breakpoint-up(md) {
+      background-color: #f0b836;
+    }
+  }
+}
