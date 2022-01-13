@@ -18,6 +18,7 @@
   &--fixedbar {
     bottom: 0;
     width: 100%;
+    z-index: $zindex-fixed;
   }
   &-collapsible {
     &__header {
@@ -72,8 +73,11 @@
     }
     &__img {
       img {
-        width: 72px;
+        width: 52px;
         height: auto;
+        @include media-breakpoint-up(md) {
+          width: 72px;
+        }
       }
     }
   }
@@ -154,6 +158,23 @@
         font-family: "Bungee";
         color: #f7c652;
       }
+    }
+  }
+}
+
+.tnc-anchor {
+  font-family: "Bungee";
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 12px;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+      color: #801416;
     }
   }
 }
