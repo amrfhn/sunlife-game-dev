@@ -29,19 +29,19 @@
 
 		<div class="mt-4">
 			<button class="btn pb-md-1 pb-2" id="fbLoginBtn">
-							<img class="fb-btn" src="assets/img/facebook-button.png" alt="facebook-login">
-						</button>
+				<img class="fb-btn" src="assets/img/facebook-button.png" alt="facebook-login">
+			</button>
 			{# <div id="fbLoginBtn" class="fb-login-button mb-2" data-width="" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div> #}
 			<button style="display:none;" id="logoutBtn">Logout</button>
 			<p class="bt-1">New player?
-				<a class="bt-1-link" href="/register.html">Register here</a>
+				<a role="button" id="fbLoginRegister" class="bt-1-link cursor-pointer">Register here</a>
 			</p>
 
 			<div id="status"></div>
 
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#howToPlayModal">
-				Launch demo modal
+				How to Play
 			</button>
 
 			{% include "./how-to-play.twig" %}

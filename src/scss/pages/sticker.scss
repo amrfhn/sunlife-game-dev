@@ -1,0 +1,22 @@
+.link-tnc {
+  font-family: $headings-font-family;
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+    color: #d3422f;
+  }
+}
+
+.sticker-page-container {
+  width: 100%;
+  position: relative;
+  .page-content {
+    position: relative;
+    margin-top: -42%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}

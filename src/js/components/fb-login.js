@@ -3,6 +3,10 @@ $(function () {
     facebookLogin();
   });
 
+  $("#fbLoginRegister").on("click", function () {
+    facebookLogin();
+  });
+
   // $("#logoutBtn").on("click", function () {
   //   $("#logoutBtn").hide();
   //   $("#fbLoginBtn").show();

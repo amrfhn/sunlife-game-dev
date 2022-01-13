@@ -1,21 +1,15 @@
 {% extends "templates/partials/base.twig" %}
-{% set showNav = true %}
 
 {% block main %}
 	<div class="container-fluid">
 		<div class="row">
 
-			{% include "templates/components/background.twig" with {
-                imgSrc: 'landing-bg.jpg'   
-            }%}
-			{# {% include "templates/components/overlay.twig"%} #}
 			<div class="relative">
-				<div id="game-container"></div>
+				<div id="game-container2"></div>
 			</div>
 
 			{% include "templates/components/reward-modal.twig" %}
 
 		</div>
 	</div>
-
 {% endblock %}

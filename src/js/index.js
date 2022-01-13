@@ -20,7 +20,7 @@ import "./helpers/validations"
 import "./components/carousels";
 import "./components/forms";
 import "./components/game-prototype";
-import "./components/mobile-nav";
+import "./components/nav";
 import "./components/game-main";
 import "./components/game-scenes";
 import "./components/game";

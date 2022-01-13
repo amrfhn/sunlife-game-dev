@@ -11,7 +11,7 @@ export default class Game extends Phaser.Scene {
       this.isMobile = false;
     }
 
-    this.score = 0;
+    // this.score = 0;
     this.isMobile ? this.speedVelocity = -200 : this.speedVelocity = -1000;
   }
 
@@ -27,7 +27,7 @@ export default class Game extends Phaser.Scene {
     this.createBall();
     this.createCircle();
 
-    this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '18px', fill: '#000000'})
+    // this.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '18px', fill: '#000000'})
    
     //create keyboard cursors
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -59,11 +59,18 @@ export default class Game extends Phaser.Scene {
 
   createBall () {
     this.movingBall = this.physics.add.image(110, 250, "ball");
-    this.movingBall.setCircle(40, 210, 210)
+    this.movingBall.setCircle(40, 210, 210);
     this.movingBall.setScale(0.4); //resize the image
-    this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
+    
     this.movingBall.body.setVelocity(this.speedVelocity, 0); //make the ball bounced, adjust speed
+    this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
+    // this.movingBall.body.setAcceleration(this.speedVelocity, 0)
     this.movingBall.body.setBoundsRectangle(this.container) //create container so that the ball does not move outside of the bound (when innerbound is small & centered)
+    
+  }
+
+  test () {
+    console.log('out')
   }
 
   createCircle () {
@@ -91,8 +98,8 @@ export default class Game extends Phaser.Scene {
     if(!this.movingBall.body.moves) {
       this.isOverlapped = true; //set overlap is true
       console.log("Player in the circle");
-      this.score += 1;
-      this.scoreText.setText('Score: ' + this.score);
+      // this.score += 1;
+      // this.scoreText.setText('Score: ' + this.score);
       
       this.resetPlayer();
 

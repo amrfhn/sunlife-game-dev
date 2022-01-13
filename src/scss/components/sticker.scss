@@ -1,39 +1,108 @@
-@include media-breakpoint-up(md) {
-    .comment-box {
-        // background: url(../../assets/img/comment-box.png);
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        padding: 3rem 0;
-    
-        .sticker-text {
-            padding: 0.5rem 10rem;
-        }
-    
-        img {
-            width: 75%;
-        }
-    }
-}
-
-@include media-breakpoint-down(sm) {
-    .comment-box {
-        border-radius: 1rem;
-        border: 1px solid #000;
-        padding: 1rem 2rem;
-        background-color: #fffad1;
-
-        img {
-            width: 100%;
-            padding-top: 1rem;
-        }
-    }
-}
-
-.comment-box-img {
+.comment-box {
+  .comment-box-bg {
+    position: relative;
     width: 100%;
-
-    @include media-breakpoint-down(md) {
-        width: 75%;
+    .background {
+      width: auto;
+      height: 250px;
+      position: relative;
+      img {
+        position: absolute;
+        object-fit: contain;
+        top: 95%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-45%);
+        height: 100%;
+        @include media-breakpoint-down(md) {
+          top: -222%;
+        }
+      }
     }
+  }
+  .content {
+    position: relative;
+    margin-top: -9%;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    @include media-breakpoint-down(md) {
+      margin-top: -128%;
+      width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-top: -220%;
+      width: 100%;
+    }
+    img {
+      width: 100px;
+      height: 100%;
+      @include media-breakpoint-down(md) {
+        width: 80px;
+        margin-right: 45px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        width: 60px;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .title-sticker {
+    font-size: 26px;
+    @include media-breakpoint-down(md) {
+      font-size: 28px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+  }
+  .btn-wrapper {
+    position: relative;
+    z-index: 3;
+    img {
+      width: 285px;
+      height: 100%;
+      @include media-breakpoint-down(md) {
+        width: 265px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 185px;
+      }
+    }
+  }
+  .img-dragon-wrapper {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -9%;
+    left: -10%;
+    @include media-breakpoint-down(md) {
+      top: 10px;
+      left: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      top: -6px;
+    }
+    img {
+      width: 200px;
+      height: auto;
+      @include media-breakpoint-down(md) {
+        width: 180px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 100px;
+      }
+    }
+  }
 }
