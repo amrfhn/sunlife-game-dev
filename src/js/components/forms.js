@@ -22,8 +22,6 @@ $(function () {
         ValidationObserver,
       },
       mounted: function () {
-        console.log("register form page");
-
         //for local test
         // var userData = new Array();
         // var loginInfo = new Object();
@@ -41,13 +39,11 @@ $(function () {
 
         var userData = JSON.parse(sessionStorage.getItem("fbUserData"));
         console.log(userData);
-
-        this.formData.Fullname = userData[0].name;
-        this.formData.Email = userData[0].email;
-
-        console.log(this.formData.Fullname);
-
-        this.prefillInput();
+        if (userData !== null) {
+          this.formData.Fullname = userData[0].name;
+          this.formData.Email = userData[0].email;
+          this.prefillInput();
+        }
       },
       methods: {
         prefillInput() {
@@ -61,7 +57,7 @@ $(function () {
         },
         async onSubmit() {
           this.generalSubmitError = "";
-          console.log('submit')
+          console.log("submit");
           try {
             const response = await $.ajax({
               method: "POST",
@@ -72,15 +68,14 @@ $(function () {
               contentType: "application/json",
               data: JSON.stringify(this.formData),
             }).promise();
-            console.log('done')
-            window.location.href = "/game.html";
+            console.log("registering player..");
           } catch (e) {
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
-          } 
-          // finally {
-          //   this.$refs.reCaptcha.reset();
-          // }
+          }
+          finally {
+            window.location.href = "/game.html";
+          }
         },
       },
     });

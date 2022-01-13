@@ -3,19 +3,25 @@
 
 {% block main %}
 	<div class="container-fluid collections-container">
-		<div class="text-center">
+		<div
+			class="text-center">
 
 			{# {% include "templates/components/background.twig" with {
-                imgSrc: 'landing-bg.jpg'
-            }%} #}
+			                imgSrc: 'landing-bg.jpg'
+			            }%} #}
 
 			<div class="collections-wrapper pt-3">
-        <div class="collections-heading w-50 m-auto">
-          <p class="collections-description">Play for 3x chances to win <span class="prizes-price-to-win">RM338</span> GrabPay credits and Sun Life Premium Angpow Packets Every Week!</p>
-        </div>
+				<div class="collections-heading w-50 m-auto">
+					<p class="collections-description">Play for 3x chances to win
+						<span class="prizes-price-to-win">RM338</span>
+						GrabPay credits and Sun Life Premium Angpow Packets Every Week!</p>
+				</div>
 			</div>
 		</div>
 	</div>
 
-  {% include "templates/components/leaderboard.twig" %}
+	{% include "templates/components/how-to-play.twig" %}
+
+
+	{% include "templates/components/leaderboard.twig" %}
 {% endblock %}

@@ -75,8 +75,8 @@ export default class Game extends Phaser.Scene {
 
   createCircle () {
     this.circle = this.physics.add.image(515, 250, 'circle');
-    this.circle.setCircle(20, 310, 320) //set innerbound of the image
-    this.circle.setScale(0.3); //resize the image
+    this.circle.setCircle(20, 210, 210) //set innerbound of the image
+    this.circle.setScale(0.35); //resize the image
     this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this) //overlap between two images
   }
 
