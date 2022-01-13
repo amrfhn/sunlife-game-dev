@@ -22,6 +22,7 @@
 @import "components/overlay.scss";
 @import "components/reward-modal.scss";
 @import "components/sticker.scss";
+@import "components/leaderboard.scss";
 
 
 /** Page Specific styling **/
@@ -30,6 +31,7 @@
 @import "pages/register.scss";
 @import "pages/collections.scss";
 @import "pages/sticker.scss";
+@import "pages/prizes.scss";
 
 /** Customizations **/
 @import "custom/utilities";
@@ -38,7 +40,7 @@
 
 /** Bootstrap **/
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "bootstrap-icons.scss";
 
 /** Vendor Imports **/
 @import "node_modules/overlayscrollbars/css/OverlayScrollbars";
