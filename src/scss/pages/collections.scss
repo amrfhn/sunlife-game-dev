@@ -19,10 +19,10 @@
   &__avatar {
     // width: 13.333%;
     img {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border-radius: 20px;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-only(md) {
         width: 30px;
         height: 30px;
       }
