@@ -2,7 +2,7 @@ import $ from "jquery";
 import ScrollOut from "scroll-out";
 
 $(function () {
-
+  // console.log($)
   // $(".animated.text-slide-in").each(function () {
   //   // const currClientRect = this.getBoundingClientRect();
   //   // const currLineHeight = parseInt($(this).css('line-height'));
@@ -16,7 +16,6 @@ $(function () {
 
   //   console.log(process.env.CLIENT_ID_FB);
 
-  // $("#direction-modal").modal('show')
 });
 
 //fb init sdk

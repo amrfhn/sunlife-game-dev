@@ -1,15 +1,17 @@
 import Swiper from "swiper";
 
-var fraction = document.getElementById("fraction");
-var slides = document.querySelectorAll(".swiper-slide");
-var slideCount = slides.length;
-if (fraction) {
-  fraction.textContent = `1 / ${slideCount}`;
-}
 $(function () {
-  $(".modal").on("show.bs.modal", function () {
+  var fraction = document.getElementById("fraction");
+  var slides = document.querySelectorAll(".swiper-slide");
+  var slideCount = slides.length;
+  if (fraction) {
+    fraction.textContent = `1 / ${slideCount}`;
+  }
+  var stepsCarousel;
+
+  $(".howtoplay-modal").on("show.bs.modal", function () {
     setTimeout(function () {
-      const stepsCarousel = new Swiper(".carousel.steps-to-play", {
+      stepsCarousel = new Swiper(".carousel.steps-to-play", {
         effect: "coverflow",
         coverflowEffect: {
           rotate: 70,
@@ -31,10 +33,39 @@ $(function () {
                 stepsCarousel.realIndex + 1
               }/${slideCount}`;
             }
+            if (stepsCarousel.realIndex == slideCount - 1) {
+              $(".carousel-controls .swiper-button-next").hide();
+              $(".carousel-controls .swiper-button-start").show();
+            } else {
+              $(".carousel-controls .swiper-button-start").hide();
+              $(".carousel-controls .swiper-button-next").show();
+            }
           },
         },
         loop: false,
       });
     }, 500);
+  });
+
+  //reset swiper on modal close - to it's default config
+  $(".howtoplay-modal").on("hidden.bs.modal", function () {
+    $(".carousel-controls .swiper-button-next").show();
+    $(".carousel-controls .swiper-button-start").hide();
+    if (fraction) {
+      fraction.textContent = `1 / ${slideCount}`;
+    }
+  });
+
+  var isStartPage = $(".start-page-container").length ? true : false;
+  var isGamePage = $(".game-page-container").length ? true : false;
+
+  $(".carousel-controls .swiper-button-start").on("click", function () {
+    if (isStartPage || isGamePage) {
+      console.log("ada");
+      $("#howToPlayModal").modal("hide");
+    } else {
+      console.log("tak ada");
+      window.location.href = "/game.html";
+    }
   });
 });
