@@ -3,7 +3,7 @@
     padding-top: 600px;
     padding-bottom: 68px;
     @include media-breakpoint-up(md) {
-      padding-top: 245px;
+      padding-top: 200px;
     }
   }
   &-header {
@@ -45,9 +45,18 @@
         margin-right: 54px;
         margin-bottom: 0;
       }
+      @include media-breakpoint-up(lg) {
+        margin-right: 94px;
+      }
     }
     &.item-locked * {
       opacity: 0.7;
+    }
+  }
+  &__item-heading {
+    margin-bottom: 24px;
+    @include media-breakpoint-only(md) {
+      margin-bottom: 14px;
     }
   }
   &__img {
