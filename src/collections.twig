@@ -9,82 +9,90 @@
                 imgSrc: 'landing-bg.jpg'
             }%} #}
 
-			<div class="collections-wrapper pt-3 pt-md-5">
+			<div class="collections-wrapper pt-5 pt-md-2 pt-lg-5 swiper-collections overflow-hidden position-relative">
         <div class="collections-heading">
           <h5 class="collections-header">Your Collection</h5>
           <p class="collections-description">Click to discover interesting facts about every object</p>
         </div>
-        <div class="collections-weekly__container d-flex justify-content-center flex-column flex-md-row flex-wrap mt-md-4">
-          <div class="collections-weekly__item-container">
-            <h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
-            <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-1.png" alt="">
-                <div class="collections-weekly__img-quantity">x5</div>
+          <div class="collections-weekly__container mt-md-4 swiper-wrapper">
+            <div class="collections-weekly__item-container swiper-slide">
+              <h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
+              <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-1.png" alt="">
+                  <div class="collections-weekly__img-quantity">x5</div>
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-1.png" alt="">
+                  <div class="collections-weekly__img-quantity">x12</div>
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-1.png" alt="">
+                  <div class="collections-weekly__img-quantity">x4</div>
+                </div>
               </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-1.png" alt="">
-                <div class="collections-weekly__img-quantity">x12</div>
+            </div>
+            <div class="collections-weekly__item-container swiper-slide item-locked">
+              <h6 class="collections-weekly__item-heading text-capitalize">Week 2</h6>
+              <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
               </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-1.png" alt="">
-                <div class="collections-weekly__img-quantity">x4</div>
+            </div>
+            <div class="collections-weekly__item-container swiper-slide item-locked">
+              <h6 class="collections-weekly__item-heading text-capitalize">Week 3</h6>
+              <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+              </div>
+            </div>
+            <div class="collections-weekly__item-container swiper-slide item-locked">
+              <h6 class="collections-weekly__item-heading text-capitalize">Week 4</h6>
+              <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
+                <div class="collections-weekly__img">
+                  <img src="assets/img/collection-locked.png" alt="">
+                  {# <div class="collections-weekly__img-quantity">x5</div> #}
+                </div>
               </div>
             </div>
           </div>
-          <div class="collections-weekly__item-container item-locked">
-            <h6 class="collections-weekly__item-heading text-capitalize">Week 2</h6>
-            <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-            </div>
+        <div class="collections-carousel-controls carousel-controls d-md-none">
+          <div class="swiper-button-prev swiper-button-disabled arrow-previous">
+            <img src="assets/img/arrow.png" alt="arrow">
           </div>
-          <div class="collections-weekly__item-container item-locked">
-            <h6 class="collections-weekly__item-heading text-capitalize">Week 3</h6>
-            <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-            </div>
-          </div>
-          <div class="collections-weekly__item-container item-locked">
-            <h6 class="collections-weekly__item-heading text-capitalize">Week 4</h6>
-            <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-              <div class="collections-weekly__img">
-                <img src="assets/img/collection-locked.png" alt="">
-                {# <div class="collections-weekly__img-quantity">x5</div> #}
-              </div>
-            </div>
+          <div class="swiper-button-next arrow-next">
+            <img src="assets/img/arrow.png" alt="arrow">
           </div>
         </div>
-        <div class="collection-button-container mt-5 pb-5 pb-md-0">
+        <div class="collection-button-container mt-2 mt-md-5 pb-5 pb-md-0">
           <button class="sunlife-buttons py-1 px-3 d-block d-md-inline-block mb-2 mb-md-0">
             <svg class="icon d-inline-block icon-s mb-1 mx-auto">
               <use xlink:href="assets/icons/icons.svg#sprite-icon-share" href="assets/icons/icons.svg#sprite-icon-share"></use>

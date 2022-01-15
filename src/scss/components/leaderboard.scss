@@ -118,8 +118,13 @@
   }
   &-collapsible__body {
     background-color: #f3b800;
+    background-image: url('/assets/img/flowers.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     @include media-breakpoint-up(md) {
       background-color: #f0b836;
+      background-image: none;
     }
   }
 }
