@@ -54,9 +54,9 @@
       }
 
       .form-group {
-        background-color: $p4;
+        background-color: $p5;
         padding: 34px 36px 10px;
-        border: 3px solid $p3;
+        border: 3px solid black;
         border-radius: 25px;
 
         @include media-breakpoint-down(md) {
@@ -74,18 +74,24 @@
           margin-bottom: 4px;
           font-size: 18px;
           line-height: 18px;
+          color: #f9b105;
         }
 
         .form-control {
           min-height: 30px;
-          border: 3px solid $p3;
+          border: 3px solid black;
           border-radius: 6px;
-          background-color: $p4;
+          background-color: $p5;
           color: black;
 
           &:focus {
             box-shadow: none;
           }
+        }
+
+        .error-message {
+          font-size: 70%;
+          line-height: 70%;
         }
 
         .form-check {
@@ -109,15 +115,16 @@
                 left: 0;
                 width: 16px;
                 height: 16px;
-                border: 1.5px solid $p3;
-                background: $p4;
+                border: 1.5px solid black;
+                background: $p5;
                 transition: 0.3s;
               }
               .material-control-description {
                 font-size: 10px;
-                line-height: 14px;
+                line-height: 8px;
+                color: #00528f;
                 a {
-                  color: $s2;
+                  color: #bb281e;
                 }
               }
             }
@@ -139,8 +146,8 @@
 }
 //change bg color to yellow if autocomplete
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px $p4 inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $p5 inset !important;
 }
