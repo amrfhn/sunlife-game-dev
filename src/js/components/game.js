@@ -13,12 +13,15 @@ export default class Game extends Phaser.Scene {
 
     // this.score = 0;
     this.isMobile ? this.speedVelocity = -200 : this.speedVelocity = -1000;
+    this.isMobile ? this.ballSize = 0.9 : this.ballSize = 0.4;
+    this.isMobile ? this.circleSize = 0.6 : this.circleSize = 0.35
   }
 
   preload() {
     this.load.image("ball", "assets/img/sun.png");
     this.load.image("circle", "assets/img/circle.png");
     this.load.image("stopButton", "assets/img/stop.png");
+    this.load.image("pauseButton", "assets/img/tap-to-pause.png");
   }
 
   create() {
@@ -39,10 +42,18 @@ export default class Game extends Phaser.Scene {
     this.stopButton = this.add.image(520, 400, 'stopButton');
     this.stopButton.setScale(0.5);
     this.stopButton.setInteractive({cursor: 'pointer'});
+    this.isMobile ? this.stopButton.visible = false : this.stopButton.visible = true;
+
+    //create pause button image
+    this.pauseButton = this.add.image(520, 250, 'pauseButton');
+    this.pauseButton.setScale(0.4);
+    this.pauseButton.setInteractive({cursor: 'pointer'});
+    this.isMobile ? this.pauseButton.visible = true : this.pauseButton.visible = false;
     
     //set event to the cursor and button
-    this.spaceKey.on("down", this.togglePause, this);
-    this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, this.togglePause, this)
+    this.spaceKey.on("down", this.togglePause, this); //set space bar events
+    this.stopButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, this.togglePause, this); //set stop button event
+    this.pauseButton.on(Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN, this.togglePause, this); //set pause button event
     
     $('#btnRestartGame').on("click", function () {
       $('#rewardModal').modal('hide');
@@ -60,7 +71,7 @@ export default class Game extends Phaser.Scene {
   createBall () {
     this.movingBall = this.physics.add.image(110, 250, "ball");
     this.movingBall.setCircle(40, 210, 210);
-    this.movingBall.setScale(0.4); //resize the image
+    this.movingBall.setScale(this.ballSize); //resize the image
     
     this.movingBall.body.setVelocity(this.speedVelocity, 0); //make the ball bounced, adjust speed
     this.movingBall.body.setCollideWorldBounds(true, 1, 1); //bounce to the wall
@@ -76,7 +87,7 @@ export default class Game extends Phaser.Scene {
   createCircle () {
     this.circle = this.physics.add.image(515, 250, 'circle');
     this.circle.setCircle(20, 210, 210) //set innerbound of the image
-    this.circle.setScale(0.35); //resize the image
+    this.circle.setScale(this.circleSize); //resize the image
     this.physics.add.overlap(this.movingBall, this.circle, this.inZone, null, this) //overlap between two images
   }
 

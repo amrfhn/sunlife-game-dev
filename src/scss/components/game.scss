@@ -10,7 +10,7 @@ canvas {
     z-index: 3;
 
     @include media-breakpoint-down(md) {
-        top: 25%
+        top: 20%
     }
 
     canvas {
