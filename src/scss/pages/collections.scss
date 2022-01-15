@@ -1,6 +1,7 @@
 .collections {
   &-container {
     padding-top: 600px;
+    padding-bottom: 68px;
     @include media-breakpoint-up(md) {
       padding-top: 245px;
     }
@@ -21,6 +22,10 @@
       width: 20px;
       height: 20px;
       border-radius: 20px;
+      @include media-breakpoint-up(md) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
   &__name {

@@ -12,7 +12,7 @@
       // }
 
       .leaderboards-collapsible__button {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
           background-color: #f3b800;
         }
         &.collapsed {
@@ -29,7 +29,7 @@
       &.collapsed {
         .leaderboards-collapsible__heading-arrow {
           transform: rotate(180deg);
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(xl) {
             background-color: #801416;
           }
         }
@@ -53,10 +53,13 @@
       width: 50px;
       @include media-breakpoint-up(md) {
         right: 10px;
-        top: 10px;
+        top: 5px;
         left: auto;
         background-color: transparent;
         width: auto;
+      }
+      @include media-breakpoint-up(lg) {
+        top: 10px;
       }
     }
     &__card-body {
@@ -72,10 +75,20 @@
       font-family: "Bungee";
       color: #ffffff;
       padding-left: 0;
+      @include media-breakpoint-up(lg) {
+        font-size: 16px;
+      }
+
       li {
         counter-increment: ranking-counter;
         font-size: 14px;
         display: flex;
+        @include media-breakpoint-up(md) {
+          font-size: 24px;
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 16px;
+        }
         &:not(:last-child) {
           margin-bottom: 5px;
         }
@@ -83,6 +96,10 @@
           content: '#' counter(ranking-counter);
           margin-right: 25px;
           width: 20px;
+
+          @include media-breakpoint-only(md) {
+            margin-right: 50px;
+          }
         }
       }
     }
@@ -90,7 +107,10 @@
       img {
         width: 52px;
         height: auto;
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-only(md) {
+          width: 84px;
+        }
+        @include media-breakpoint-up(lg) {
           width: 72px;
         }
       }
@@ -101,5 +121,12 @@
     @include media-breakpoint-up(md) {
       background-color: #f0b836;
     }
+  }
+}
+
+.tnc-anchor {
+  &-container {
+    left: 0;
+    bottom: 64px;
   }
 }
