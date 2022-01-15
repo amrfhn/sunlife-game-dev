@@ -2,7 +2,7 @@
 {% set showNav = true %}
 
 {% block main %}
-	<div class="container-fluid">
+	<div class="container-fluid pt-3 pt-md-5">
 		<div class="row">
 			{% include "templates/components/background.twig" with {
         imgSrc: 'registrationform-bg.jpg'   
@@ -14,8 +14,8 @@
 				</div>
 			</div>
 
-			{% include "templates/components/how-to-play.twig" %}
-
 		</div>
 	</div>
+	{% include "templates/components/how-to-play.twig" %}
+  	{% include "templates/components/leaderboard.twig" %}
 {% endblock %}
