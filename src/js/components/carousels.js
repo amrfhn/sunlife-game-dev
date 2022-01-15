@@ -10,6 +10,7 @@ $(function () {
   var stepsCarousel;
 
   $(".howtoplay-modal").on("show.bs.modal", function () {
+    $(".carousel-controls .button-skip").show();
     setTimeout(function () {
       stepsCarousel = new Swiper(".carousel.steps-to-play", {
         effect: "coverflow",
@@ -40,6 +41,11 @@ $(function () {
               $(".carousel-controls .swiper-button-start").hide();
               $(".carousel-controls .swiper-button-next").show();
             }
+            if (stepsCarousel.realIndex !== slideCount - 1) {
+              $(".carousel-controls .button-skip").show();
+            } else {
+              $(".carousel-controls .button-skip").hide();
+            }
           },
         },
         loop: false,
@@ -61,11 +67,13 @@ $(function () {
 
   $(".carousel-controls .swiper-button-start").on("click", function () {
     if (isStartPage || isGamePage) {
-      console.log("ada");
       $("#howToPlayModal").modal("hide");
     } else {
-      console.log("tak ada");
       window.location.href = "/game.html";
     }
+  });
+  $(".carousel-controls .button-skip").on("click", function () {
+    stepsCarousel.slideTo(6, 500);
+    $(this).hide();
   });
 });
