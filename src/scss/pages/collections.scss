@@ -45,9 +45,6 @@
         margin-right: 54px;
         margin-bottom: 0;
       }
-      @include media-breakpoint-up(lg) {
-        margin-right: 94px;
-      }
     }
     &.item-locked * {
       opacity: 0.7;
