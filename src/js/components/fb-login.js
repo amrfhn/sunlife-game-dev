@@ -43,31 +43,24 @@ $(function () {
     FB.api("/me?fields=id,name,email,picture", function (response) {
       console.log(response);
       console.log("Successful login for: " + response.name);
-      
+
       var userData = new Array();
       var loginInfo = new Object();
 
       loginInfo = {
         id: response.id,
-        name:  response.name,
+        name: response.name,
         email: response.email,
         profile_image: response.picture.data.url,
-        status: 'authorized from facebook'
-      }
+        status: "connected",
+      };
 
       userData.push(loginInfo);
 
-      sessionStorage.setItem('fbUserData', JSON.stringify(userData));
+      sessionStorage.setItem("fbUserData", JSON.stringify(userData));
 
-      // setTimeout(() => {
-      //   window.location.href = '/register.html';
-      // }, 250);
-
-
-
-      // var profile = `<h1>Welcome ${response.name}<h1>
-      // <h2>Your email is ${response.email}</h2>`;
-      // $("#status").append(profile);
+      checkRegisteredUser(response.id);
+      
     });
   }
 
@@ -79,5 +72,25 @@ $(function () {
       },
       { scope: "public_profile,email" }
     );
+  }
+
+  function checkRegisteredUser(facebookID) {
+    $.ajax({
+      url: process.env.API_BASEURL + "/users/user-login",
+      dataType: "json",
+      data: JSON.stringify({ facebook_id: facebookID }),
+      cache: false,
+      timeout: 30000,
+      contentType: "application/json",
+      type: "POST",
+    }).done(function (response) {
+      if (response.status) {
+        window.location.href = "/game.html";
+      } else {
+        window.location.href = "/register.html";
+      }
+    }).fail(function (jqXHR, errorThrown, textStatus) {
+      console.log(jqXHR);
+    });
   }
 });

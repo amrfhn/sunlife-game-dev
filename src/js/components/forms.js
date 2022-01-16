@@ -44,19 +44,21 @@ $(function () {
         var userData = JSON.parse(sessionStorage.getItem("fbUserData"));
         console.log(userData);
         if (userData !== null) {
-          this.formData.Fullname = userData[0].name;
-          this.formData.Email = userData[0].email;
+          this.formData.name = userData[0].name;
+          this.formData.email = userData[0].email;
+          this.formData.facebook_id = userData[0].id;
+          this.formData.profile_image = userData[0].profile_image;
           this.prefillInput();
         }
       },
       methods: {
         prefillInput() {
-          if (this.formData.Fullname !== "") {
-            $("#nameInputControl").val(this.formData.Fullname);
+          if (this.formData.name !== "") {
+            $("#nameInputControl").val(this.formData.name);
           }
 
-          if (this.formData.Email !== "") {
-            $("#emailInputControl").val(this.formData.Email);
+          if (this.formData.email !== "") {
+            $("#emailInputControl").val(this.formData.email);
           }
         },
         async onSubmit() {
