@@ -1,6 +1,6 @@
 .prizes {
   &-price-to-win {
-    font-family: "Bungee";
+    font-family: "AllerDisplay";
     color: #e01a0a;
     font-size: 32px;
   }
@@ -9,13 +9,33 @@
       background-color: #ffffff;
       border: 1px solid #801416;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include media-breakpoint-only(md) {
+        &:not(:last-child) {
+          margin-right: 23px;
+        }
+      }
+      @include media-breakpoint-up(lg) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      &.locked {
+        background-color: #856823;
+      }
     }
     &-image {
-      width: 100%;
+      width: 80%;
       height: auto;
       margin: -40px 0 auto;
       display: block;
-
+      @include media-breakpoint-only(md) {
+        margin: -30px 0 auto;
+      }
+      @include media-breakpoint-up(md) {
+        width: 90%;
+      }
     }
     &-item {
       &:not(:last-child) {
@@ -24,18 +44,83 @@
       .winner-item__img-list {
         width: 35px;
         height: auto;
-        margin-right: 14px;
+        margin-right: 24px;
+        @include media-breakpoint-only(md) {
+          width: 30px;
+        }
+        @include media-breakpoint-up(md) {
+          margin-right: 14px;
+        }
       }
       .winner-item__img-user {
         width: 35px;
         height: 35px;
         border-radius: 20px;
-        margin-right: 14px;
+        margin-right: 24px;
+        @include media-breakpoint-only(md) {
+          width: 30px;
+          height: 30px;
+        }
+        @include media-breakpoint-up(md) {
+          margin-right: 14px;
+        }
       }
     }
     &-name {
       font-family: "Bungee";
       font-size: 14px;
+      @include media-breakpoint-only(md) {
+        font-size: 9px
+      }
     }
+    &-body__content {
+      .locked-icon {
+        width: 40px;
+        height: auto;
+      }
+      .locked-wrapper {
+        margin-bottom: 20px;
+      }
+      .locked-icon-text {
+        font-family: "Bungee";
+        color: #fbb601;
+        margin-top: 6px;
+      }
+    }
+  }
+  &-wrapper {
+    .collections-carousel-controls.carousel-controls {
+      .swiper-button-next {
+        &.arrow-next {
+        right: -24px;
+        top: 55%;
+        z-index: $zindex-dropdown;
+        }
+      }
+      .swiper-button-prev {
+        &.arrow-previous {
+          left: -24px;
+          top: 55%;
+          z-index: $zindex-dropdown;
+        }
+      }
+    }
+    &-container {
+      // @include media-breakpoint-only(md) {
+      //   display: flex;
+      //   justify-content: center;
+      //   flex-wrap: wrap;
+      // }
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.trophy-icon-wrapper {
+  img {
+    width: 50px;
   }
 }

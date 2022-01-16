@@ -2,7 +2,7 @@
 {% set showNav = true %}
 
 {% block main %}
-	<div class="container collections-container">
+	<div class="container-fluid collections-container">
 		<div
 			class="text-center">
 
@@ -10,102 +10,82 @@
           imgSrc: 'landing-bg.jpg'
       }%} #}
 
-			<div class="collections-wrapper pt-5 pt-md-2 pt-lg-5 mt-md-4">
-				<div class="collections-heading w-50 m-auto">
+			<div class="collections-wrapper overflow-hidden pt-5 pt-md-2 pt-lg-5 mt-md-4">
+				<div class="collections-heading w-75 m-auto">
 					<p class="collections-description">Play for 3x chances to win
 						<span class="prizes-price-to-win">RM338</span>
 						GrabPay credits and Sun Life Premium Angpow Packets Every Week!</p>
 				</div>
-        <div class="prizes-wrapper">
-          <div class="row pt-5">
-            <div class="prizes-winner-container col-md-3 ">
-              <img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
-              <div class="prizes-winner-body pt-4 pb-4">
-                <div class="prizes-winner-body__content px-2">
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
+        <div class="px-4">
+          <div id="swiper-prizes" class="prizes-wrapper position-relative">
+            <div class="pt-5 swiper-wrapper prizes-wrapper-container">
+              <div class="prizes-winner-container swiper-slide">
+                <img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
+                <div class="prizes-winner-body pt-4 pb-4">
+                  <div class="prizes-winner-body__content px-2">
+                    <div class="prizes-winner-item d-flex align-items-center">
+                      <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
+                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                      <div class="prizes-winner-name">Kevin Mitnick</div>
+                    </div>
+                    <div class="prizes-winner-item d-flex align-items-center">
+                      <img class="winner-item__img-list" src="assets/img/mooncake.png" alt="">
+                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                      <div class="prizes-winner-name">Kevin Mitnick</div>
+                    </div>
+                    <div class="prizes-winner-item d-flex align-items-center">
+                      <img class="winner-item__img-list" src="assets/img/caligraphy.png" alt="">
+                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                      <div class="prizes-winner-name">Kevin Mitnick</div>
+                    </div>
                   </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
+                </div>
+              </div>
+              <div class="prizes-winner-container swiper-slide locked">
+                <img class="prizes-winner-image" src="assets/img/winners/week-2-winners.png">
+                <div class="prizes-winner-body pt-4 pb-4">
+                  <div class="prizes-winner-body__content px-2">
+                    <div class="locked-wrapper">
+                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+                      <div class="locked-icon-text">Coming soon</div>
+                    </div>
                   </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
+                </div>
+              </div>
+              <div class="prizes-winner-container swiper-slide locked">
+                <img class="prizes-winner-image" src="assets/img/winners/week-3-winners.png">
+                <div class="prizes-winner-body pt-4 pb-4">
+                  <div class="prizes-winner-body__content px-2">
+                    <div class="locked-wrapper">
+                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+                      <div class="locked-icon-text">Coming soon</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="prizes-winner-container swiper-slide locked">
+                <img class="prizes-winner-image" src="assets/img/winners/week-4-winners.png">
+                <div class="prizes-winner-body pt-4 pb-4">
+                  <div class="prizes-winner-body__content px-2">
+                    <div class="locked-wrapper">
+                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+                      <div class="locked-icon-text">Coming soon</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="prizes-winner-container col-md-3">
-              <img class="prizes-winner-image" src="assets/img/winners/week-2-winners.png">
-              <div class="prizes-winner-body pt-4 pb-4">
-                <div class="prizes-winner-body__content px-2">
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                </div>
+            <div class="collections-carousel-controls carousel-controls d-md-none">
+              <div class="swiper-button-prev swiper-button-disabled arrow-previous">
+                <img src="assets/img/arrow.png" alt="arrow">
+              </div>
+              <div class="swiper-button-next arrow-next">
+                <img src="assets/img/arrow.png" alt="arrow">
               </div>
             </div>
-            <div class="prizes-winner-container col-md-3">
-              <img class="prizes-winner-image" src="assets/img/winners/week-3-winners.png">
-              <div class="prizes-winner-body pt-4 pb-4">
-                <div class="prizes-winner-body__content px-2">
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="prizes-winner-container col-md-3">
-              <img class="prizes-winner-image" src="assets/img/winners/week-4-winners.png">
-              <div class="prizes-winner-body pt-4 pb-4">
-                <div class="prizes-winner-body__content px-2">
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                  <div class="prizes-winner-item d-flex align-items-center">
-                    <img class="winner-item__img-list" src="assets/img/orange.png" alt="">
-                    <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                    <div class="prizes-winner-name">Kevin Mitnick</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div class="trophy-icon-wrapper d-none d-md-block mt-4">
+            <img src="assets/img/trophy.png" alt="">
           </div>
         </div>
 			</div>
