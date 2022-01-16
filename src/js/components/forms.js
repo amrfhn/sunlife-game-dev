@@ -9,10 +9,12 @@ $(function () {
       el: "#register-form",
       data: {
         formData: {
-          Fullname: "",
-          Email: "",
-          IcNumber: "",
-          ContactNumber: "",
+          name: "",
+          nric: "",
+          email: "",
+          facebook_id: "",
+          mobile_no: "",
+          profile_image: "",
           IsCheckedTNC: "", //checked
           IsCheckedLocality: "", //checked
         },
@@ -23,6 +25,7 @@ $(function () {
         ValidationObserver,
       },
       mounted: function () {
+        console.log(process.env.API_BASEURL)
         //for local test
         // var userData = new Array();
         // var loginInfo = new Object();
@@ -62,7 +65,7 @@ $(function () {
           try {
             const response = await $.ajax({
               method: "POST",
-              url: "/api/leads",
+              url: process.env.API_BASEURL + "/users/user-registration",
               // headers: {
               //   "g-recaptcha-response": this.recaptchaResponse,
               // },
@@ -73,8 +76,7 @@ $(function () {
           } catch (e) {
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
-          }
-          finally {
+          } finally {
             window.location.href = "/game.html";
           }
         },

@@ -40,7 +40,7 @@ $(function () {
   //fetch info from api
   function fetchUserProfile() {
     console.log("Welcome!  Fetching your information.... ");
-    FB.api("/me?fields=id,name,email", function (response) {
+    FB.api("/me?fields=id,firstname,lastname,name,email,profile_pic", function (response) {
       console.log(response);
       console.log("Successful login for: " + response.name);
       
@@ -58,9 +58,9 @@ $(function () {
 
       sessionStorage.setItem('fbUserData', JSON.stringify(userData));
 
-      setTimeout(() => {
-        window.location.href = '/register.html';
-      }, 250);
+      // setTimeout(() => {
+      //   window.location.href = '/register.html';
+      // }, 250);
 
 
 
