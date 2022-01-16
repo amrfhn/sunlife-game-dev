@@ -29,9 +29,6 @@
 
 		<div class="mt-4 d-flex flex-column">
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-howtoplay p-0 mb-3" data-toggle="modal" data-target="#howToPlayModal">
-				<img src="assets/img/how-to-play-button.png" alt="how-to-play-button">
-			</button>
 			<button class="btn pb-md-1 pb-2 p-lg-0" id="fbLoginBtn">
 				<img class="fb-btn" src="assets/img/facebook-button.png" alt="facebook-login">
 			</button>
@@ -40,6 +37,10 @@
 			<p class="bt-1">New player?
 				<a role="button" id="fbLoginRegister" class="bt-1-link cursor-pointer">Register here</a>
 			</p>
+
+			<button type="button" class="btn btn-howtoplay p-0 mb-3" data-toggle="modal" data-target="#howToPlayModal">
+				<img src="assets/img/how-to-play-button.png" alt="how-to-play-button">
+			</button>
 
 			{% include "./how-to-play.twig" %}
 
