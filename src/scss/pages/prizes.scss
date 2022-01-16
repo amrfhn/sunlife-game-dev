@@ -4,4 +4,38 @@
     color: #e01a0a;
     font-size: 32px;
   }
+  &-winner {
+    &-container {
+      background-color: #ffffff;
+      border: 1px solid #801416;
+      border-radius: 10px;
+    }
+    &-image {
+      width: 100%;
+      height: auto;
+      margin: -40px 0 auto;
+      display: block;
+
+    }
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+      .winner-item__img-list {
+        width: 35px;
+        height: auto;
+        margin-right: 14px;
+      }
+      .winner-item__img-user {
+        width: 35px;
+        height: 35px;
+        border-radius: 20px;
+        margin-right: 14px;
+      }
+    }
+    &-name {
+      font-family: "Bungee";
+      font-size: 14px;
+    }
+  }
 }

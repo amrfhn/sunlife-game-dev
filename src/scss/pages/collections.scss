@@ -1,6 +1,6 @@
 .collections {
   &-container {
-    padding-top: 600px;
+    // padding-top: 600px;
     padding-bottom: 68px;
     @include media-breakpoint-up(md) {
       padding-top: 200px;
@@ -9,9 +9,24 @@
   &-header {
     color: #d3422f;
   }
-
   &-description {
     font-family: "Bungee";
+  }
+  &-carousel-controls.carousel-controls {
+    .swiper-button-next {
+      &.arrow-next {
+      right: 0;
+      top: 45%;
+      z-index: $zindex-dropdown;
+      }
+    }
+    .swiper-button-prev {
+      &.arrow-previous {
+        left: 0;
+        top: 45%;
+        z-index: $zindex-dropdown;
+      }
+    }
   }
 }
 
@@ -38,6 +53,12 @@
 }
 
 .collections-weekly {
+  &__container {
+    @include media-breakpoint-up(md) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
   &__item-container {
     &:not(:last-child) {
       margin-bottom: 34px;
@@ -63,6 +84,9 @@
     img {
       height: 130px;
       width: auto;
+      @include media-breakpoint-up(md) {
+        height: 170px;
+      }
     }
     &-list-wrapper {
       width: 100%;
