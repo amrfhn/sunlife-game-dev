@@ -4,6 +4,7 @@ const merge =                       require("webpack-merge")
 const MiniCssExtractPlugin =        require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } =      require("clean-webpack-plugin") // only need in prod cuz dev is using in-memory server
 const CssUrlRelativePlugin =        require("css-url-relative-plugin")
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
     mode: "production",
@@ -108,6 +109,7 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
+        new CopyPlugin([{ from: "src/assets/img", to: "assets/img" }]),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "assets/css/bundle.css"

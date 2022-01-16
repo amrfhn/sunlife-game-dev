@@ -14,7 +14,7 @@ $(function () {
           IcNumber: "",
           ContactNumber: "",
           IsCheckedTNC: "", //checked
-          // IsCheckedLocality: "", //checked
+          IsCheckedLocality: "", //checked
         },
         generalSubmitError: "",
       },

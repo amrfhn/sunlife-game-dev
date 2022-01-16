@@ -23,7 +23,7 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<label for="nameInputControl">Name as per IC</label>
-											<input type="text" class="form-control" id="nameInputControl" v-model="formData.Fullname">
+											<input type="text" name="nameInputControl" class="form-control" id="nameInputControl" v-model="formData.Fullname">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>
@@ -79,7 +79,7 @@
 											</div>
 										</div>
 									</validation-provider>
-                  
+
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<div class="form-check">

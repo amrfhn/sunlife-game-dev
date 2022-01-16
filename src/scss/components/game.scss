@@ -1,7 +1,3 @@
-canvas {
-    display: none;
-}
-
 #game-container {
     position: absolute;
     transform: translateY(-50%);
@@ -11,11 +7,6 @@ canvas {
 
     @include media-breakpoint-down(md) {
         top: 20%
-    }
-
-    canvas {
-        // width: 100%;
-        display: block;
     }
 }
 // position: absolute;
