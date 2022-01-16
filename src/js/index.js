@@ -27,3 +27,4 @@ import "./components/game";
 import "./components/fb-login";
 
 import "./pages/collections";
+import "./pages/prizes";
