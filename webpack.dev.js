@@ -3,6 +3,7 @@ const common = require("./webpack.common");
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssUrlRelativePlugin = require("css-url-relative-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
@@ -118,6 +119,7 @@ module.exports = merge(common, {
   },
   devtool: "source-map",
   plugins: [
+    new CopyPlugin([{ from: "src/assets/img", to: "assets/img" }]),
     new MiniCssExtractPlugin({
       filename: "css/bundle.[hash].css",
     }),

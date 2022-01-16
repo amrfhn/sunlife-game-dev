@@ -3,7 +3,6 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 const pages = fs
@@ -34,7 +33,6 @@ module.exports = {
         filename: "assets/icons/icons.svg",
       },
     }),
-    new CopyPlugin([{ from: "src/assets/img", to: "assets/img" }]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",

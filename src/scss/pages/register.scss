@@ -120,7 +120,7 @@
                 transition: 0.3s;
               }
               .material-control-description {
-                font-size: 10px;
+                font-size: 12px;
                 line-height: 8px;
                 color: #00528f;
                 a {
@@ -145,9 +145,9 @@
   }
 }
 //change bg color to yellow if autocomplete
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $p5 inset !important;
-}
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//   -webkit-box-shadow: 0 0 0 30px $p5 inset !important;
+// }
