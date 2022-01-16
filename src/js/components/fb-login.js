@@ -40,7 +40,7 @@ $(function () {
   //fetch info from api
   function fetchUserProfile() {
     console.log("Welcome!  Fetching your information.... ");
-    FB.api("/me?fields=id,firstname,lastname,name,email,profile_pic", function (response) {
+    FB.api("/me?fields=id,name,email,picture", function (response) {
       console.log(response);
       console.log("Successful login for: " + response.name);
       
@@ -51,6 +51,7 @@ $(function () {
         id: response.id,
         name:  response.name,
         email: response.email,
+        profile_image: response.picture.data.url,
         status: 'authorized from facebook'
       }
 
