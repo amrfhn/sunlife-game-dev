@@ -114,8 +114,12 @@
         }
       }
     }
-    .fb-btn {
-      width: 250px;
+    .fb-login-btn {
+      cursor: auto !important;
+      .fb-btn {
+        cursor: pointer;
+        width: 250px;
+      }
     }
   }
 }
