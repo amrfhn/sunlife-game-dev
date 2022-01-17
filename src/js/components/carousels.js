@@ -2,7 +2,7 @@ import Swiper from "swiper";
 
 $(function () {
   var fraction = document.getElementById("fraction");
-  var slides = document.querySelectorAll(".swiper-slide");
+  var slides = document.querySelectorAll(".swiper-slide.step-slide");
   var slideCount = slides.length;
   if (fraction) {
     fraction.textContent = `1 / ${slideCount}`;
@@ -73,7 +73,7 @@ $(function () {
     }
   });
   $(".carousel-controls .button-skip").on("click", function () {
-    stepsCarousel.slideTo(6, 500);
+    stepsCarousel.slideTo(slideCount, 500);
     $(this).hide();
   });
 });
