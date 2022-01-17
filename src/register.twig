@@ -22,7 +22,7 @@
 								<div class="form-group">
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
-											<label for="nameInputControl">Name as per IC</label>
+											<label for="nameInputControl">Name as per NRIC</label>
 											<input type="text" name="nameInputControl" class="form-control" id="nameInputControl" v-model="formData.Fullname">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
@@ -32,7 +32,7 @@
 
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
-											<label for="ICInputControl">IC</label>
+											<label for="ICInputControl">NRIC</label>
 											<input type="text" class="form-control" id="ICInputControl" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="12" v-model="formData.IcNumber">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
