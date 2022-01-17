@@ -1,5 +1,4 @@
 import Phaser from "phaser";
-import sun from 'assets/img/sun.png';
 
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -13,13 +12,13 @@ export default class Game extends Phaser.Scene {
     }
 
     // this.score = 0;
-    this.isMobile ? this.speedVelocity = -200 : this.speedVelocity = -1000;
+    this.isMobile ? this.speedVelocity = -1250 : this.speedVelocity = -1000;
     this.isMobile ? this.ballSize = 0.9 : this.ballSize = 0.4;
     this.isMobile ? this.circleSize = 0.6 : this.circleSize = 0.35
   }
 
   preload() {
-    this.load.image("ball", sun);
+    this.load.image("ball", 'assets/img/sun.png');
     this.load.image("circle", "assets/img/circle.png");
     this.load.image("stopButton", "assets/img/stop.png");
     this.load.image("pauseButton", "assets/img/tap-to-pause.png");
@@ -93,7 +92,6 @@ export default class Game extends Phaser.Scene {
   }
 
   togglePause() {
-    console.log('test')
     // this.movingBall.body.moves = this.movingBall.body.moves ? false : true; //toggle pause and resume of the moving ball
     this.movingBall.body.moves = false; //toggle pause
 

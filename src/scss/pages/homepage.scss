@@ -23,74 +23,74 @@
         display: inline-block;
 
         &.w {
-          transform: translate(37px, 0px) rotate(-8deg);
+          transform: translate(36px, 0px) rotate(-4deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(32px, 0px) rotate(-8deg);
+            transform: translate(32px, 0px) rotate(-3deg);
           }
         }
 
         &.e {
-          transform: translate(22px, -5px) rotate(-4deg);
+          transform: translate(24px, -4px) rotate(-2deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(23px, -5px) rotate(-7deg);
+            transform: translate(23px, -2px) rotate(-2deg);
           }
         }
 
         &.l {
-          transform: translate(7px, -7px) rotate(-3deg);
+          transform: translate(11px, -5px) rotate(-2deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(13px, -7px) rotate(-6deg);
+            transform: translate(14px, -3px) rotate(-1deg);
           }
         }
 
         &.c {
-          transform: translate(-6px, -9px) rotate(-2deg);
+          transform: translate(-1px, -7px) rotate(-1deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(4px, -9px) rotate(-2deg);
+            transform: translate(6px, -4px) rotate(-1deg);
           }
         }
 
         &.o {
-          transform: translate(-19px, -10px) rotate(0deg);
+          transform: translate(-14px, -8px) rotate(0deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(-5px, -10px) rotate(0deg);
+            transform: translate(-3px, -4px) rotate(1deg);
           }
         }
 
         &.m {
-          transform: translate(-32px, -9px) rotate(2deg);
+          transform: translate(-27px, -8px) rotate(1deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(-15px, -9px) rotate(2deg);
+            transform: translate(-11px, -5px) rotate(1deg);
           }
         }
 
         &.e1 {
-          transform: translate(-48px, -8px) rotate(3deg);
+          transform: translate(-40px, -7px) rotate(2deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(-25px, -8px) rotate(3deg);
+            transform: translate(-20px, -4px) rotate(2deg);
           }
         }
 
         &.t {
-          transform: translate(-50px, -2px) rotate(9deg);
+          transform: translate(-47px, -4px) rotate(4deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(-37px, -6px) rotate(9deg);
+            transform: translate(-27px, -2px) rotate(4deg);
           }
         }
 
         &.o2 {
-          transform: translate(-64px, 5px) rotate(13deg);
+          transform: translate(-60px, -1px) rotate(4deg);
 
           @include media-breakpoint-down(md) {
-            transform: translate(-47px, -1px) rotate(13deg);
+            transform: translate(-36px, 2px) rotate(5deg);
           }
         }
       }

@@ -3,6 +3,7 @@
     $(".bar").toggleClass("animate");
     var mobileNav = $(".mobile-nav");
     mobileNav.toggleClass("hide show");
+    $('#overlay-mobileNav').toggleClass("hide show");
   });
 })();
 
