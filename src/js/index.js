@@ -25,6 +25,7 @@ import "./components/game-main";
 import "./components/game-scenes";
 import "./components/game";
 import "./components/fb-login";
+import "./components/leaderboard";
 
 import "./pages/collections";
 import "./pages/prizes";

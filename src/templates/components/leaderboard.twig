@@ -18,14 +18,14 @@
         </div>
 
         <div id="leader-collapsible" class="collapse leaderboards-collapsible__body" aria-labelledby="headingOne" data-parent="#leaderboard-collapse__parent">
-          <div class="card-body leaderboards-collapsible__card-body">
-            <div class="row">
-              <div class="col-12 col-lg-4 pr-lg-5">
-                <div class="">
+          <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body">
+            <div class="swiper-wrapper row">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+                <div class="pl-md-3 pl-lg-0">
                   <div class="leaderboards-users__img text-center mb-4">
                     <img class="" src="assets/img/orange.png" alt="">
                   </div>
-                  <ol class="leaderboards-users__listing">
+                  <ol class="leaderboards-users__listing pl-4 pl-md-0">
                     <li>
                       <div class="users-ranking__avatar">
                         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
@@ -99,12 +99,12 @@
                   </ol>
                 </div>
               </div>
-              <div class="col-12 col-lg-4 pr-lg-5">
-                <div class="">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+                <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" src="assets/img/mooncake.png" alt="">
                   </div>
-                  <ol class="leaderboards-users__listing">
+                  <ol class="leaderboards-users__listing pl-4 pl-md-0">
                     <li>
                       <div class="users-ranking__avatar">
                         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
@@ -178,12 +178,12 @@
                   </ol>
                 </div>
               </div>
-              <div class="col-12 col-lg-4">
-                <div class="">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+                <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" src="assets/img/caligraphy.png" alt="">
                   </div>
-                  <ol class="leaderboards-users__listing">
+                  <ol class="leaderboards-users__listing pl-4 pl-md-0">
                     <li>
                       <div class="users-ranking__avatar">
                         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
@@ -258,7 +258,15 @@
                 </div>
               </div>
             </div>
-            <div class="tnc-anchor text-center d-md-none mt-5">
+            <div class="collections-carousel-controls carousel-controls d-lg-none">
+              <div class="swiper-button-prev swiper-button-disabled arrow-previous">
+                <img src="assets/img/arrow.png" alt="arrow">
+              </div>
+              <div class="swiper-button-next arrow-next">
+                <img src="assets/img/arrow.png" alt="arrow">
+              </div>
+            </div>
+            <div class="tnc-anchor text-center d-md-none mb-5 mt-4">
               <a href="#">Terms & Conditions</a>
             </div>
           </div>

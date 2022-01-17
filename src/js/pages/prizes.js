@@ -1,22 +1,23 @@
 import Swiper from 'swiper';
 
-const swiper = new Swiper('#swiper-prizes', {
+const prizesSwiper = new Swiper('#swiper-prizes', {
   loop: false,
   slidesPerView: 1,
   spaceBetween: 30,
   // width: 340,
   autoHeight: true,
   // centeredSlides: true,
-  breakpoints: {
-    992: {
-      slidesPerView: 4
-    }
-  },
+  // breakpoints: {
+  //   992: {
+  //     slidesPerView: 4
+  //   }
+  // },
   navigation: {
     nextEl: ".collections-carousel-controls.carousel-controls .swiper-button-next",
     prevEl: ".collections-carousel-controls.carousel-controls .swiper-button-prev",
   }
 })
+
 
 $(function() {
   const $collectionsSlidesEl = $('#swiper-prizes').find('.swiper-slide')
@@ -27,11 +28,11 @@ $(function() {
     if ($(window).width() < 768) {
       $collectionsSlidesItemEl.addClass('swiper-slide')
       // $prizesWrapperContainer.removeClass('row')
-      swiper.init()
+      prizesSwiper.init()
     } else {
       $collectionsSlidesEl.removeClass('swiper-slide')
       // $prizesWrapperContainer.addClass('row')
-      swiper.destroy()
+      prizesSwiper.destroy()
     }
   }
   $(window).on('resize', initCollectionSwiper)

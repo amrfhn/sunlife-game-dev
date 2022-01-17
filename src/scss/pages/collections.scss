@@ -30,28 +30,6 @@
   }
 }
 
-.users-ranking {
-  &__avatar {
-    // width: 13.333%;
-    img {
-      width: 22px;
-      height: 22px;
-      border-radius: 20px;
-      @include media-breakpoint-only(md) {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
-  &__name {
-    width: 60.333%;
-    text-align: center;
-  }
-  &__points {
-    width: 33.333%;
-  }
-}
-
 .collections-weekly {
   &__container {
     @include media-breakpoint-up(md) {
