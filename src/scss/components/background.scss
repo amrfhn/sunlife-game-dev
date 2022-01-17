@@ -1,6 +1,7 @@
 .game-page-bg {
   width: 100%;
   position: relative;
+ 
   .background {
     width: 100%;
     height: 100vh;
@@ -15,9 +16,17 @@
       transform: translateY(-50%);
       height: 100%;
 
-      // @include media-breakpoint-down(m) {
-      //   height: 385px;
-      // }
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        object-fit: contain;
+        top: 83%;
+        width: auto;
+        text-align: center;
+        margin: auto;
+        transform: translateY(-110%);
+        height: 295px;
+        left: -20%;
+      }
     }
   }
 }
