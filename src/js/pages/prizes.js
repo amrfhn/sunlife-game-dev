@@ -6,7 +6,7 @@ const swiper = new Swiper('#swiper-prizes', {
   spaceBetween: 30,
   // width: 340,
   autoHeight: true,
-  centeredSlides: true,
+  // centeredSlides: true,
   breakpoints: {
     992: {
       slidesPerView: 4
