@@ -71,18 +71,19 @@
     &__listing {
       list-style: none;
       counter-reset: ranking-counter;
-      column-count: 2;
       font-family: "Bungee";
       color: #ffffff;
       padding-left: 0;
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
+        column-count: 2;
         font-size: 16px;
       }
 
       li {
         counter-increment: ranking-counter;
-        font-size: 14px;
+        font-size: 20px;
         display: flex;
+        align-items: center;
         @include media-breakpoint-up(md) {
           font-size: 24px;
         }
@@ -95,10 +96,14 @@
         &::before {
           content: '#' counter(ranking-counter);
           margin-right: 25px;
-          width: 20px;
+          width: 50px;
 
           @include media-breakpoint-only(md) {
             margin-right: 50px;
+            width: 20px;
+          }
+          @include media-breakpoint-up(lg) {
+            width: 20px;
           }
         }
       }
@@ -125,6 +130,49 @@
     @include media-breakpoint-up(md) {
       background-color: #f0b836;
       background-image: none;
+    }
+
+    .carousel-controls {
+      .swiper-button-next.arrow-next {
+        right: 10px !important;
+        @include media-breakpoint-only(md) {
+          top: 57% !important;
+        }
+      }
+      .swiper-button-prev.arrow-previous {
+        left: 10px !important;
+        @include media-breakpoint-only(md) {
+          top: 57% !important;
+        }
+      }
+    }
+  }
+}
+
+.users-ranking {
+  &__avatar {
+    // width: 13.333%;
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      @include media-breakpoint-only(md) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  &__name {
+    width: 60.333%;
+    text-align: center;
+    @include media-breakpoint-down(md) {
+      width: 50.33%;
+    }
+  }
+  &__points {
+    width: 33.333%;
+    @include media-breakpoint-down(md) {
+      text-align: center;
     }
   }
 }
