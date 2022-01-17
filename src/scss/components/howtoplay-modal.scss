@@ -15,6 +15,7 @@
       margin-top: -0.5rem;
     }
     @include media-breakpoint-down(sm) {
+      max-width: 100%;
       margin-top: 1rem;
     }
   }
@@ -69,8 +70,14 @@
 }
 
 .btn-howtoplay {
+  cursor: auto !important;
   img {
     width: 215px;
     height: auto;
+    cursor: pointer;
   }
+}
+
+.how-to-play-text {
+  color: #f2b900;
 }
