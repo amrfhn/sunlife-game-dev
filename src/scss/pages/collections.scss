@@ -32,7 +32,7 @@
 
 .collections-weekly {
   &__container {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -40,7 +40,7 @@
   &__item-container {
     &:not(:last-child) {
       margin-bottom: 34px;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         margin-right: 54px;
         margin-bottom: 0;
       }
@@ -51,7 +51,7 @@
   }
   &__item-heading {
     margin-bottom: 24px;
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-only(xl) {
       margin-bottom: 14px;
     }
   }
@@ -62,7 +62,7 @@
     img {
       height: 130px;
       width: auto;
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(xl) {
         height: 170px;
       }
     }

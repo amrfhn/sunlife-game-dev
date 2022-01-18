@@ -4,7 +4,13 @@ const swiper = new Swiper('#swiper-collections', {
   loop: false,
   slidesPerView: 1,
   breakpoints: {
-    992: {
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    },
+    1366: {
       slidesPerView: 4
     }
   },
@@ -19,7 +25,7 @@ $(function() {
   const $collectionsSlidesItemEl = $('#swiper-collections').find('.collections-weekly__item-container')
 
   function initCollectionSwiper() {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 1366) {
       $collectionsSlidesItemEl.addClass('swiper-slide')
       swiper.init()
     } else {
