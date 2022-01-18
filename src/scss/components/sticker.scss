@@ -1,65 +1,25 @@
 .comment-box {
-  .comment-box-bg {
-    position: relative;
-    width: 100%;
-    .background {
-      width: auto;
-      height: 250px;
-      position: relative;
-      img {
-        position: absolute;
-        object-fit: contain;
-        top: 95%;
-        left: 0;
-        width: 100%;
-        transform: translateY(-45%);
-        height: 100%;
-        @include media-breakpoint-down(md) {
-          top: -222%;
-        }
-      }
-    }
-  }
-  .content {
-    position: relative;
-    margin-top: -9%;
-    width: 55%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  .img-sticker {
+    max-width: 140px;
+    height: 100%;
     @include media-breakpoint-down(md) {
-      margin-top: -128%;
-      width: 100%;
+      width: 80px;
+      margin-right: 45px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
     @include media-breakpoint-down(sm) {
-      margin-top: -220%;
-      width: 100%;
-    }
-    img {
-      width: 100px;
-      height: 100%;
-      @include media-breakpoint-down(md) {
-        width: 80px;
-        margin-right: 45px;
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-      @include media-breakpoint-down(sm) {
-        width: 60px;
-        margin-right: 10px;
-        &:last-child {
-          margin-right: 0;
-        }
+      width: calc(100% / 5);
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
   .title-sticker {
     font-size: 26px;
-    color: #D3422F;
+    color: #d3422f;
     @include media-breakpoint-down(md) {
       font-size: 28px;
     }
@@ -67,42 +27,99 @@
       font-size: 14px;
     }
   }
-  .btn-wrapper {
-    position: relative;
-    z-index: 3;
-    img {
-      width: 285px;
-      height: 100%;
-      @include media-breakpoint-down(md) {
-        width: 265px;
-      }
-      @include media-breakpoint-down(sm) {
-        width: 185px;
-      }
-    }
+}
+.sticker-page-container .btn-wrapper {
+  position: relative;
+  z-index: 3;
+  top: -190px;
+  @include media-breakpoint-down(sm) {
+    top: -80px;
   }
-  .img-dragon-wrapper {
-    z-index: 2;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -9%;
-    left: -10%;
+  img {
+    width: 400px;
+    height: 100%;
     @include media-breakpoint-down(md) {
-      top: 10px;
-      left: 0;
+      width: 265px;
     }
     @include media-breakpoint-down(sm) {
-      top: -6px;
+      width: 148px;
     }
-    img {
-      width: 200px;
-      height: auto;
-      @include media-breakpoint-down(md) {
-        width: 180px;
-      }
+  }
+}
+.img-dragon-wrapper {
+  z-index: 9;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8%;
+  left: -3%;
+  @include media-breakpoint-down(md) {
+    left: 0;
+    margin-top: -94%;
+  }
+  @include media-breakpoint-down(sm) {
+    left: -15px;
+    margin-top: -170%;
+  }
+  img {
+    width: 280px;
+    height: auto;
+    @include media-breakpoint-down(md) {
+      width: 180px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 90px;
+    }
+  }
+}
+
+.speech-bubble {
+  background: #fff9ce;
+  padding: 20px;
+  border-radius: 30px;
+  margin: 20px auto;
+  top: 75px;
+  width: 75%;
+  position: relative;
+  box-shadow: rgb(0 0 0) 0 0 0 5px;
+  @include media-breakpoint-down(md) {
+    top: -695px;
+    width: 100%;
+  }
+  @include media-breakpoint-down(sm) {
+    top: -662px;
+    width: 100%;
+  }
+  &.speech-bubble-bottom-right {
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -62px;
+      right: 99px;
+      width: 0px;
+      height: 0px;
+      border-top: 62px solid black;
+      border-left: 62px solid transparent;
       @include media-breakpoint-down(sm) {
-        width: 100px;
+        border-top: 40px solid black;
+        border-left: 40px solid transparent;
+        bottom: -44px;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      bottom: -48px;
+      right: 104px;
+      width: 0px;
+      height: 0px;
+      border-top: 50px solid #fff9ce;
+      border-left: 50px solid transparent;
+      @include media-breakpoint-down(sm) {
+        border-top: 35px solid #fff9ce;
+        border-left: 35px solid transparent;
+        bottom: -34px;
       }
     }
   }
