@@ -17,8 +17,11 @@
       height: 100%;
 
       @include media-breakpoint-down(md) {
-        position: absolute;
         object-fit: contain;
+      }
+
+      @include media-breakpoint-down(sm) {
+        position: absolute;
         top: 83%;
         width: auto;
         text-align: center;

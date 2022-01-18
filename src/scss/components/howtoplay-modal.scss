@@ -16,7 +16,7 @@
     }
     @include media-breakpoint-down(sm) {
       margin: auto;
-      max-width: 100%;
+      max-width: 96%;
       margin-top: 1rem;
     }
   }
@@ -26,14 +26,14 @@
     border: 3px solid black;
     border-radius: 25px;
     position: relative;
-    min-height: 450px;
+    min-height: 475px;
 
     @include media-breakpoint-down(md) {
-      min-height: 475px;
+      min-height: 515px;
     }
 
     @include media-breakpoint-down(sm) {
-      min-height: 300px;
+      min-height: 420px;
     }
     .modal-header {
       position: absolute;
@@ -81,5 +81,15 @@
 
 .how-to-play-text {
   color: $p1;
+  font-size: 12px;
+  line-height: 14px;
   text-align: center;
+  @include media-breakpoint-down(md) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
