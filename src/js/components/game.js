@@ -13,7 +13,7 @@ export default class Game extends Phaser.Scene {
 
     // this.score = 0;
     this.isMobile ? this.speedVelocity = -1250 : this.speedVelocity = -1000;
-    this.isMobile ? this.ballSize = 0.9 : this.ballSize = 0.4;
+    this.isMobile ? this.ballSize = 0.45 : this.ballSize = 0.25 ;
     this.isMobile ? this.circleSize = 0.6 : this.circleSize = 0.35
   }
 
