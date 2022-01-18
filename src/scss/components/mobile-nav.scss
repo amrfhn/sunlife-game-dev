@@ -75,9 +75,17 @@
     height: 450px;
     transition: 0.2s ease;
     z-index: 1005;
+    @include media-breakpoint-up(sm) {
+      top: -33%;
+      width: 700px;
+      height: 700px;
+    }
     &.show {
       right: -50%;
       opacity: 1;
+      @include media-breakpoint-up(sm) {
+        right: -42%;
+      }
       a {
         opacity: 1;
       }
@@ -96,6 +104,10 @@
       @include media-breakpoint-up(sm) {
         padding-left: 40px;
       }
+      @include media-breakpoint-up(md) {
+        left: -50%;
+        top: 78%;
+      }
     }
     a {
       font-size: 4vw;
@@ -105,10 +117,14 @@
       opacity: 0;
       transition: opacity 0.9s ease-in-out;
 
-      @include media-breakpoint-up(sm) {
-        margin-bottom: 40px;
-        line-height: 4vw;
+      @include media-breakpoint-up(md) {
+        line-height: 30px;
+        font-size: 28px;
       }
+      // @include media-breakpoint-up(sm) {
+      //   line-height: 24px;
+      //   font-size: 22px;
+      // }
     }
   }
 }

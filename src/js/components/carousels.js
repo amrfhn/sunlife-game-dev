@@ -8,9 +8,12 @@ $(function () {
     fraction.textContent = `1 / ${slideCount}`;
   }
   var stepsCarousel;
+  var isStartPage = $(".start-page-container").length ? true : false;
+  var isGamePage = $(".game-page-container").length ? true : false;
 
   $(".howtoplay-modal").on("show.bs.modal", function () {
     $(".carousel-controls .button-skip").show();
+
     setTimeout(function () {
       stepsCarousel = new Swiper(".carousel.steps-to-play", {
         effect: "coverflow",
@@ -51,6 +54,17 @@ $(function () {
         loop: false,
       });
     }, 500);
+
+    $("body").keyup(function (e) {
+      if (e.keyCode == 32) {
+        console.log('tekan')
+        if (isStartPage || isGamePage) {
+          $("#howToPlayModal").modal("hide");
+        } else {
+          window.location.href = "/game.html";
+        }
+      }
+    });
   });
 
   //reset swiper on modal close - to it's default config
@@ -61,9 +75,6 @@ $(function () {
       fraction.textContent = `1 / ${slideCount}`;
     }
   });
-
-  var isStartPage = $(".start-page-container").length ? true : false;
-  var isGamePage = $(".game-page-container").length ? true : false;
 
   $(".carousel-controls .swiper-button-start").on("click", function () {
     if (isStartPage || isGamePage) {
