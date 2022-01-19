@@ -65,19 +65,15 @@ $(function() {
   const leaderboard = new Vue({
     el: "#leader-collapsible",
     data: {
-      leaderboard: {
-        item_1: [],
-        item_2: [],
-        item_3: [],
-      },
-      week: {
-        id:-1,
-        name:"",
-        week_no:-1,
-        week_start_date:"",
-        week_end_date:"",
-        item_as: [],        
-      }
+      item_1: [],
+      item_2: [],
+      item_3: [],
+      id:-1,
+      name:"",
+      week_no:-1,
+      week_start_date:"",
+      week_end_date:"",
+      item_as: [],
     },
     mounted: function () {
       console.log("leaderboard listing mounted");
@@ -92,19 +88,21 @@ $(function() {
           statusCode: {
             200: function(res) {
               if (res.success) {
-                let data = JSON.parse(res.data);
+                let data = res.data;
 
                 console.log(`Data -> ${data}`);
 
-                this.leaderboard.item_1 = data["item-1"];
-                this.leaderboard.item_2 = data["item-2"];
-                this.leaderboard.item_3 = data["item-3"];
+                this.item_1 = data.leaderboard["item-1"];
+                this.item_2 = data.leaderboard["item-2"];
+                this.item_3 = data.leaderboard["item-3"];
 
-                this.week.id = data.week.id;
-                this.week.name = data.week.name;
-                this.week.week_start_date = data.week.week_start_date;
-                this.week.week_end_date = data.week.week_end_date;
-                this.week.item_as = data.week.item_as;
+                console.log(this.item_1);
+
+                this.id = data.week.id;
+                this.name = data.week.name;
+                this.week_start_date = data.week.week_start_date;
+                this.week_end_date = data.week.week_end_date;
+                this.item_as = data.week.item_as;
               }
             },
             500: function(res) {
