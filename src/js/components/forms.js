@@ -17,6 +17,7 @@ $(function () {
           profile_image: "",
           is_agree: 0, //checked
           is_msia_citizen: 0, //checked
+          score: 0,
         },
         generalSubmitError: "",
       },
@@ -25,21 +26,6 @@ $(function () {
         ValidationObserver,
       },
       mounted: function () {
-        //for local test
-        // var userData = new Array();
-        // var loginInfo = new Object();
-
-        // loginInfo = {
-        //   id: "123456787654",
-        //   name: "Amir Farhan",
-        //   email: "amir@gmail.com",
-        //   status: "authorized from facebook",
-        // };
-
-        // userData.push(loginInfo);
-        // sessionStorage.setItem("fbUserData", JSON.stringify(userData));
-        /*************/
-
         var userData = JSON.parse(sessionStorage.getItem("fbUserData"));
         if (userData !== null) {
           this.formData.name = userData[0].name;
@@ -61,50 +47,62 @@ $(function () {
         },
         onSubmit() {
           this.generalSubmitError = "";
-          try {
-            $.ajax({
-              method: "POST",
-              url: process.env.API_BASEURL + "/register",
-              // headers: {
-              //   "g-recaptcha-response": this.recaptchaResponse,
-              // },
-              contentType: "application/json",
-              data: JSON.stringify(this.formData),
-              statusCode: {
-                422: function(response) {
-                  if (!response.success && response.data.email[0] == "The email has already been taken.") {
-                      var el = document.createElement("small");
-                      el.classList.add('error-message');
-                      el.appendChild(document.createTextNode(`The email {response.data.email[0]} has already been taken.`));
-                      document.getElementById('emailregistered-error').appendChild(el);
-                  }
-                },
-                200: function() {
-                  window.location.href = "/game.html";
-                },
-                500: function(res) {
-                  console.log(`error {res}`);
+          $.ajax({
+            method: "POST",
+            url: process.env.API_BASEURL + "/register",
+            // headers: {
+            //   "g-recaptcha-response": this.recaptchaResponse,
+            // },
+            contentType: "application/json",
+            data: JSON.stringify(this.formData),
+            statusCode: {
+              422: function (response) {
+                if (
+                  !response.success &&
+                  response.data.email[0] == "The email has already been taken."
+                ) {
+                  var el = document.createElement("small");
+                  el.classList.add("error-message");
+                  el.appendChild(
+                    document.createTextNode(
+                      `The email {response.data.email[0]} has already been taken.`
+                    )
+                  );
+                  document
+                    .getElementById("emailregistered-error")
+                    .appendChild(el);
                 }
+              },
+              200: function () {
+                window.location.href = "/game.html";
+              },
+              500: function (res) {
+                this.generalSubmitError =
+                  "An error has occured while trying to submit the form. Please try again later.";
+                console.log(`error {res}`);
+              },
+            },
+            complete: function (res) {
+              if (res.success) {
+                localStorage.setItem(
+                  "game_token",
+                  JSON.stringify(response.data.token)
+                );
+                this.$store.commit("updateUserData", {
+                  name: res.data.user.name,
+                  nric: res.data.user.nric,
+                  email: res.data.user.email,
+                  mobile_no: res.data.user.mobile_no,
+                  facebook_id: res.data.user.facebook_id,
+                  profile_image: res.data.user.profile_image,
+                  is_agree: res.data.user.is_agree,
+                  is_msia_citizen: res.data.user.is_msia_citizen,
+                  id: res.data.user.id,
+                });
+                window.location.href = "/game.html";
               }
-            });
-            // ();
-            // console.log(response);
-            // if (!response.success && response.data.email[0] == "The email has already been taken.") {
-            //   var el = document.createElement("small");
-            //   el.classList.add('error-message')
-            //   el.appendChild(document.createTextNode("The email has already been taken."));
-            //   document.getElementById('emailregistered-error').appendChild(el);
-            //   return response;
-            // }
-          } catch (e) {
-            this.generalSubmitError =
-              "An error has occured while trying to submit the form. Please try again later.";
-          } finally {
-            if(response.success) {
-              window.location.href = "/game.html";
-            }
-            // console.log(response);
-          }
+            },
+          });
         },
       },
     });

@@ -6,7 +6,17 @@ $(function () {
   const store = new Vuex.Store({
     state: {
       token: localStorage.getItem("game_token") !== null,
-      userData: {},
+      userData: {
+        name: "",
+        nric: "",
+        email: "",
+        mobile_no: "",
+        facebook_id: "",
+        profile_image:"",
+        is_agree: "",
+        is_msia_citizen: "",
+        id: null,
+      },
       week: {},
       score: [],
     },
