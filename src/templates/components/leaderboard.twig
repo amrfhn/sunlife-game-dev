@@ -15,13 +15,13 @@
         <div id="leader-collapsible" class="collapse leaderboards-collapsible__body" aria-labelledby="headingOne" data-parent="#leaderboard-collapse__parent">
           <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body">
             <div class="swiper-wrapper row">
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="leaderboard.item_1.length > 0">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_1.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                   <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" :src="leaderboard.item_1[0].item_as.image_thumbnail" :alt="leaderboard.item_1[0].item_as.image_thumbnail" :title="leaderboard.item_1[0].item_as.name">
+                    <img class="" :src="item_1[0].item_as.image_thumbnail" :alt="item_1[0].item_as.image_thumbnail" :title="item_1[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li v-for="item in leaderboard.item_1">
+                    <li v-for="item in item_1">
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
@@ -31,13 +31,13 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4"  v-if="leaderboard.item_2.length > 0">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4"  v-if="item_2.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" :src="leaderboard.item_2[0].item_as.image_thumbnail" :alt="leaderboard.item_2[0].item_as.image_thumbnail" :title="leaderboard.item_2[0].item_as.name">
+                    <img class="" :src="item_2[0].item_as.image_thumbnail" :alt="item_2[0].item_as.image_thumbnail" :title="item_2[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li v-for="item in leaderboard.item_2">
+                    <li v-for="item in item_2">
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
@@ -47,13 +47,13 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="leaderboard.item_3.length > 0">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_3.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" :src="leaderboard.item_3[0].item_as.image_thumbnail" :alt="leaderboard.item_3[0].item_as.image_thumbnail" :title="leaderboard.item_3[0].item_as.name">
+                    <img class="" :src="item_3[0].item_as.image_thumbnail" :alt="item_3[0].item_as.image_thumbnail" :title="item_3[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li v-for="item in leaderboard.item_3">
+                    <li v-for="item in item_3">
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
