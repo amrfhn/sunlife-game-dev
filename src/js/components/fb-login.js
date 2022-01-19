@@ -95,7 +95,10 @@ $(function () {
           window.location.href = "/register.html";
         },
         200: function (res) {
-          localStorage.setItem("game_token", JSON.stringify(res.data.token));
+          sessionStorage.setItem("game_token", JSON.stringify(res.data.token));
+          sessionStorage.setItem("user_data", JSON.stringify(res.data.user));
+          sessionStorage.setItem("week_data", JSON.stringify(res.data.week));
+          sessionStorage.setItem("score_data", JSON.stringify(res.data.score));
           window.location.href = "game.html";
         },
         500: function (res) {

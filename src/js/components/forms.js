@@ -74,21 +74,24 @@ $(function () {
                 }
               },
               200: function (res) {
-                localStorage.setItem(
+                sessionStorage.setItem(
                   "game_token",
                   JSON.stringify(res.data.token)
                 );
-                this.$store.commit("updateUserData", {
-                  name: res.data.user.name,
-                  nric: res.data.user.nric,
-                  email: res.data.user.email,
-                  mobile_no: res.data.user.mobile_no,
-                  facebook_id: res.data.user.facebook_id,
-                  profile_image: res.data.user.profile_image,
-                  is_agree: res.data.user.is_agree,
-                  is_msia_citizen: res.data.user.is_msia_citizen,
-                  id: res.data.user.id,
-                });
+                sessionStorage.setItem("user_data", JSON.stringify(res.data.user));
+                sessionStorage.setItem("week_data", JSON.stringify(res.data.week));
+                sessionStorage.setItem("score_data", JSON.stringify(res.data.score));
+                // this.$store.commit("updateUserData", {
+                //   name: res.data.user.name,
+                //   nric: res.data.user.nric,
+                //   email: res.data.user.email,
+                //   mobile_no: res.data.user.mobile_no,
+                //   facebook_id: res.data.user.facebook_id,
+                //   profile_image: res.data.user.profile_image,
+                //   is_agree: res.data.user.is_agree,
+                //   is_msia_citizen: res.data.user.is_msia_citizen,
+                //   id: res.data.user.id,
+                // });
                 window.location.href = "/game.html";
               },
               500: function (res) {
