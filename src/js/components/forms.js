@@ -77,7 +77,7 @@ $(function () {
               el.classList.add('error-message')
               el.appendChild(document.createTextNode("The email has already been taken."));
               document.getElementById('emailregistered-error').appendChild(el);
-              return response;
+              return;
             }
           } catch (e) {
             this.generalSubmitError =
