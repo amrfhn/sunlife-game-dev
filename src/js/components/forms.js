@@ -73,20 +73,10 @@ $(function () {
                     .appendChild(el);
                 }
               },
-              200: function () {
-                window.location.href = "/game.html";
-              },
-              500: function (res) {
-                this.generalSubmitError =
-                  "An error has occured while trying to submit the form. Please try again later.";
-                console.log(`error {res}`);
-              },
-            },
-            complete: function (res) {
-              if (res.success) {
+              200: function (res) {
                 localStorage.setItem(
                   "game_token",
-                  JSON.stringify(response.data.token)
+                  JSON.stringify(res.data.token)
                 );
                 this.$store.commit("updateUserData", {
                   name: res.data.user.name,
@@ -100,7 +90,15 @@ $(function () {
                   id: res.data.user.id,
                 });
                 window.location.href = "/game.html";
-              }
+              },
+              500: function (res) {
+                this.generalSubmitError =
+                  "An error has occured while trying to submit the form. Please try again later.";
+                console.log(`error {res}`);
+              },
+            },
+            complete: function (res) {
+              console.log(res);
             },
           });
         },
