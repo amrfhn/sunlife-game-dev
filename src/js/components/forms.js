@@ -75,7 +75,7 @@ $(function () {
                   if (!response.success && response.data.email[0] == "The email has already been taken.") {
                       var el = document.createElement("small");
                       el.classList.add('error-message');
-                      el.appendChild(document.createTextNode(`The email {response.data.email[0]} has already been taken.`));
+                      el.appendChild(document.createTextNode(`The email ${response.data.email[0]} has already been taken.`));
                       document.getElementById('emailregistered-error').appendChild(el);
                   }
                 },
@@ -83,7 +83,7 @@ $(function () {
                   window.location.href = "/game.html";
                 },
                 500: function(res) {
-                  console.log(`error {res}`);
+                  console.log(`error ${res}`);
                 }
               }
             });

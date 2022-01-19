@@ -98,7 +98,7 @@ $(function () {
           window.location.href = "game.html";
         },
         500: function(res) {
-          console.log(`error {res}`);
+          console.log(`error ${res}`);
         }
       }
     });

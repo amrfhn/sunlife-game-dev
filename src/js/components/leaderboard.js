@@ -1,4 +1,5 @@
 import Swiper from 'swiper'
+import Vue from "vue";
 
 // const leaderswiper = new Swiper('#swiper-leaderboard', {
 //   loop: false,
@@ -57,7 +58,63 @@ $(function() {
         }
       })
     }, 500)
-  })
+  });
+
+  let user_token = sessionStorage.getItem("user-token");
+
+  const leaderboard = new Vue({
+    el: "#leader-collapsible",
+    data: {
+      leaderboard: {
+        item_1: [],
+        item_2: [],
+        item_3: [],
+      },
+      week: {
+        id:-1,
+        name:"",
+        week_no:-1,
+        week_start_date:"",
+        week_end_date:"",
+        item_as: [],        
+      }
+    },
+    mounted: function () {
+      console.log("leaderboard listing mounted");
+
+      this.fetchLeaderboard();
+    },
+    methods: {
+      fetchLeaderboard: () => {
+        $.ajax({
+          method: "GET",
+          url: process.env.API_BASEURL + "/user-leaderboard",
+          statusCode: {
+            200: function(res) {
+              if (res.success) {
+                let data = JSON.parse(res.data);
+
+                console.log(`Data -> ${data}`);
+
+                this.leaderboard.item_1 = data["item-1"];
+                this.leaderboard.item_2 = data["item-2"];
+                this.leaderboard.item_3 = data["item-3"];
+
+                this.week.id = data.week.id;
+                this.week.name = data.week.name;
+                this.week.week_start_date = data.week.week_start_date;
+                this.week.week_end_date = data.week.week_end_date;
+                this.week.item_as = data.week.item_as;
+              }
+            },
+            500: function(res) {
+              console.log(`error {res}`);
+            }
+          }
+        })
+      }
+    }
+  });
 })
 
 // $('#leader-collapsible').on('hidden.bs.collapse', function() {

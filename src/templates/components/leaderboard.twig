@@ -15,239 +15,50 @@
         <div id="leader-collapsible" class="collapse leaderboards-collapsible__body" aria-labelledby="headingOne" data-parent="#leaderboard-collapse__parent">
           <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body">
             <div class="swiper-wrapper row">
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="leaderboard.item_1.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                   <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" src="assets/img/scroll-1.png" alt="">
+                    <img class="" :src="leaderboard.item_1[0].item_as.image_thumbnail" :alt="leaderboard.item_1[0].item_as.image_thumbnail" :title="leaderboard.item_1[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li>
+                    <li v-for="item in leaderboard.item_1">
                       <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                        <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">Riana</div>
-                      <div class="users-ranking__points">508</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Chris</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Cairg</div>
-                      <div class="users-ranking__points">499</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Des</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mike</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Jesse</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Frank</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Riley</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Elise</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mabel</div>
-                      <div class="users-ranking__points">100</div>
+                      <div class="users-ranking__name">{{item.user_as.name}}</div>
+                      <div class="users-ranking__points">{{item.score}}</div>
                     </li>
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4"  v-if="leaderboard.item_2.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" src="assets/img/scroll-2.png" alt="">
+                    <img class="" :src="leaderboard.item_2[0].item_as.image_thumbnail" :alt="leaderboard.item_2[0].item_as.image_thumbnail" :title="leaderboard.item_2[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li>
+                    <li v-for="item in leaderboard.item_2">
                       <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                        <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">Riana</div>
-                      <div class="users-ranking__points">508</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Chris</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Cairg</div>
-                      <div class="users-ranking__points">499</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Des</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mike</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Jesse</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Frank</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Riley</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Elise</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mabel</div>
-                      <div class="users-ranking__points">100</div>
+                      <div class="users-ranking__name">{{item.user_as.name}}</div>
+                      <div class="users-ranking__points">{{item.score}}</div>
                     </li>
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="leaderboard.item_3.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
-                    <img class="" src="assets/img/scroll-3.png" alt="">
+                    <img class="" :src="leaderboard.item_3[0].item_as.image_thumbnail" :alt="leaderboard.item_3[0].item_as.image_thumbnail" :title="leaderboard.item_3[0].item_as.name">
                   </div>
                   <ol class="leaderboards-users__listing pl-4 pl-md-0">
-                    <li>
+                    <li v-for="item in leaderboard.item_3">
                       <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                        <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">Riana</div>
-                      <div class="users-ranking__points">508</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Chris</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Cairg</div>
-                      <div class="users-ranking__points">499</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Des</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mike</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Jesse</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Frank</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Riley</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Elise</div>
-                      <div class="users-ranking__points">100</div>
-                    </li>
-                    <li>
-                      <div class="users-ranking__avatar">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      </div>
-                      <div class="users-ranking__name">Mabel</div>
-                      <div class="users-ranking__points">100</div>
+                      <div class="users-ranking__name">{{item.user_as.name}}</div>
+                      <div class="users-ranking__points">{{item.score}}</div>
                     </li>
                   </ol>
                 </div>
