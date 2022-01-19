@@ -90,17 +90,28 @@ $(function () {
       timeout: 30000,
       contentType: "application/json",
       type: "POST",
-    })
-      .done(function (response) {
-        console.log("res", response);
-        if (response.success) {
-          window.location.href = "/game.html";
-        } else {
+      statusCode: {
+        401: function() {
           window.location.href = "/register.html";
+        },
+        200: function() {
+          window.location.href = "game.html";
+        },
+        500: function(res) {
+          console.log(`error {res}`);
         }
-      })
-      .fail(function (jqXHR, errorThrown, textStatus) {
-        console.log(jqXHR);
-      });
+      }
+    });
+    //   .done(function (response) {
+    //     console.log("res", response);
+    //     if (response.success) {
+    //       window.location.href = "/game.html";
+    //     } else {
+    //       window.location.href = "/register.html";
+    //     }
+    //   })
+    //   .fail(function (jqXHR, errorThrown, textStatus) {
+    //     console.log(jqXHR);
+    //   });
   }
 });
