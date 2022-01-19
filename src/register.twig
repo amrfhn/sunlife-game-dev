@@ -54,6 +54,8 @@
 										<div class="form-input-wrapper mb-2">
 											<label for="emailInputControl">Email</label>
 											<input type="email" class="form-control" id="emailInputControl" v-model="formData.email">
+                      <div class="text-danger" id="emailregistered-error">
+											</div>
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>
@@ -64,7 +66,7 @@
 										<div class="form-input-wrapper mb-2">
 											<div class="form-check">
 												<label class="custom-control material-checkbox">
-													<input type="checkbox" class="material-control-input" v-model="formData.IsCheckedTNC">
+													<input type="checkbox" class="material-control-input" v-model="formData.is_agree">
 													<span class="material-control-indicator"></span>
 													<span class="material-control-description">
 														I have read, understood and accepted the
@@ -84,7 +86,7 @@
 										<div class="form-input-wrapper mb-2">
 											<div class="form-check">
 												<label class="custom-control material-checkbox" for="checkLocalityInput">
-													<input type="checkbox" class="material-control-input" id="checkLocalityInput" v-model="formData.IsCheckedLocality">
+													<input type="checkbox" class="material-control-input" id="checkLocalityInput" v-model="formData.is_msia_citizen">
 													<span class="material-control-indicator"></span>
 													<span class="material-control-description">
 														I am a Malaysian citizen/Permanent Resident (PR) with a valid NRIC aged 18 and above and I understand that only Malaysians/Malaysian PR can participate in this game.

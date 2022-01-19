@@ -15,8 +15,8 @@ $(function () {
           facebook_id: "",
           mobile_no: "",
           profile_image: "",
-          IsCheckedTNC: "", //checked
-          IsCheckedLocality: "", //checked
+          is_agree: 0, //checked
+          is_msia_citizen: 0, //checked
         },
         generalSubmitError: "",
       },
@@ -25,7 +25,6 @@ $(function () {
         ValidationObserver,
       },
       mounted: function () {
-        console.log(process.env.API_BASEURL)
         //for local test
         // var userData = new Array();
         // var loginInfo = new Object();
@@ -42,7 +41,6 @@ $(function () {
         /*************/
 
         var userData = JSON.parse(sessionStorage.getItem("fbUserData"));
-        console.log(userData);
         if (userData !== null) {
           this.formData.name = userData[0].name;
           this.formData.email = userData[0].email;
@@ -63,23 +61,32 @@ $(function () {
         },
         async onSubmit() {
           this.generalSubmitError = "";
-          console.log("submit");
           try {
             const response = await $.ajax({
               method: "POST",
-              url: process.env.API_BASEURL + "/users/user-registration",
+              url: process.env.API_BASEURL + "/register",
               // headers: {
               //   "g-recaptcha-response": this.recaptchaResponse,
               // },
               contentType: "application/json",
               data: JSON.stringify(this.formData),
             }).promise();
-            console.log("registering player..");
+            console.log(response);
+            if (!response.success && response.data.email[0] == "The email has already been taken.") {
+              var el = document.createElement("small");
+              el.classList.add('error-message')
+              el.appendChild(document.createTextNode("The email has already been taken."));
+              document.getElementById('emailregistered-error').appendChild(el);
+              return response;
+            }
           } catch (e) {
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
           } finally {
-            window.location.href = "/game.html";
+            if(response.success) {
+              window.location.href = "/game.html";
+            }
+            // console.log(response);
           }
         },
       },

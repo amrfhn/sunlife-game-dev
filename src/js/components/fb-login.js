@@ -1,6 +1,7 @@
 $(function () {
   $("#fbLoginBtn").on("click", function () {
-    facebookLogin();
+    // facebookLogin();
+    checkRegisteredUser("45678922323");
   });
 
   $("#fbLoginRegister").on("click", function () {
@@ -33,6 +34,7 @@ $(function () {
       // fethc info
       fetchUserProfile();
     } else {
+      // checkRegisteredUser("45678922323");
       facebookLoginByDialog();
     }
   }
@@ -41,8 +43,8 @@ $(function () {
   function fetchUserProfile() {
     console.log("Welcome!  Fetching your information.... ");
     FB.api("/me?fields=id,name,email,picture", function (response) {
-      console.log(response);
-      console.log("Successful login for: " + response.name);
+      // console.log(response);
+      // console.log("Successful login for: " + response.name);
 
       var userData = new Array();
       var loginInfo = new Object();
@@ -60,7 +62,7 @@ $(function () {
       sessionStorage.setItem("fbUserData", JSON.stringify(userData));
 
       checkRegisteredUser(response.id);
-      
+      // checkRegisteredUser("45678922323");
     });
   }
 
@@ -76,21 +78,29 @@ $(function () {
 
   function checkRegisteredUser(facebookID) {
     $.ajax({
-      url: process.env.API_BASEURL + "/users/user-login",
+      url: process.env.API_BASEURL + "/login",
       dataType: "json",
       data: JSON.stringify({ facebook_id: facebookID }),
       cache: false,
+      // crossDomain: true,
+      // headers: {
+      //   accept: "application/json",
+      //   "Access-Control-Allow-Headers": "*",
+      // },
       timeout: 30000,
       contentType: "application/json",
       type: "POST",
-    }).done(function (response) {
-      if (response.status) {
-        window.location.href = "/game.html";
-      } else {
-        window.location.href = "/register.html";
-      }
-    }).fail(function (jqXHR, errorThrown, textStatus) {
-      console.log(jqXHR);
-    });
+    })
+      .done(function (response) {
+        console.log("res", response);
+        if (response.success) {
+          window.location.href = "/game.html";
+        } else {
+          window.location.href = "/register.html";
+        }
+      })
+      .fail(function (jqXHR, errorThrown, textStatus) {
+        console.log(jqXHR);
+      });
   }
 });
