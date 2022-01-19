@@ -59,10 +59,10 @@ $(function () {
             $("#emailInputControl").val(this.formData.email);
           }
         },
-        async onSubmit() {
+        onSubmit() {
           this.generalSubmitError = "";
           try {
-            const response = await $.ajax({
+            $.ajax({
               method: "POST",
               url: process.env.API_BASEURL + "/register",
               // headers: {
@@ -70,15 +70,32 @@ $(function () {
               // },
               contentType: "application/json",
               data: JSON.stringify(this.formData),
-            }).promise();
-            console.log(response);
-            if (!response.success && response.data.email[0] == "The email has already been taken.") {
-              var el = document.createElement("small");
-              el.classList.add('error-message')
-              el.appendChild(document.createTextNode("The email has already been taken."));
-              document.getElementById('emailregistered-error').appendChild(el);
-              return response;
-            }
+              statusCode: {
+                422: function(response) {
+                  if (!response.success && response.data.email[0] == "The email has already been taken.") {
+                      var el = document.createElement("small");
+                      el.classList.add('error-message');
+                      el.appendChild(document.createTextNode(`The email {response.data.email[0]} has already been taken.`));
+                      document.getElementById('emailregistered-error').appendChild(el);
+                  }
+                },
+                200: function() {
+                  window.location.href = "/game.html";
+                },
+                500: function(res) {
+                  console.log(`error {res}`);
+                }
+              }
+            });
+            // ();
+            // console.log(response);
+            // if (!response.success && response.data.email[0] == "The email has already been taken.") {
+            //   var el = document.createElement("small");
+            //   el.classList.add('error-message')
+            //   el.appendChild(document.createTextNode("The email has already been taken."));
+            //   document.getElementById('emailregistered-error').appendChild(el);
+            //   return response;
+            // }
           } catch (e) {
             this.generalSubmitError =
               "An error has occured while trying to submit the form. Please try again later.";
