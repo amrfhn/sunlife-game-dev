@@ -15,6 +15,7 @@ import "bootstrap";
 // Global Scripts
 import "./global";
 import "./helpers/validations"
+import "./vue-state"
 
 // Import the JS components
 import "./components/carousels";

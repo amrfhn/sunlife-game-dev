@@ -91,16 +91,17 @@ $(function () {
       contentType: "application/json",
       type: "POST",
       statusCode: {
-        401: function() {
+        401: function () {
           window.location.href = "/register.html";
         },
-        200: function() {
+        200: function (res) {
+          localStorage.setItem("game_token", JSON.stringify(res.data.token));
           window.location.href = "game.html";
         },
-        500: function(res) {
+        500: function (res) {
           console.log(`error {res}`);
-        }
-      }
+        },
+      },
     });
     //   .done(function (response) {
     //     console.log("res", response);
