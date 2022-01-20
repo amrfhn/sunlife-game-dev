@@ -65,62 +65,65 @@ $(function () {
     }, 500);
   });
 
-  let user_token = sessionStorage.getItem("user-token");
-
-  const leaderboard = new Vue({
-    el: "#leader-collapsible",
-    data: {
-      item_1: [],
-      item_2: [],
-      item_3: [],
-      id: -1,
-      name: "",
-      week_no: -1,
-      week_start_date: "",
-      week_end_date: "",
-      item_as: [],
-    },
-    mounted: function () {
-      console.log("leaderboard listing mounted");
-
-      this.fetchLeaderboard();
-    },
-    methods: {
-      fetchLeaderboard: () => {
-        $.ajax({
-          method: "GET",
-          url: process.env.API_BASEURL + "/user-leaderboard",
-          headers: {
-            Authorization: `Bearer ${user_token}`,
-          },
-          statusCode: {
-            200: function (res) {
-              if (res.success) {
-                let data = res.data;
-
-                console.log(`Data -> ${data}`);
-
-                this.item_1 = data.leaderboard["item-1"];
-                this.item_2 = data.leaderboard["item-2"];
-                this.item_3 = data.leaderboard["item-3"];
-
-                console.log(this.item_1);
-
-                this.id = data.week.id;
-                this.name = data.week.name;
-                this.week_start_date = data.week.week_start_date;
-                this.week_end_date = data.week.week_end_date;
-                this.item_as = data.week.item_as;
-              }
-            },
-            500: function (res) {
-              console.log(`error {res}`);
-            },
-          },
-        });
+  let token = sessionStorage.getItem("game_token");
+  if ($("#leader-collapsible").length) {
+    const leaderboard = new Vue({
+      el: "#leader-collapsible",
+      data: {
+        item_1: [],
+        item_2: [],
+        item_3: [],
+        id: -1,
+        name: "",
+        week_no: -1,
+        week_start_date: "",
+        week_end_date: "",
+        item_as: [],
       },
-    },
-  });
+      created: function() {
+        this.fetchLeaderboard(this.item_1, this.item_2, this.item_3);
+      },
+      mounted: function () {
+        console.log("leaderboard listing mounted");
+
+        console.log(`item_1 = ${this.item_1}`);
+      },
+      methods: {
+        fetchLeaderboard: (item_1, item_2, item_3) => {
+          let self = this;
+          $.ajax({
+            method: "GET",
+            url: process.env.API_BASEURL + "/user-leaderboard",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            statusCode: {
+              200: (res) => {
+                if (res.success) {
+                  let data = res.data;
+
+                  console.log(`Data -> ${data}`);
+
+                  self.item_1 = data.leaderboard["item-1"];
+                  self.item_2 = data.leaderboard["item-2"];
+                  self.item_3 = data.leaderboard["item-3"];
+
+                  self.id = data.week.id;
+                  self.name = data.week.name;
+                  self.week_start_date = data.week.week_start_date;
+                  self.week_end_date = data.week.week_end_date;
+                  self.item_as = data.week.item_as;
+                }
+              },
+              500: function (res) {
+                console.log(`error {res}`);
+              },
+            },
+          });
+        },
+      },
+    });
+  }
 });
 
 // $('#leader-collapsible').on('hidden.bs.collapse', function() {

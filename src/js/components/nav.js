@@ -3,15 +3,19 @@
     $(".bar").toggleClass("animate");
     var mobileNav = $(".mobile-nav");
     mobileNav.toggleClass("hide show");
-    $('#overlay-mobileNav').toggleClass("hide show");
+    $("#overlay-mobileNav").toggleClass("hide show");
   });
 })();
 
 $(function () {
   $(".nav-menu ").find("a.active").removeClass("active");
   $(".nav-menu a").each(function () {
-    if($(this).attr('href') == location.pathname) {
-      $(this).addClass('active');
+    if ($(this).attr("href") == location.pathname) {
+      $(this).addClass("active");
     }
   });
+});
+
+$(function () {
+  let token = sessionStorage.getItem("game_token");
 });
