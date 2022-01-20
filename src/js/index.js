@@ -15,6 +15,7 @@ import "bootstrap";
 // Global Scripts
 import "./global";
 import "./helpers/validations"
+import "./vue-state"
 
 // Import the JS components
 import "./components/carousels";
@@ -26,6 +27,7 @@ import "./components/game-scenes";
 import "./components/game";
 import "./components/fb-login";
 import "./components/leaderboard";
+import "./components/reward-modal";
 
 import "./pages/collections";
 import "./pages/prizes";
