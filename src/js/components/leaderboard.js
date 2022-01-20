@@ -1,4 +1,4 @@
-import Swiper from 'swiper'
+import Swiper from "swiper";
 import Vue from "vue";
 
 // const leaderswiper = new Swiper('#swiper-leaderboard', {
@@ -17,30 +17,33 @@ import Vue from "vue";
 // })
 // let leaderSwiper
 
-$(function() {
-  const $leaderboardSlidesEl = $('#swiper-leaderboard').find('.swiper-slide')
-  const $leaderboardSlidesItemEl = $('#swiper-leaderboard').find('.swiper-leaderboard-item')
-  const $leaderboardSlidesWrapper = $('#swiper-leaderboard').find('.swiper-wrapper')
+$(function () {
+  const $leaderboardSlidesEl = $("#swiper-leaderboard").find(".swiper-slide");
+  const $leaderboardSlidesItemEl = $("#swiper-leaderboard").find(
+    ".swiper-leaderboard-item"
+  );
+  const $leaderboardSlidesWrapper = $("#swiper-leaderboard").find(
+    ".swiper-wrapper"
+  );
 
   function initLeaderboardSwiper() {
     if ($(window).width() < 992) {
-      $leaderboardSlidesItemEl.addClass('swiper-slide')
-      $leaderboardSlidesWrapper.removeClass("row")
+      $leaderboardSlidesItemEl.addClass("swiper-slide");
+      $leaderboardSlidesWrapper.removeClass("row");
       // leaderSwiper.init()
     } else {
-      $leaderboardSlidesEl.removeClass('swiper-slide')
-      $leaderboardSlidesWrapper.addClass("row")
+      $leaderboardSlidesEl.removeClass("swiper-slide");
+      $leaderboardSlidesWrapper.addClass("row");
       // leaderSwiper.destroy()
     }
   }
-  $(window).on('resize', initLeaderboardSwiper)
-  initLeaderboardSwiper()
+  $(window).on("resize", initLeaderboardSwiper);
+  initLeaderboardSwiper();
 
-
-  $('#leader-collapsible').on('show.bs.collapse', function() {
-    console.log("Show")
-    setTimeout(function() {
-      leaderSwiper = new Swiper('#swiper-leaderboard', {
+  $("#leader-collapsible").on("show.bs.collapse", function () {
+    console.log("Show");
+    setTimeout(function () {
+      leaderSwiper = new Swiper("#swiper-leaderboard", {
         loop: false,
         slidesPerView: 1,
         spaceBetween: 30,
@@ -53,11 +56,13 @@ $(function() {
         //   }
         // },
         navigation: {
-          nextEl: ".collections-carousel-controls.carousel-controls .swiper-button-next",
-          prevEl: ".collections-carousel-controls.carousel-controls .swiper-button-prev",
-        }
-      })
-    }, 500)
+          nextEl:
+            ".collections-carousel-controls.carousel-controls .swiper-button-next",
+          prevEl:
+            ".collections-carousel-controls.carousel-controls .swiper-button-prev",
+        },
+      });
+    }, 500);
   });
 
   let user_token = sessionStorage.getItem("user-token");
@@ -65,19 +70,15 @@ $(function() {
   const leaderboard = new Vue({
     el: "#leader-collapsible",
     data: {
-      leaderboard: {
-        item_1: [],
-        item_2: [],
-        item_3: [],
-      },
-      week: {
-        id:-1,
-        name:"",
-        week_no:-1,
-        week_start_date:"",
-        week_end_date:"",
-        item_as: [],        
-      }
+      item_1: [],
+      item_2: [],
+      item_3: [],
+      id: -1,
+      name: "",
+      week_no: -1,
+      week_start_date: "",
+      week_end_date: "",
+      item_as: [],
     },
     mounted: function () {
       console.log("leaderboard listing mounted");
@@ -89,33 +90,38 @@ $(function() {
         $.ajax({
           method: "GET",
           url: process.env.API_BASEURL + "/user-leaderboard",
+          headers: {
+            Authorization: `Bearer ${user_token}`,
+          },
           statusCode: {
-            200: function(res) {
+            200: function (res) {
               if (res.success) {
-                let data = JSON.parse(res.data);
+                let data = res.data;
 
                 console.log(`Data -> ${data}`);
 
-                this.leaderboard.item_1 = data["item-1"];
-                this.leaderboard.item_2 = data["item-2"];
-                this.leaderboard.item_3 = data["item-3"];
+                this.item_1 = data.leaderboard["item-1"];
+                this.item_2 = data.leaderboard["item-2"];
+                this.item_3 = data.leaderboard["item-3"];
 
-                this.week.id = data.week.id;
-                this.week.name = data.week.name;
-                this.week.week_start_date = data.week.week_start_date;
-                this.week.week_end_date = data.week.week_end_date;
-                this.week.item_as = data.week.item_as;
+                console.log(this.item_1);
+
+                this.id = data.week.id;
+                this.name = data.week.name;
+                this.week_start_date = data.week.week_start_date;
+                this.week_end_date = data.week.week_end_date;
+                this.item_as = data.week.item_as;
               }
             },
-            500: function(res) {
+            500: function (res) {
               console.log(`error {res}`);
-            }
-          }
-        })
-      }
-    }
+            },
+          },
+        });
+      },
+    },
   });
-})
+});
 
 // $('#leader-collapsible').on('hidden.bs.collapse', function() {
 //   console.log("leaderboard hidden")
