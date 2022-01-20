@@ -26,7 +26,8 @@ $(function () {
             method: "GET",
             url: process.env.API_BASEURL + "/user-prizes",
             headers: {
-              Authorization: `Bearer ${token.replaceAll('"', "")}`,
+              Authorization: `Bearer ${token}`,
+
             },
           })
             .done(function (res) {
@@ -35,13 +36,13 @@ $(function () {
 
                 console.log(`Prizes Data -> ${data.price}`);
 
-                self.item_1 = data.price["item-1"];
+                self.item_1 = JSON.parse(data.price["item-1"]);
                 self.item_2 = data.price["item-2"];
                 self.item_3 = data.price["item-3"];
               }
             })
             .fail(function (res) {
-              console.log(`error {res}`);
+              console.log(`error ${res}`);
             });
         },
       },

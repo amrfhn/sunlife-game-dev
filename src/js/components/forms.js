@@ -76,7 +76,7 @@ $(function () {
               200: function (res) {
                 sessionStorage.setItem(
                   "game_token",
-                  JSON.stringify(res.data.token)
+                  res.data.token
                 );
                 sessionStorage.setItem("user_data", JSON.stringify(res.data.user));
                 sessionStorage.setItem("week_data", JSON.stringify(res.data.week));
