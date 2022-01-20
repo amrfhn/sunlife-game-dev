@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="reward-modal modal fade" data-backdrop="static" id="rewardModal" tabindex="-1" role="dialog" aria-labelledby="rewardModalLabel" aria-hidden="true" style="display:none">
+<div class="reward-modal modal show" data-backdrop="static" ref="vuemodal" id="rewardModal" tabindex="-1" role="dialog" aria-labelledby="rewardModalLabel" aria-hidden="true" style="display:none">
 	<div class="modal-dialog modal-dialog-centered modal-md mx-auto" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,12 +8,12 @@
 			<div class="modal-body text-center">
 
 				<h3 class="header-gift color-s1 text-center mb-2">YOU HAVE COLLECTED</h3>
-				<img class="img-gift mb-2" src="assets/img/collections/final-scroll-1.png" alt="gift">
-				<h3 class="header-gift color-p3 text-center mb-4">MANDARIN ORANGES</h3>
-				<p class="body-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam porro quam sint eligendi et deleniti autem soluta commodi veniam quaerat dolore enim officiis, nostrum nihil ipsam, repellendus, quo maxime error.</p>
+				<img class="img-gift mb-2" :src="score.image" alt="gift-avatar">
+				<h3 class="header-gift color-p3 text-center mb-4" v-text="score.name"></h3>
+				<p class="body-text" v-text="score.description"></p>
 
                 <div class="btn-wrapper">
-                    <button class="btn btn-img" id="btnRestartGame"><img class="img-btn" src="assets/img/next.png" alt=""></button>
+                    <button class="btn btn-img" id="btnRestartGame"><img class="img-btn" src="assets/img/next.png" alt="next"></button>
                 </div>
 			</div>
 		</div>
