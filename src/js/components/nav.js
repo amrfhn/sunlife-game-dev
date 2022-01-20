@@ -37,15 +37,9 @@ $(function () {
         second: "",
       },
       mounted: function () {
-        console.log("tajskdjakdj");
+        this.getUserCollection();
         this.calculateTime();
-        // this.getUserCollection();
         // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
-      },
-      computed: {
-        // time: function(){
-        //   return this.date.format('dd:hh:mm:ss');
-        // }
       },
       methods: {
         getUserCollection() {
