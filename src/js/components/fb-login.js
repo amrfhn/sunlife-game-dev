@@ -101,10 +101,10 @@ $(function () {
           sessionStorage.setItem("score_data", JSON.stringify(res.data.score));
           window.location.href = "game.html";
         },
-        500: function (res) {
-          console.log(`error {res}`);
-        },
-      },
+        500: function(res) {
+          console.log(`error ${res}`);
+        }
+      }
     });
     //   .done(function (response) {
     //     console.log("res", response);

@@ -147,37 +147,6 @@ export default class Game extends Phaser.Scene {
     this.scene.destroy(); //kill the game config
   }
 
-  submitScore() {
-    $.ajax({
-      url: process.env.API_BASEURL + "/user-score-submission",
-      dataType: "json",
-      data: {},
-      cache: false,
-      // crossDomain: true,
-      headers: {
-        "Authorization": "Bearer eyJraWQiOiJBbWZJSXU3UFhhdXlUbHM3UmNyZmNIQUd1MUdCWkRab2I0U05GaVJuWUFJPSIsImFsZyI6IlYYYjU2In0.eyJzdWIiOiJjNTYyEEE1ZS05Zjc3LTQ2NDAtYTFmOS1hJJJ5Njk1OGE0MzUiLCJhdWQiOiI3Z2ZsZnNmMm1vNnQ4dXJpOG0xcHY5N3BnayIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImE2YWFjOTQxLTYzYWUtNGU5ZS1iYTE1LTRlYTNlOGIyZjQ5MSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTY4OTY0NDI2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl9qanRiZFZkZEYiLCJjb2duaXRvOnVzZXJuYW1lIjoiYzU2MmFjNWUtOWY3Ny00NjQwLWExZjktYTgxOTY5NThhNDM1IiwiZXhwIjoxNTY4OTY4MDI2LCJpYXQiOjE1Njg5NjQ0MjcsImVtYWlsIjoiYnJ5YW5Ab3BlbndvbmsuY29tIn0.fV4bgaKwXx-HjrBmGtBnSzaDHdP0JEeJ0sbE6MzuOJYWafT5gWfh9pLtkpUv-mgsnX3cVIWDVKC0H8_XM4ziUhsulZIRBwTiSca0CfABvanuMdbdjk1iK70aUxsrjHX0gK4SDUi4Zl6JNGws_SRbVi9Yq_ntx7ttXfUpZHjimfZ2mLidOLUruYctG1V_gU-dLD6CARCUbGh5aRk5nwX_5-HBUTbBVPYK3sXcVg2YRk63d-p3TITA5hoOEj9lxtHs3ZM7ZqNPl0XPUGghxdbvWnpSIUKrFLugRHqCiWxC38ZYiBhP0NDYoEMaOI-UrnEH1W6j-kr3fnH2LD5wOMJ_8Q"
-      },
-      timeout: 30000,
-      contentType: "application/json",
-      type: "GET",
-      statusCode: {
-        401: function () {
-          window.location.href = "/register.html";
-        },
-        200: function (res) {
-          sessionStorage.setItem("game_token", JSON.stringify(res.data.token));
-          sessionStorage.setItem("user_data", JSON.stringify(res.data.user));
-          sessionStorage.setItem("week_data", JSON.stringify(res.data.week));
-          sessionStorage.setItem("score_data", JSON.stringify(res.data.score));
-          window.location.href = "game.html";
-        },
-        500: function (res) {
-          console.log(`error {res}`);
-        },
-      },
-    });
-  }
-
   update() {
     if (this.movingBall.active) {
       // To make the score only add once per stop when it is in the zone.
