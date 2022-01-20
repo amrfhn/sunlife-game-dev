@@ -2,7 +2,7 @@
 	{% include "./mobile-nav.twig" %}
 </div>
 
-<div class="game-navbar bg-gradient" id="gameNavbar">
+<div class="game-navbar bg-gradient" id="gameNavbar" v-cloak>
 	<div class="nav-menu d-lg-flex d-none">
 		<a role="button" class="btn btn-link p-0 mr-4 cursor-pointer" data-toggle="modal" data-target="#howToPlayModal">
 			HOW TO PLAY
@@ -28,19 +28,15 @@
 	<div class="d-flex justify-content-around flex-lg-row flex-column w-100 mt-lg-0 mt-6">
 		<div class="nav-wrapper mb-4 mb-lg-0">
 			<div class="countdown-container mx-auto d-flex justify-content-lg-start justify-content-center align-items-center">
-				<div class="w text-nav var-small mr-3">WEEK 1</div>
-				<div class="w text-nav mr-3">03
-					<span class="count-unit">DAYS</span>
-				</div>
-				<div class="w text-nav mr-3">17
-					<span class="count-unit">HOUR</span>
-				</div>
-				<div class="w text-nav mr-3">41
-					<span class="count-unit">MIN</span>
-				</div>
-				<div class="w text-nav mr-3">16
-					<span class="count-unit">SEC</span>
-				</div>
+				<div class="w text-nav var-small mr-3" v-text="week_name">WEEK 1</div>
+				<div class="w text-nav mr-1" v-text="day"></div>
+				<span class="text-nav count-unit w mr-3">DAYS</span>
+				<div class="w text-nav mr-1" v-text="hour"></div>
+				<span class="text-nav count-unit w mr-3">HOUR</span>
+				<div class="w text-nav mr-1" v-text="minute"></div>
+				<span class="text-nav count-unit w mr-3">MIN</span>
+				<div class="w text-nav mr-1" v-text="second"></div>
+				<span class="text-nav count-unit w mr-3">SEC</span>
 			</div>
 		</div>
 
@@ -57,13 +53,13 @@
 					<span class="text-nav ml-1 w var-small" v-text="`X${item.score}`"></span>
 				</div>
 				{# <div class="score-tile d-flex justify-content-between mr-3">
-									<img src="assets/img/scroll-2.png" alt="sticker">
-									<span class="text-nav ml-1 w var-small">X27</span>
-								</div>
-								<div class="score-tile d-flex justify-content-between mr-3">
-									<img src="assets/img/scroll-3.png" alt="sticker">
-									<span class="text-nav ml-1 w var-small">X252</span>
-								</div> #}
+																					<img src="assets/img/scroll-2.png" alt="sticker">
+																					<span class="text-nav ml-1 w var-small">X27</span>
+																				</div>
+																				<div class="score-tile d-flex justify-content-between mr-3">
+																					<img src="assets/img/scroll-3.png" alt="sticker">
+																					<span class="text-nav ml-1 w var-small">X252</span>
+																				</div> #}
 				<a class="ml-2 text-center d-none d-lg-block" href="/">
 					<svg class="icon d-block icon-s mb-1 mx-auto">
 						<use xlink:href="assets/icons/icons.svg#sprite-fb-share" href="assets/icons/icons.svg#sprite-fb-share"></use>

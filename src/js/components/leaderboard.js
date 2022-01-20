@@ -83,9 +83,8 @@ $(function () {
   }
 
   if ($('#leader-collapsible"').length) {
-
-  $(window).on("resize", initLeaderboardSwiper);
-  initLeaderboardSwiper();
+    $(window).on("resize", initLeaderboardSwiper);
+    initLeaderboardSwiper();
 
     $("#leader-collapsible").on("show.bs.collapse", function () {
       console.log("Show");

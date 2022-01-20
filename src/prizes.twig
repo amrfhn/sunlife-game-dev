@@ -17,18 +17,18 @@
 						GrabPay credits and Sun Life Premium Angpow Packets Every Week!</p>
 				</div>
         <div class="px-4">
-          <div id="swiper-prizes" class="prizes-wrapper position-relative">
+          <div id="swiper-prizes" class="prizes-wrapper position-relative" v-cloak>
             <div class="pt-5 swiper-wrapper prizes-wrapper-container">
               <div class="prizes-winner-container swiper-slide">
                 <img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
                 <div class="prizes-winner-body pt-4 pb-4">
                   <div class="prizes-winner-body__content px-2">
-                    <div class="prizes-winner-item d-flex align-items-center">
-                      <img class="winner-item__img-list" src="assets/img/scroll-1.png" alt="">
-                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      <div class="prizes-winner-name">Kevin Mitnick</div>
+                    <div class="prizes-winner-item d-flex align-items-center" v-for="item in itemArray">
+                      <img class="winner-item__img-list" :src="item.image_thumbnail" alt="thumbnail">
+                      <img class="winner-item__img-user" :src="item.user_as.profile_image" alt="profile-image">
+                      <div class="prizes-winner-name" v-text="item.user_as.name"></div>
                     </div>
-                    <div class="prizes-winner-item d-flex align-items-center">
+                    {# <div class="prizes-winner-item d-flex align-items-center">
                       <img class="winner-item__img-list" src="assets/img/scroll-2.png" alt="">
                       <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
                       <div class="prizes-winner-name">Kevin Mitnick</div>
@@ -37,7 +37,7 @@
                       <img class="winner-item__img-list" src="assets/img/scroll-3.png" alt="">
                       <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
                       <div class="prizes-winner-name">Kevin Mitnick</div>
-                    </div>
+                    </div> #}
                   </div>
                 </div>
               </div>
