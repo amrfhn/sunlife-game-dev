@@ -7,7 +7,11 @@ $(function () {
       el: "#rewardModal",
       data: {
         week: {},
-        score: [],
+        score: {
+          name: "",
+          image: "",
+          description: "",
+        },
       },
       mounted: function () {
         this.getScoreSubmission();
@@ -20,19 +24,22 @@ $(function () {
             type: "GET",
             url: process.env.API_BASEURL + "/user-score-submission",
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${token.replaceAll('"', "")}`,
             },
             contentType: "application/json",
             data: JSON.stringify({}),
             statusCode: {
               422: function (res) {},
               200: function (res) {
-                console.log('res data',res.data)
-                self.score = res.data.score[0];
                 // this.week = res.data.week;
               },
               500: function (res) {},
             },
+          }).done(function (res) {
+            console.log("res data", res.data);
+            self.score.name = res.data.score[0].name;
+            self.score.image = res.data.score[0].image;
+            self.score.description = res.data.score[0].description;
           });
         },
       },

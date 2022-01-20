@@ -6,12 +6,10 @@
 				<img src="assets/img/congratulations.png" alt="how-to-play">
 			</div>
 			<div class="modal-body text-center">
-				<div v-for="item in score">
-					<h3 class="header-gift color-s1 text-center mb-2">YOU HAVE COLLECTED</h3>
-					<img class="img-gift mb-2" :src="item.image" alt="gift-avatar">
-					<h3 class="header-gift color-p3 text-center mb-4" v-text="item.image"></h3>
-					<p class="body-text" v-text="item.image"></p>
-				</div>
+				<h3 class="header-gift color-s1 text-center mb-2">YOU HAVE COLLECTED</h3>
+				<img class="img-gift mb-2" :src="score.image" alt="gift-avatar">
+				<h3 class="header-gift color-p3 text-center mb-4" v-text="score.name"></h3>
+				<p class="body-text" v-text="score.description"></p>
 
 				<div class="btn-wrapper">
 					<button class="btn btn-img" id="btnRestartGame"><img class="img-btn" src="assets/img/next.png" alt="next"></button>

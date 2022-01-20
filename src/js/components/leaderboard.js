@@ -80,46 +80,40 @@ $(function () {
         week_end_date: "",
         item_as: [],
       },
-      created: function() {
-        this.fetchLeaderboard(this.item_1, this.item_2, this.item_3);
-      },
       mounted: function () {
         console.log("leaderboard listing mounted");
-
-        console.log(`item_1 = ${this.item_1}`);
+        this.fetchLeaderboard();
       },
       methods: {
-        fetchLeaderboard: (item_1, item_2, item_3) => {
+        fetchLeaderboard: () => {
           let self = this;
           $.ajax({
             method: "GET",
             url: process.env.API_BASEURL + "/user-leaderboard",
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${token.replaceAll('"', "")}`,
             },
-            statusCode: {
-              200: (res) => {
-                if (res.success) {
-                  let data = res.data;
+          })
+            .done(function (res) {
+              if (res.success) {
+                let data = res.data;
 
-                  console.log(`Data -> ${data}`);
+                console.log(`Data -> ${data}`);
 
-                  self.item_1 = data.leaderboard["item-1"];
-                  self.item_2 = data.leaderboard["item-2"];
-                  self.item_3 = data.leaderboard["item-3"];
+                self.item_1 = data.leaderboard["item-1"];
+                self.item_2 = data.leaderboard["item-2"];
+                self.item_3 = data.leaderboard["item-3"];
 
-                  self.id = data.week.id;
-                  self.name = data.week.name;
-                  self.week_start_date = data.week.week_start_date;
-                  self.week_end_date = data.week.week_end_date;
-                  self.item_as = data.week.item_as;
-                }
-              },
-              500: function (res) {
-                console.log(`error {res}`);
-              },
-            },
-          });
+                self.id = data.week.id;
+                self.name = data.week.name;
+                self.week_start_date = data.week.week_start_date;
+                self.week_end_date = data.week.week_end_date;
+                self.item_as = data.week.item_as;
+              }
+            })
+            .fail(function (res) {
+              console.log(`error {res}`);
+            });
         },
       },
     });

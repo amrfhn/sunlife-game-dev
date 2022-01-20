@@ -74,19 +74,13 @@ $(function () {
                 }
               },
               200: function (res) {
-                sessionStorage.setItem("game_token", res.data.token);
                 sessionStorage.setItem(
-                  "user_data",
-                  JSON.stringify(res.data.user)
+                  "game_token",
+                  JSON.stringify(res.data.token)
                 );
-                sessionStorage.setItem(
-                  "week_data",
-                  JSON.stringify(res.data.week)
-                );
-                sessionStorage.setItem(
-                  "score_data",
-                  JSON.stringify(res.data.score)
-                );
+                sessionStorage.setItem("user_data", JSON.stringify(res.data.user));
+                sessionStorage.setItem("week_data", JSON.stringify(res.data.week));
+                sessionStorage.setItem("score_data", JSON.stringify(res.data.score));
                 // this.$store.commit("updateUserData", {
                 //   name: res.data.user.name,
                 //   nric: res.data.user.nric,
