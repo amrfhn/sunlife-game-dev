@@ -18,10 +18,10 @@ import "./helpers/validations"
 import "./vue-state"
 
 // Import the JS components
+import "./components/nav";
 import "./components/carousels";
 import "./components/forms";
 import "./components/game-prototype";
-import "./components/nav";
 import "./components/game-main";
 import "./components/game-scenes";
 import "./components/game";

@@ -76,8 +76,7 @@ $(function () {
     }
   }
 
-  if ($('#leader-collapsible').length) {
-
+  if ($('#leader-collapsible"').length) {
     $(window).on("resize", initLeaderboardSwiper);
     initLeaderboardSwiper();
 
