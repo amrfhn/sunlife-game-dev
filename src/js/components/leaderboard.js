@@ -98,11 +98,13 @@ $(function () {
               if (res.success) {
                 let data = res.data;
 
-                console.log(`Data -> ${data}`);
+                console.log('Data ->', data);
 
                 self.item_1 = data.leaderboard["item-1"];
                 self.item_2 = data.leaderboard["item-2"];
                 self.item_3 = data.leaderboard["item-3"];
+
+                console.log('self item 1', self.item_1[0].item_as.image_thumbnail);
 
                 self.id = data.week.id;
                 self.name = data.week.name;

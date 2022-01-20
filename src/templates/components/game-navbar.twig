@@ -2,7 +2,7 @@
 	{% include "./mobile-nav.twig" %}
 </div>
 
-<div class="game-navbar bg-gradient">
+<div class="game-navbar bg-gradient" id="gameNavbar">
 	<div class="nav-menu d-lg-flex d-none">
 		<a role="button" class="btn btn-link p-0 mr-4 cursor-pointer" data-toggle="modal" data-target="#howToPlayModal">
 			HOW TO PLAY
@@ -52,18 +52,18 @@
 			<div class="d-block d-lg-none text-center mb-2 w text-nav var-small mr-3">YOUR SCORE</div>
 			<div class="score-container mx-auto d-flex justify-content-lg-end justify-content-center align-items-center mr-1">
 				<div class="d-none d-lg-block w text-nav var-small mr-3">YOUR SCORE</div>
-				<div class="score-tile d-flex justify-content-between mr-3">
-					<img src="assets/img/scroll-1.png" alt="sticker">
-					<span class="text-nav ml-1 w var-small">X109</span>
+				<div class="score-tile d-flex justify-content-between mr-3" v-for="item in collection_items">
+					<img :src="item.item_as.image_thumbnail" :alt="item.name">
+					<span class="text-nav ml-1 w var-small" v-text="`X${item.score}`"></span>
 				</div>
-				<div class="score-tile d-flex justify-content-between mr-3">
-					<img src="assets/img/scroll-2.png" alt="sticker">
-					<span class="text-nav ml-1 w var-small">X27</span>
-				</div>
-				<div class="score-tile d-flex justify-content-between mr-3">
-					<img src="assets/img/scroll-3.png" alt="sticker">
-					<span class="text-nav ml-1 w var-small">X252</span>
-				</div>
+				{# <div class="score-tile d-flex justify-content-between mr-3">
+									<img src="assets/img/scroll-2.png" alt="sticker">
+									<span class="text-nav ml-1 w var-small">X27</span>
+								</div>
+								<div class="score-tile d-flex justify-content-between mr-3">
+									<img src="assets/img/scroll-3.png" alt="sticker">
+									<span class="text-nav ml-1 w var-small">X252</span>
+								</div> #}
 				<a class="ml-2 text-center d-none d-lg-block" href="/">
 					<svg class="icon d-block icon-s mb-1 mx-auto">
 						<use xlink:href="assets/icons/icons.svg#sprite-fb-share" href="assets/icons/icons.svg#sprite-fb-share"></use>

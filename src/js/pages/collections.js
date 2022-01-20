@@ -1,38 +1,82 @@
-import Swiper from 'swiper';
+import Vue from "vue";
+import Swiper from "swiper";
 
-const swiper = new Swiper('#swiper-collections', {
+const swiper = new Swiper("#swiper-collections", {
   loop: false,
   slidesPerView: 1,
   breakpoints: {
     768: {
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     1024: {
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1366: {
-      slidesPerView: 4
-    }
+      slidesPerView: 4,
+    },
   },
   navigation: {
-    nextEl: ".collections-carousel-controls.carousel-controls .swiper-button-next",
-    prevEl: ".collections-carousel-controls.carousel-controls .swiper-button-prev",
-  }
-})
+    nextEl:
+      ".collections-carousel-controls.carousel-controls .swiper-button-next",
+    prevEl:
+      ".collections-carousel-controls.carousel-controls .swiper-button-prev",
+  },
+});
 
-$(function() {
-  const $collectionsSlidesEl = $('#swiper-collections').find('.swiper-slide')
-  const $collectionsSlidesItemEl = $('#swiper-collections').find('.collections-weekly__item-container')
+$(function () {
+  const $collectionsSlidesEl = $("#swiper-collections").find(".swiper-slide");
+  const $collectionsSlidesItemEl = $("#swiper-collections").find(
+    ".collections-weekly__item-container"
+  );
 
-  function initCollectionSwiper() {
-    if ($(window).width() < 1366) {
-      $collectionsSlidesItemEl.addClass('swiper-slide')
-      swiper.init()
-    } else {
-      $collectionsSlidesEl.removeClass('swiper-slide')
-      swiper.destroy()
+  if ($("#swiper-collections").length) {
+    function initCollectionSwiper() {
+      if ($(window).width() < 1366) {
+        $collectionsSlidesItemEl.addClass("swiper-slide");
+        swiper.init();
+      } else {
+        $collectionsSlidesEl.removeClass("swiper-slide");
+        swiper.destroy();
+      }
     }
+    $(window).on("resize", initCollectionSwiper);
+    initCollectionSwiper();
   }
-  $(window).on('resize', initCollectionSwiper)
-  initCollectionSwiper()
-})
+});
+
+$(function () {
+  let token = sessionStorage.getItem("game_token");
+  if ($("#swiper-collections").length) {
+    const reward = new Vue({
+      el: "#swiper-collections",
+      data: {
+        collection_items: [],
+      },
+      mounted: function () {
+        console.log("think");
+        this.getUserCollection();
+        // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
+      },
+      methods: {
+        getUserCollection() {
+          let self = this;
+          $.ajax({
+            type: "GET",
+            url: process.env.API_BASEURL + "/user-collection",
+            headers: {
+              Authorization: `Bearer ${token.replaceAll('"', "")}`,
+            },
+            contentType: "application/json",
+          })
+            .done(function (res) {
+              console.log("res data", res.data);
+              self.collection_items = res.data.collection["1"];
+            })
+            .fail(function (e) {
+              console.log(e);
+            });
+        },
+      },
+    });
+  }
+});

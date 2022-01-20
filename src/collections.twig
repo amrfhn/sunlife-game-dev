@@ -18,17 +18,9 @@
             <div class="collections-weekly__item-container swiper-slide">
               <h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
               <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-                <div class="collections-weekly__img">
-                  <img src="assets/img/collections/final-scroll-1.png" alt="">
-                  <div class="collections-weekly__img-quantity">x5</div>
-                </div>
-                <div class="collections-weekly__img">
-                  <img src="assets/img/collections/final-scroll-2.png" alt="">
-                  <div class="collections-weekly__img-quantity">x12</div>
-                </div>
-                <div class="collections-weekly__img">
-                  <img src="assets/img/collections/final-scroll-3.png" alt="">
-                  <div class="collections-weekly__img-quantity">x4</div>
+                <div class="collections-weekly__img" v-for="item in collection_items">
+                  <img :src="item.item_as.image" alt="thumbnail">
+                  <div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
                 </div>
               </div>
             </div>
