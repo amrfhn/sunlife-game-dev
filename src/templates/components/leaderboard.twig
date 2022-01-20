@@ -25,8 +25,8 @@
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">{{item.user_as.name}}</div>
-                      <div class="users-ranking__points">{{item.score}}</div>
+                      <div class="users-ranking__name" v-text="item.user_as.name"></div>
+                      <div class="users-ranking__points" v-text="item.score"></div>
                     </li>
                   </ol>
                 </div>
@@ -41,8 +41,8 @@
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">{{item.user_as.name}}</div>
-                      <div class="users-ranking__points">{{item.score}}</div>
+                      <div class="users-ranking__name" v-text="item.user_as.name"></div>
+                      <div class="users-ranking__points" v-text="item.score"></div>
                     </li>
                   </ol>
                 </div>
@@ -57,8 +57,8 @@
                       <div class="users-ranking__avatar">
                         <img :src="item.user_as.profile_image" :alt="item.user_as.name">
                       </div>
-                      <div class="users-ranking__name">{{item.user_as.name}}</div>
-                      <div class="users-ranking__points">{{item.score}}</div>
+                      <div class="users-ranking__name" v-text="item.user_as.name"></div>
+                      <div class="users-ranking__points" v-text="item.score"></div>
                     </li>
                   </ol>
                 </div>
