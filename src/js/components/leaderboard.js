@@ -62,7 +62,7 @@ $(function () {
   $(window).on("resize", initLeaderboardSwiper);
   initLeaderboardSwiper();
 
-  if ($("#leader-collapsible").length) {
+  if ($("#leader-collapsible").length && $(window).width < 992) {
     $("#leader-collapsible").on("show.bs.collapse", function () {
       setTimeout(function () {
         const leaderSwiper = new Swiper("#swiper-leaderboard", {
