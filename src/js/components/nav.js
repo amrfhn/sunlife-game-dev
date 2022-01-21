@@ -30,7 +30,7 @@ $(function () {
       el: "#gameNavbar",
       data: {
         collection_items: [],
-        week_end_date: "",
+        week_end_date: "2022-01-25 00:00:00",
         week_start_date: "",
         week_name: "",
         day: "",
@@ -68,14 +68,12 @@ $(function () {
         },
         calculateTime() {
           var self = this;
-          var startDate = moment().tz('Asia/Kuala_Lumpur').format('YYYY-MM-DD h:mm:ss') //todays date
+          var startDate = moment().tz('Asia/Kuala_Lumpur') //todays date
           var endDate = moment(this.week_end_date); // another date
           var diffTime = endDate.diff(startDate);
           var duration = moment.duration(diffTime, "milliseconds", true);
           var interval = 1000;
 
-          console.log(startDate)
-          console.log('e',endDate)
           setInterval(function () {
             duration = moment.duration(duration - interval, "milliseconds");
             self.day = duration.days();
