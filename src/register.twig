@@ -33,7 +33,7 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<label for="ICInputControl">NRIC No.</label>
-											<input type="text" class="form-control" id="ICInputControl" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="12" v-model="formData.nric">
+											<input type="text" class="form-control" id="ICInputControl" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="12" minLength="12" v-model="formData.nric">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>

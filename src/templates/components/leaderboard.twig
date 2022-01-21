@@ -1,5 +1,5 @@
 {# Start leaderboards component #}
-  <div class="leaderboard-container leaderboards--fixedbar position-fixed">
+  <div class="leaderboard-container leaderboards--fixedbar position-fixed" id="leaderboardEl">
     <div class="accordion" id="leaderboard-collapse__parent">
       <div class="">
         <div class="leaderboards-collapsible__header" id="headingOne">
@@ -14,9 +14,9 @@
 
         <div id="leader-collapsible" class="collapse leaderboards-collapsible__body" aria-labelledby="headingOne" data-parent="#leaderboard-collapse__parent">
           <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body">
-            <h1>${item_1.length}</h1>
-            <div class="swiper-wrapper row">
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_1.length > 0">
+            <div v-for="item in item_1"><p v-text="item.id"></p></div>
+            {# <div class="row">
+              <div class="swiper-leaderboard-7 col-lg-4">
                 <div class="pl-md-3 pl-lg-0">
                   <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_1[0].item_as.image_thumbnail">
@@ -32,7 +32,7 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_2.length > 0">
+              <div class="swiper-leaderboard-item col-lg-4">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_2[0].item_as.image_thumbnail" :alt="item_2[0].item_as.image_thumbnail" :title="item_2[0].item_as.name">
@@ -48,7 +48,7 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_3.length > 0">
+              <div class="swiper-leaderboard-item col-lg-4">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_3[0].item_as.image_thumbnail" :alt="item_3[0].item_as.image_thumbnail" :title="item_3[0].item_as.name">
@@ -64,15 +64,15 @@
                   </ol>
                 </div>
               </div>
-            </div>
-            <div class="collections-carousel-controls carousel-controls d-lg-none">
+            </div> #}
+            {# <div class="collections-carousel-controls carousel-controls d-lg-none">
               <div class="swiper-button-prev swiper-button-disabled arrow-previous">
                 <img src="assets/img/arrow.png" alt="arrow">
               </div>
               <div class="swiper-button-next arrow-next">
                 <img src="assets/img/arrow.png" alt="arrow">
               </div>
-            </div>
+            </div> #}
           </div>
           <div class="text-center">
             <p class="w">*Rankings are determined by highest scores and fastest times</p>

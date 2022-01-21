@@ -69,16 +69,16 @@
   .mobile-nav {
     background-color: #f2b900;
     position: absolute;
-    top: -25%;
-    width: 450px;
+    top: -35%;
+    width: 530px;
     border-radius: 50%;
-    height: 450px;
+    height: 590px;
     transition: 0.2s ease;
     z-index: 1005;
     @include media-breakpoint-up(sm) {
-      top: -33%;
-      width: 700px;
-      height: 700px;
+      top: -35%;
+      width: 800px;
+      height: 800px;
     }
     &.show {
       right: -50%;

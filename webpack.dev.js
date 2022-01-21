@@ -119,7 +119,7 @@ module.exports = merge(common, {
   },
   devtool: "source-map",
   plugins: [
-    new CopyPlugin([{ from: "src/assets/img", to: "assets/img" }]),
+    new CopyPlugin([{ from: "src/assets/img", to: "assets/img" },{from: "src/assets/json", to: "assets/json"}]),
     new MiniCssExtractPlugin({
       filename: "css/bundle.[hash].css",
     }),

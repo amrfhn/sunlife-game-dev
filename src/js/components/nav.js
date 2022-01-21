@@ -22,13 +22,13 @@ $(function () {
 });
 
 $(function () {
-  // let token = sessionStorage.getItem("game_token");
+  let token = sessionStorage.getItem("game_token");
   if ($("#gameNavbar").length) {
     const reward = new Vue({
       el: "#gameNavbar",
       data: {
         collection_items: [],
-        week_end_date: "",
+        week_end_date: "2022-01-28 00:00:00",
         week_start_date: "",
         week_name: "",
         day: "",
@@ -37,8 +37,9 @@ $(function () {
         second: "",
       },
       mounted: function () {
-        this.getUserCollection();
+        // this.getUserCollection();
         this.calculateTime();
+
         // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
       },
       methods: {
@@ -57,6 +58,8 @@ $(function () {
               self.week_start_date = res.data.week.week_start_date;
               self.week_end_date = res.data.week.week_end_date;
               self.week_name = res.data.week.name;
+
+              self.calculateTime();
             })
             .fail(function (e) {
               console.log(e);
@@ -64,12 +67,13 @@ $(function () {
         },
         calculateTime() {
           var self = this;
-          var startDate = moment(this.week_start_date); //todays date
+          var startDate = moment().tz('Utc/GMT+8').format('YYYY-MM-DD h:mm:ss') //todays date
           var endDate = moment(this.week_end_date); // another date
           var diffTime = endDate.diff(startDate);
           var duration = moment.duration(diffTime, "milliseconds", true);
           var interval = 1000;
 
+          console.log(startDate, endDate)
           setInterval(function () {
             duration = moment.duration(duration - interval, "milliseconds");
             self.day = duration.days();
