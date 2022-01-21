@@ -30,7 +30,7 @@ $(function () {
       el: "#gameNavbar",
       data: {
         collection_items: [],
-        week_end_date: "2022-01-25 00:00:00",
+        week_end_date: "",
         week_start_date: "",
         week_name: "",
         day: "",
