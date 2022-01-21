@@ -1,7 +1,9 @@
 import Vue from "vue";
-import moment from "moment";
+// import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
+import moment from 'moment-timezone';
 momentDurationFormatSetup(moment);
+// momentTimezone().tz("Asia/Kuala Lumpur").format();
 
 (function () {
   $(".hamburger-menu").on("click", function () {
@@ -28,7 +30,7 @@ $(function () {
       el: "#gameNavbar",
       data: {
         collection_items: [],
-        week_end_date: "2022-01-28 00:00:00",
+        week_end_date: "",
         week_start_date: "",
         week_name: "",
         day: "",
@@ -37,9 +39,8 @@ $(function () {
         second: "",
       },
       mounted: function () {
-        // this.getUserCollection();
-        this.calculateTime();
-
+        this.getUserCollection();
+        // this.calculateTime();
         // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
       },
       methods: {
@@ -67,13 +68,14 @@ $(function () {
         },
         calculateTime() {
           var self = this;
-          var startDate = moment().tz('Utc/GMT+8').format('YYYY-MM-DD h:mm:ss') //todays date
+          var startDate = moment().tz('Asia/Kuala_Lumpur').format('YYYY-MM-DD h:mm:ss') //todays date
           var endDate = moment(this.week_end_date); // another date
           var diffTime = endDate.diff(startDate);
           var duration = moment.duration(diffTime, "milliseconds", true);
           var interval = 1000;
 
-          console.log(startDate, endDate)
+          console.log(startDate)
+          console.log('e',endDate)
           setInterval(function () {
             duration = moment.duration(duration - interval, "milliseconds");
             self.day = duration.days();
