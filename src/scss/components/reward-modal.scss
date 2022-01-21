@@ -98,17 +98,23 @@
   }
 }
 
-img.img-item {
-  width: 35px;
-}
-
-.header-item {
-  font-size: 14px;
-  &.color-s1 {
-    color: $s1;
+#itemDetailsModal {
+  img.img-item {
+    width: 5;
   }
-  &.color-p3 {
-    color: $p3;
+  
+  .header-item {
+    font-size: 1.1px;
+    &.color-s1 {
+      color: $s1;
+    }
+    &.color-p3 {
+      color: $p3;
+    }
+  }
+
+  .body-text {
+    font-size: 1rem;
   }
 }
 
