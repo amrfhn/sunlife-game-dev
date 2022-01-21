@@ -58,9 +58,7 @@ $(function () {
         }
       },
       mounted: function () {
-        console.log("think");
         this.getUserCollection();
-        // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
       },
       methods: {
         getUserCollection() {
@@ -74,19 +72,16 @@ $(function () {
             contentType: "application/json",
           })
             .done(function (res) {
-              console.log("res data", res.data);
               self.collection_items = res.data.collection["1"];
             })
-            .fail(function (e) {
-              console.log(e);
+            .fail(function (res) {
+              console.log(`error {res}`);
             });
         },
         setModalInformation(item) {
           this.modal.image = item.item_as.image;
           this.modal.name = item.item_as.name;
           this.modal.description = item.item_as.description;
-
-          console.log(this.modal.image, this.modal.name, this.modal.description);
         },
         closeModal() {
           $("#itemDetailsModal").modal("hide");

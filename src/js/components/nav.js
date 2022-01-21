@@ -1,7 +1,7 @@
 import Vue from "vue";
 // import moment from "moment";
 import momentDurationFormatSetup from "moment-duration-format";
-import moment from 'moment-timezone';
+import moment from "moment-timezone";
 momentDurationFormatSetup(moment);
 // momentTimezone().tz("Asia/Kuala Lumpur").format();
 
@@ -40,8 +40,6 @@ $(function () {
       },
       mounted: function () {
         this.getUserCollection();
-        // this.calculateTime();
-        // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
       },
       methods: {
         getUserCollection() {
@@ -62,13 +60,13 @@ $(function () {
 
               self.calculateTime();
             })
-            .fail(function (e) {
-              console.log(e);
+            .fail(function (res) {
+              console.log("error", res);
             });
         },
         calculateTime() {
           var self = this;
-          var startDate = moment().tz('Asia/Kuala_Lumpur') //todays date
+          var startDate = moment().tz("Asia/Kuala_Lumpur"); //todays date
           var endDate = moment(this.week_end_date); // another date
           var diffTime = endDate.diff(startDate);
           var duration = moment.duration(diffTime, "milliseconds", true);

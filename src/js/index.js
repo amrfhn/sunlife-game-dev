@@ -28,7 +28,6 @@ import "./components/game";
 import "./components/fb-login";
 import "./components/leaderboard";
 import "./components/reward-modal";
-import "./components/prizes";
 import "./components/redirect";
 
 import "./pages/collections";

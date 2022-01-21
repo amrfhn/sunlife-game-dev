@@ -97,10 +97,6 @@ export default class Game extends Phaser.Scene {
     this.movingBall.body.setBoundsRectangle(this.container); //create container so that the ball does not move outside of the bound (when innerbound is small & centered)
   }
 
-  test() {
-    console.log("out");
-  }
-
   createCircle() {
     this.circle = this.physics.add.image(515, 250, "circle");
     this.circle.setCircle(20, 210, 210); //set innerbound of the image
@@ -131,7 +127,6 @@ export default class Game extends Phaser.Scene {
   inZone(ball, circle) {
     if (!this.movingBall.body.moves) {
       this.isOverlapped = true; //set overlap is true
-      console.log("Player in the circle");
       // this.score += 1;
       // this.scoreText.setText('Score: ' + this.score);
 
