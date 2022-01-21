@@ -75,10 +75,6 @@ $(function () {
     }
   });
 
-  $("#btnClose").on("click", function () {
-    $("#itemDetailsModal").modal("hide");
-  });
-
   $(".carousel-controls .swiper-button-start").on("click", function () {
     if (isStartPage || isGamePage) {
       $("#howToPlayModal").modal("hide");

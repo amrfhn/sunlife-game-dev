@@ -38,5 +38,9 @@ $(function () {
         },
       },
     });
-  }
+  };
+  
+  $("#btnClose").on("click", function () {
+    $("#itemDetailsModal").modal("hide");
+  });
 });
