@@ -63,6 +63,15 @@
           color: $p3;
         }
       }
+      .header-item {
+        font-size: 14px;
+        &.color-s1 {
+          color: $s1;
+        }
+        &.color-p3 {
+          color: $p3;
+        }
+      }
       .body-text {
         font-size: 14px;
         line-height: 20px;
@@ -70,6 +79,9 @@
       }
       img.img-gift {
         width: 50px;
+      }
+      img.img-item {
+        width: 35px;
       }
       img.img-btn {
         width: 145px;
@@ -85,3 +97,25 @@
     }
   }
 }
+
+#itemDetailsModal {
+  img.img-item {
+    width: 5rem;
+  }
+  
+  .header-item {
+    font-size: 1.1rem;
+    &.color-s1 {
+      color: $s1;
+    }
+    &.color-p3 {
+      color: $p3;
+    }
+  }
+
+  .body-text {
+    font-size: 1rem;
+  }
+}
+
+

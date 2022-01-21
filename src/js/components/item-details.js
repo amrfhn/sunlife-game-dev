@@ -1,10 +1,10 @@
 import Vue from "vue";
 
 $(function () {
-  if ($("#rewardModal").length) {
+  if ($("#itemModal").length) {
     let token = sessionStorage.getItem("game_token");
     const reward = new Vue({
-      el: "#rewardModal",
+      el: "#itemModal",
       data: {
         week: {},
         score: {
@@ -38,5 +38,5 @@ $(function () {
         },
       },
     });
-  };
+  }
 });

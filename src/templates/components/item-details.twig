@@ -1,0 +1,17 @@
+<!-- Modal -->
+<div class="howtoplay-modal modal fade" id="itemDetailsModal" tabindex="-1" role="dialog" aria-labelledby="itemDetailsModalLabel" aria-hidden="true" style="display:none">
+	<div class="modal-dialog modal-dialog-centered modal-md mx-auto" role="document">
+		<div class="modal-content">
+			<div class="modal-body text-center">
+				<h3 class="header-item color-s1 text-center mb-2">YOU HAVE COLLECTED</h3>
+				<img class="img-item mb-2" :src="modal.image" alt="gift-avatar">
+				<h3 class="header-item color-p3 text-center mb-4" v-text="modal.name"></h3>
+				<p class="body-text" v-text="modal.description"></p>
+
+				<div class="btn-wrapper">
+					<button class="btn btn-img" v-on:click="closeModal"><img class="img-btn" src="assets/img/close.png" alt="close"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

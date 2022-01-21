@@ -76,7 +76,7 @@ $(function () {
             .done(function (res) {
               self.item_1 = res.data.prize["1"];
               console.log("a", self.item_1);
-              console.log('s', self.item[0].image_thumbnail)
+              console.log('s', self.item_1[0].image_thumbnail)
 
               // self.$nextTick(self.initCollectionSwiper)
 
