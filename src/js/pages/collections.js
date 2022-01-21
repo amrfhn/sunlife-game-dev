@@ -51,6 +51,11 @@ $(function () {
       el: "#swiper-collections",
       data: {
         collection_items: [],
+        modal: {
+          image: "",
+          name: "",
+          description: ""
+        }
       },
       mounted: function () {
         console.log("think");
@@ -76,6 +81,13 @@ $(function () {
               console.log(e);
             });
         },
+        setModalInformation(item) {
+          this.modal.image = item.item_as.image;
+          this.modal.name = item.item_as.name;
+          this.modal.description = item.item_as.description;
+
+          console.log(this.modal.image, this.modal.name, this.modal.description);
+        }
       },
     });
   }
