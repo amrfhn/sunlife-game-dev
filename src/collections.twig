@@ -19,7 +19,9 @@
               <h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
               <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
                 <div class="collections-weekly__img" v-for="item in collection_items">
-                  <img :src="item.item_as.image" alt="thumbnail">
+                  <a data-toggle="modal" data-target="#itemDetailsModal">
+                    <img :src="item.item_as.image" alt="thumbnail">
+                  </a>
                   <div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
                 </div>
               </div>
@@ -105,4 +107,5 @@
 	</div>
 	{% include "templates/components/how-to-play.twig" %}
   {% include "templates/components/leaderboard.twig" %}
+  {% include "templates/components/item-details.twig" %}
 {% endblock %}
