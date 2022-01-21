@@ -59,7 +59,7 @@ const swiper = new Swiper("#swiper-collections", {
       slidesPerView: 3,
     },
     1366: {
-      slidesPerView: 4,
+      slidesPerView: 5,
     },
   },
   navigation: {
