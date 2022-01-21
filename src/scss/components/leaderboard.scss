@@ -1,4 +1,3 @@
-
 .leaderboards {
   &--fixedbar {
     bottom: 0;
@@ -74,27 +73,30 @@
       font-family: "Bungee";
       color: #ffffff;
       padding-left: 0;
-      @include media-breakpoint-up(md) {
-        column-count: 2;
+      @include media-breakpoint-up(lg) {
+        display: flex;
         font-size: 16px;
+        flex-direction: column;
+        max-height: 205px;
+        flex-wrap: wrap;
       }
 
       li {
         counter-increment: ranking-counter;
-        font-size: 20px;
+        font-size: 16px;
         display: flex;
         align-items: center;
         @include media-breakpoint-up(md) {
           font-size: 24px;
         }
         @include media-breakpoint-up(lg) {
-          font-size: 16px;
+          font-size: 12px;
         }
         &:not(:last-child) {
           margin-bottom: 5px;
         }
         &::before {
-          content: '#' counter(ranking-counter);
+          content: "#" counter(ranking-counter);
           margin-right: 25px;
           width: 50px;
 
@@ -104,6 +106,7 @@
           }
           @include media-breakpoint-up(lg) {
             width: 20px;
+            margin-right: 8px;
           }
         }
       }
@@ -123,7 +126,7 @@
   }
   &-collapsible__body {
     background-color: #f3b800;
-    background-image: url('/assets/img/flowers.png');
+    background-image: url("/assets/img/flowers.png");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -163,16 +166,20 @@
     }
   }
   &__name {
-    width: 60.333%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    margin-left: 8px;
+    margin-right: 7px;
     @include media-breakpoint-down(md) {
-      width: 50.33%;
+      width: 100%;
+      text-align: left;
+      margin-left: 10px;
     }
   }
   &__points {
     width: 33.333%;
     @include media-breakpoint-down(md) {
-      text-align: center;
+      text-align: left;
     }
   }
 }

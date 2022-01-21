@@ -1,34 +1,27 @@
 import Vue from "vue";
 import Swiper from "swiper";
 
-// const prizesSwiper = new Swiper("#swiper-prizes", {
-//   loop: false,
-//   slidesPerView: 1,
-//   spaceBetween: 30,
-//   // width: 340,
-//   autoHeight: true,
-//   // centeredSlides: true,
-//   // breakpoints: {
-//   //   992: {
-//   //     slidesPerView: 4
-//   //   }
-//   // },
-//   navigation: {
-//     nextEl:
-//       ".collections-carousel-controls.carousel-controls .swiper-button-next",
-//     prevEl:
-//       ".collections-carousel-controls.carousel-controls .swiper-button-prev",
-//   },
-// });
+const prizesSwiper = new Swiper("#swiper-prizes", {
+  loop: false,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoHeight: true,
+  navigation: {
+    nextEl:
+      ".collections-carousel-controls.carousel-controls .swiper-button-next",
+    prevEl:
+      ".collections-carousel-controls.carousel-controls .swiper-button-prev",
+  },
+});
 
 $(function () {
-  // const $collectionsSlidesEl = $("#swiper-prizes").find(".swiper-slide");
-  // const $collectionsSlidesItemEl = $("#swiper-prizes").find(
-  //   ".prizes-winner-container"
-  // );
-  // const $prizesWrapperContainer = $("#swiper-prizes").find(
-  //   ".prizes-wrapper-container"
-  // );
+  const $collectionsSlidesEl = $("#swiper-prizes").find(".swiper-slide");
+  const $collectionsSlidesItemEl = $("#swiper-prizes").find(
+    ".prizes-winner-container"
+  );
+  const $prizesWrapperContainer = $("#swiper-prizes").find(
+    ".prizes-wrapper-container"
+  );
   let token = sessionStorage.getItem("game_token");
 
   if ($("#swiper-prizes").length) {
@@ -44,7 +37,7 @@ $(function () {
         item_as: [],
       },
       mounted: function () {
-        console.log("prizes listing mounted");
+        console.log("prizes listing mounted1");
         this.fetchLeaderboard();
         // this.$nextTick(this.initCollectionSwiper)
 
@@ -52,17 +45,15 @@ $(function () {
         // initCollectionSwiper();
       },
       methods: {
-        // initCollectionSwiper: () => {
-        //   if ($(window).width() < 768) {
-        //     $collectionsSlidesItemEl.addClass("swiper-slide");
-        //     // $prizesWrapperContainer.removeClass('row')
-        //     prizesSwiper.init();
-        //   } else {
-        //     $collectionsSlidesEl.removeClass("swiper-slide");
-        //     // $prizesWrapperContainer.addClass('row')
-        //     prizesSwiper.destroy();
-        //   }
-        // },
+        initCollectionSwiper() {
+          if ($(window).width() < 768) {
+            $collectionsSlidesItemEl.addClass("swiper-slide");
+            prizesSwiper.init();
+          } else {
+            $collectionsSlidesEl.removeClass("swiper-slide");
+            prizesSwiper.destroy();
+          }
+        },
         fetchLeaderboard () {
           let self = this;
           $.ajax({
@@ -73,12 +64,10 @@ $(function () {
             },
             contentType: "application/json",
           })
-            .done(function (res) {
-              self.item_1 = res.data.prize["1"];
-              console.log("a", self.item_1);
-              console.log('s', self.item_1[0].image_thumbnail)
+            .done((res) => {
+              this.item_1 = res.data.prize["1"];
 
-              // self.$nextTick(self.initCollectionSwiper)
+              this.initCollectionSwiper();
 
               // $(window).on("resize", this.initCollectionSwiper);
             })

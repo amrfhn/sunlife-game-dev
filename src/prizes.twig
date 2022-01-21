@@ -6,10 +6,6 @@
 		<div
 			class="text-center">
 
-			{# {% include "templates/components/background.twig" with {
-          imgSrc: 'landing-bg.jpg'
-      }%} #}
-
 			<div class="container collections-wrapper overflow-hidden pt-5 pt-md-2 pt-lg-5 mt-md-4">
 				<div class="collections-heading w-75 m-auto">
 					<p class="collections-description">Play to win
@@ -18,8 +14,8 @@
 				</div>
         <div class="px-4">
           <div id="swiper-prizes" class="prizes-wrapper position-relative" v-cloak>
-            <div class="pt-5  prizes-wrapper-container">
-              <div class="prizes-winner-container ">
+            <div class="pt-5 swiper-wrapper prizes-wrapper-container">
+              <div class="prizes-winner-container swiper-slide">
                 <img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
                 <div class="prizes-winner-body pt-4 pb-4">
                   <div class="prizes-winner-body__content px-2">
@@ -28,20 +24,10 @@
                       <img class="winner-item__img-user" :src="item.user_as.profile_image" alt="profile-image">
                       <div class="prizes-winner-name" v-text="item.user_as.name"></div>
                     </div>
-                    {# <div class="prizes-winner-item d-flex align-items-center">
-                      <img class="winner-item__img-list" src="assets/img/scroll-2.png" alt="">
-                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      <div class="prizes-winner-name">Kevin Mitnick</div>
-                    </div>
-                    <div class="prizes-winner-item d-flex align-items-center">
-                      <img class="winner-item__img-list" src="assets/img/scroll-3.png" alt="">
-                      <img class="winner-item__img-user" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                      <div class="prizes-winner-name">Kevin Mitnick</div>
-                    </div> #}
                   </div>
                 </div>
               </div>
-              <div class="prizes-winner-container locked">
+              <div class="prizes-winner-container swiper-slide locked">
                 <img class="prizes-winner-image" src="assets/img/winners/week-2-winners.png">
                 <div class="prizes-winner-body pt-4 pb-4">
                   <div class="prizes-winner-body__content px-2">
@@ -52,7 +38,7 @@
                   </div>
                 </div>
               </div>
-              <div class="prizes-winner-container  locked">
+              <div class="prizes-winner-container swiper-slide locked">
                 <img class="prizes-winner-image" src="assets/img/winners/week-3-winners.png">
                 <div class="prizes-winner-body pt-4 pb-4">
                   <div class="prizes-winner-body__content px-2">
@@ -63,7 +49,7 @@
                   </div>
                 </div>
               </div>
-              <div class="prizes-winner-container  locked">
+              <div class="prizes-winner-container swiper-slide locked">
                 <img class="prizes-winner-image" src="assets/img/winners/week-4-winners.png">
                 <div class="prizes-winner-body pt-4 pb-4">
                   <div class="prizes-winner-body__content px-2">
@@ -75,17 +61,17 @@
                 </div>
               </div>
             </div>
-            {# <div class="collections-carousel-controls carousel-controls d-md-none">
+            <div class="collections-carousel-controls carousel-controls d-md-none">
               <div class="swiper-button-prev swiper-button-disabled arrow-previous">
                 <img src="assets/img/arrow.png" alt="arrow">
               </div>
               <div class="swiper-button-next arrow-next">
                 <img src="assets/img/arrow.png" alt="arrow">
               </div>
-            </div> #}
+            </div>
           </div>
           <div class="trophy-icon-wrapper d-none d-md-block mt-4">
-            <img src="assets/img/trophy.png" alt="">
+            <img src="assets/img/trophy.png" alt="trophy">
           </div>
         </div>
 			</div>

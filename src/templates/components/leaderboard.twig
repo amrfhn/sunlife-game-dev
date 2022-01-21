@@ -1,5 +1,5 @@
 {# Start leaderboards component #}
-  <div class="leaderboard-container leaderboards--fixedbar position-fixed" id="leaderboardEl">
+  <div class="leaderboard-container leaderboards--fixedbar position-fixed" ref="leaderboard" id="leaderboardEl">
     <div class="accordion" id="leaderboard-collapse__parent">
       <div class="">
         <div class="leaderboards-collapsible__header" id="headingOne">
@@ -12,9 +12,9 @@
           </h2>
         </div>
         <div id="leader-collapsible" class="collapse leaderboards-collapsible__body" aria-labelledby="headingOne" data-parent="#leaderboard-collapse__parent">
-          <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body">
-            <div class="row">
-              <div class="swiper-leaderboard-item col-lg-4" v-if="item_1.length > 0">
+          <div id="swiper-leaderboard" class="card-body leaderboards-collapsible__card-body swiper-container">
+            <div class="swiper-wrapper row">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_1.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                   <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_1[0].item_as.image_thumbnail">
@@ -34,7 +34,7 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item col-lg-4" v-if="item_2.length > 0">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_2.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_2[0].item_as.image_thumbnail" :alt="item_2[0].item_as.image_thumbnail" :title="item_2[0].item_as.name">
@@ -54,7 +54,7 @@
                   </ol>
                 </div>
               </div>
-              <div class="swiper-leaderboard-item col-lg-4" v-if="item_3.length > 0">
+              <div class="swiper-leaderboard-item swiper-slide col-lg-4" v-if="item_3.length > 0">
                 <div class="pl-md-3 pl-lg-0">
                 <div class="leaderboards-users__img text-center mb-4">
                     <img class="" :src="item_3[0].item_as.image_thumbnail" :alt="item_3[0].item_as.image_thumbnail" :title="item_3[0].item_as.name">
