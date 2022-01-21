@@ -87,6 +87,9 @@ $(function () {
           this.modal.description = item.item_as.description;
 
           console.log(this.modal.image, this.modal.name, this.modal.description);
+        },
+        closeModal() {
+          $("#itemDetailsModal").modal("hide");
         }
       },
     });
