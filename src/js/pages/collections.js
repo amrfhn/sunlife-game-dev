@@ -1,6 +1,53 @@
 import Vue from "vue";
 import Swiper from "swiper";
 
+$(function () {
+  let token = sessionStorage.getItem("game_token");
+  if ($("#swiper-collections").length) {
+    const reward = new Vue({
+      el: "#swiper-collections",
+      data: {
+        collection_items: [],
+        modal: {
+          image: "",
+          name: "",
+          description: "",
+        },
+      },
+      mounted: function () {
+        this.getUserCollection();
+      },
+      methods: {
+        getUserCollection() {
+          let self = this;
+          $.ajax({
+            type: "GET",
+            url: process.env.API_BASEURL + "/user-collection",
+            headers: {
+              Authorization: `Bearer ${token.replaceAll('"', "")}`,
+            },
+            contentType: "application/json",
+          })
+            .done(function (res) {
+              self.collection_items = res.data.collection["1"];
+            })
+            .fail(function (res) {
+              console.log(`error {res}`);
+            });
+        },
+        setModalInformation(item) {
+          this.modal.image = item.item_as.image;
+          this.modal.name = item.item_as.name;
+          this.modal.description = item.item_as.description;
+        },
+        closeModal() {
+          $("#itemDetailsModal").modal("hide");
+        },
+      },
+    });
+  }
+});
+
 const swiper = new Swiper("#swiper-collections", {
   loop: false,
   slidesPerView: 1,
@@ -41,52 +88,5 @@ $(function () {
     }
     $(window).on("resize", initCollectionSwiper);
     initCollectionSwiper();
-  }
-});
-
-$(function () {
-  let token = sessionStorage.getItem("game_token");
-  if ($("#swiper-collections").length) {
-    const reward = new Vue({
-      el: "#swiper-collections",
-      data: {
-        collection_items: [],
-        modal: {
-          image: "",
-          name: "",
-          description: ""
-        }
-      },
-      mounted: function () {
-        this.getUserCollection();
-      },
-      methods: {
-        getUserCollection() {
-          let self = this;
-          $.ajax({
-            type: "GET",
-            url: process.env.API_BASEURL + "/user-collection",
-            headers: {
-              Authorization: `Bearer ${token.replaceAll('"', "")}`,
-            },
-            contentType: "application/json",
-          })
-            .done(function (res) {
-              self.collection_items = res.data.collection["1"];
-            })
-            .fail(function (res) {
-              console.log(`error {res}`);
-            });
-        },
-        setModalInformation(item) {
-          this.modal.image = item.item_as.image;
-          this.modal.name = item.item_as.name;
-          this.modal.description = item.item_as.description;
-        },
-        closeModal() {
-          $("#itemDetailsModal").modal("hide");
-        }
-      },
-    });
   }
 });

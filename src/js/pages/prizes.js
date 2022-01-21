@@ -9,6 +9,8 @@ $(function () {
       el: "#swiper-prizes",
       data: {
         item_1: "",
+        item_2: "",
+        item_3: ""
       },
       mounted: function () {
         this.fetchPrizes();
@@ -26,6 +28,9 @@ $(function () {
           })
             .done((res) => {
               this.item_1 = res.data.prize["1"];
+              // this.item_2 = res.data.prize["2"];
+              // this.item_2 = res.data.prize["3"];
+              // console.log(this.item_2)
             })
             .fail(function (res) {
               console.log(`error {res}`);

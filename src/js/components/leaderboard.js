@@ -40,12 +40,6 @@ $(function () {
 });
 
 $(function () {
-  const isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-      ? true
-      : false;
   const $leaderboardSlidesEl = $("#swiper-leaderboard").find(".swiper-slide");
   const $leaderboardSlidesItemEl = $("#swiper-leaderboard").find(
     ".swiper-leaderboard-item"
@@ -55,14 +49,17 @@ $(function () {
   );
 
   function initLeaderboardSwiper() {
-    if (isMobile) {
+    if ($(window).width() < 992) {
       $leaderboardSlidesItemEl.addClass("swiper-slide");
       $leaderboardSlidesWrapper.removeClass("row");
+      // leaderSwiper.init()
     } else {
       $leaderboardSlidesEl.removeClass("swiper-slide");
       $leaderboardSlidesWrapper.addClass("row");
+      // leaderSwiper.destroy()
     }
   }
+  $(window).on("resize", initLeaderboardSwiper);
   initLeaderboardSwiper();
 
   if ($("#leader-collapsible").length) {
