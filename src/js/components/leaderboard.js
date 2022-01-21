@@ -40,6 +40,8 @@ $(function () {
 });
 
 $(function () {
+  const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false;
+  const isIPad = /iPad/i.test(navigator.userAgent) ? true : false;
   const $leaderboardSlidesEl = $("#swiper-leaderboard").find(".swiper-slide");
   const $leaderboardSlidesItemEl = $("#swiper-leaderboard").find(
     ".swiper-leaderboard-item"
@@ -62,7 +64,7 @@ $(function () {
   $(window).on("resize", initLeaderboardSwiper);
   initLeaderboardSwiper();
 
-  if ($("#leader-collapsible").length && $(window).width < 992) {
+  if ($("#leader-collapsible").length && (isMobile || isIPad)) {
     $("#leader-collapsible").on("show.bs.collapse", function () {
       setTimeout(function () {
         const leaderSwiper = new Swiper("#swiper-leaderboard", {
@@ -72,9 +74,9 @@ $(function () {
           autoHeight: false,
           navigation: {
             nextEl:
-              ".collections-carousel-controls.carousel-controls .swiper-button-next",
+              ".leaderboard-carousel-controls.carousel-controls .swiper-button-next",
             prevEl:
-              ".collections-carousel-controls.carousel-controls .swiper-button-prev",
+              ".leaderboard-carousel-controls.carousel-controls .swiper-button-prev",
           },
         });
       }, 500);
