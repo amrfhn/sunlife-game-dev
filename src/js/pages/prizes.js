@@ -40,7 +40,9 @@ $(function () {
     });
   }
 
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false;
+  const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false;
+  const isIPad = /iPad/i.test(navigator.userAgent) ? true : false;
+
   const $collectionsSlidesEl = $("#swiper-prizes").find(".swiper-slide");
   const $collectionsSlidesItemEl = $("#swiper-prizes").find(
     ".prizes-winner-container"
@@ -48,11 +50,12 @@ $(function () {
   const $prizesWrapperContainer = $("#swiper-prizes").find(
     ".prizes-wrapper-container"
   );
+  // const isIPad = ($(window).width > 390 && $(window).width < 1040) ? true : false;
   const prizesSwiper = new Swiper("#swiper-prizes", {
     loop: false,
-    slidesPerView: 1,
+    slidesPerView: isIPad ? 3 : 1,
     spaceBetween: 30,
-    autoHeight: true,
+    autoHeight: false,
     navigation: {
       nextEl:
         ".collections-carousel-controls.carousel-controls .swiper-button-next",
@@ -62,7 +65,7 @@ $(function () {
   });
 
   function initCollectionSwiper() {
-    if (isMobile) {
+    if (isMobile || isIPad) {
       $collectionsSlidesItemEl.addClass("swiper-slide");
       prizesSwiper.init();
     } else {

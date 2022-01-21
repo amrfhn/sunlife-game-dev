@@ -92,14 +92,14 @@
     .collections-carousel-controls.carousel-controls {
       .swiper-button-next {
         &.arrow-next {
-        right: -24px;
+        right: 0px;
         top: 55%;
         z-index: $zindex-dropdown;
         }
       }
       .swiper-button-prev {
         &.arrow-previous {
-          left: -24px;
+          left: 0px;
           top: 55%;
           z-index: $zindex-dropdown;
         }

@@ -3,8 +3,7 @@
 
 {% block main %}
 	<div class="container-fluid collections-container">
-		<div
-			class="text-center">
+		<div class="text-center">
 
 			<div class="container collections-wrapper overflow-hidden pt-5 pt-md-2 pt-lg-5 mt-md-4">
 				<div class="collections-heading w-75 m-auto">
@@ -12,68 +11,80 @@
 						<span class="prizes-price-to-win">RM338</span>
 						GrabPay credits and Sun Life Premium Angpow Packets Every Week!</p>
 				</div>
-        <div class="px-4">
-          <div id="swiper-prizes" class="prizes-wrapper position-relative swiper-container" v-cloak>
-            <div class="pt-5 swiper-wrapper prizes-wrapper-container">
-              <div class="prizes-winner-container swiper-slide">
-                <img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
-                <div class="prizes-winner-body pt-4 pb-4">
-                  <div class="prizes-winner-body__content px-2">
-                    <div class="prizes-winner-item d-flex align-items-center" v-for="item in item_1">
-                      <img class="winner-item__img-list" :src="item.item_as.image_thumbnail" alt="thumbnail">
-                      <img class="winner-item__img-user" :src="item.user_as.profile_image" alt="profile-image">
-                      <div class="prizes-winner-name" v-text="item.user_as.name"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="prizes-winner-container swiper-slide locked">
-                <img class="prizes-winner-image" src="assets/img/winners/week-2-winners.png">
-                <div class="prizes-winner-body pt-4 pb-4">
-                  <div class="prizes-winner-body__content px-2">
-                    <div class="locked-wrapper">
-                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
-                      <div class="locked-icon-text">Coming soon</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="prizes-winner-container swiper-slide locked">
-                <img class="prizes-winner-image" src="assets/img/winners/week-3-winners.png">
-                <div class="prizes-winner-body pt-4 pb-4">
-                  <div class="prizes-winner-body__content px-2">
-                    <div class="locked-wrapper">
-                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
-                      <div class="locked-icon-text">Coming soon</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="prizes-winner-container swiper-slide locked">
-                <img class="prizes-winner-image" src="assets/img/winners/week-4-winners.png">
-                <div class="prizes-winner-body pt-4 pb-4">
-                  <div class="prizes-winner-body__content px-2">
-                    <div class="locked-wrapper">
-                      <img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
-                      <div class="locked-icon-text">Coming soon</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="collections-carousel-controls carousel-controls d-md-none">
-              <div class="swiper-button-prev swiper-button-disabled arrow-previous">
-                <img src="assets/img/arrow.png" alt="arrow">
-              </div>
-              <div class="swiper-button-next arrow-next">
-                <img src="assets/img/arrow.png" alt="arrow">
-              </div>
-            </div>
-          </div>
-          <div class="trophy-icon-wrapper d-none d-md-block mt-4">
-            <img src="assets/img/trophy.png" alt="trophy">
-          </div>
-        </div>
+				<div class="px-4">
+					<div id="swiper-prizes" class="prizes-wrapper position-relative swiper-container" v-cloak>
+						<div class="pt-5 swiper-wrapper prizes-wrapper-container">
+							<div class="prize-slide swiper-slide">
+								<div class="prizes-winner-container">
+									<img class="prizes-winner-image" src="assets/img/winners/week-1-winners.png">
+									<div class="prizes-winner-body pt-4 pb-4">
+										<div class="prizes-winner-body__content px-2">
+											<div class="prizes-winner-item d-flex align-items-center" v-for="item in item_1">
+												<img class="winner-item__img-list" :src="item.item_as.image_thumbnail" alt="thumbnail">
+												<img class="winner-item__img-user" :src="item.user_as.profile_image" alt="profile-image">
+												<div class="prizes-winner-name" v-text="item.user_as.name"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="prize-slide swiper-slide">
+
+								<div class="prizes-winner-container locked">
+									<img class="prizes-winner-image" src="assets/img/winners/week-2-winners.png">
+									<div class="prizes-winner-body pt-4 pb-4">
+										<div class="prizes-winner-body__content px-2">
+											<div class="locked-wrapper">
+												<img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+												<div class="locked-icon-text">Coming soon</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="prize-slide swiper-slide">
+
+								<div class="prizes-winner-container locked">
+									<img class="prizes-winner-image" src="assets/img/winners/week-3-winners.png">
+									<div class="prizes-winner-body pt-4 pb-4">
+										<div class="prizes-winner-body__content px-2">
+											<div class="locked-wrapper">
+												<img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+												<div class="locked-icon-text">Coming soon</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="prize-slide swiper-slide">
+
+								<div class="prizes-winner-container locked">
+									<img class="prizes-winner-image" src="assets/img/winners/week-4-winners.png">
+									<div class="prizes-winner-body pt-4 pb-4">
+										<div class="prizes-winner-body__content px-2">
+											<div class="locked-wrapper">
+												<img class="locked-icon" src="assets/img/coming-soon-locked.png" alt="">
+												<div class="locked-icon-text">Coming soon</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="collections-carousel-controls carousel-controls d-lg-none">
+							<div class="swiper-button-prev swiper-button-disabled arrow-previous">
+								<img src="assets/img/arrow.png" alt="arrow">
+							</div>
+							<div class="swiper-button-next arrow-next">
+								<img src="assets/img/arrow.png" alt="arrow">
+							</div>
+						</div>
+					</div>
+					<div class="trophy-icon-wrapper d-none d-md-block mt-4">
+						<img src="assets/img/trophy.png" alt="trophy">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
