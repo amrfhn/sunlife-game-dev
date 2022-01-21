@@ -97,3 +97,19 @@
     }
   }
 }
+
+img.img-item {
+  width: 35px;
+}
+
+.header-item {
+  font-size: 14px;
+  &.color-s1 {
+    color: $s1;
+  }
+  &.color-p3 {
+    color: $p3;
+  }
+}
+
+
