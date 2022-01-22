@@ -54,7 +54,7 @@ $(function () {
   const prizesSwiper = new Swiper("#swiper-prizes", {
     loop: false,
     slidesPerView: isIPad ? 3 : 1,
-    // spaceBetween: 30,
+    spaceBetween: 30,
     autoHeight: false,
     navigation: {
       nextEl:
