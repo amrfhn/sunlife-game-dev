@@ -19,17 +19,17 @@
 		<a class="btn btn-link p-0 mr-4" href="https://www.sunlifemalaysia.com/campaigns/unlock-the-luck-collect-the-huat/cny-2022/" target="_blank">
 			T&C
 		</a>
-		<a href="#" v-on:click="destroyKey()">
-			<img class="icon d-block icon-l mb-1 mx-auto icon-profileImg" :src="user_image" alt="">
-		</a>
+		<button class="btn p-0" v-on:click="logOutSession()">
+			<img class="icon d-block icon-l mb-1 mx-auto icon-profileImg" :src="user_image" alt="profile-image">
+		</button>
 	</div>
 	<div class="nav-menu nav-menu-left d-lg-flex d-none">
 		<a class="btn btn-link p-0 mr-4" href="/game.html">
 			Back to Game
 		</a>
 	</div>
-	<div class="d-flex justify-content-around flex-lg-row flex-column w-100 mt-lg-0 mt-6">
-		<div class="nav-wrapper mb-4 mb-lg-0">
+	<div class="d-flex justify-content-around flex-lg-row flex-column w-100 mt-lg-0">
+		<div class="nav-wrapper mb-1 mb-lg-0">
 			<div class="countdown-container mx-auto d-flex justify-content-lg-start justify-content-center align-items-center">
 				<div class="w text-nav var-small mr-3" v-text="week_name">WEEK 1</div>
 				<div class="w text-nav mr-1" v-text="day"></div>

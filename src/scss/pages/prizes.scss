@@ -12,6 +12,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 240px;
+      margin: auto;
       @include media-breakpoint-only(md) {
         &:not(:last-child) {
           margin-right: 23px;
@@ -20,20 +22,25 @@
       @include media-breakpoint-up(lg) {
         margin-left: 10px;
         margin-right: 10px;
+        max-width: 100%;
       }
       &.locked {
         background-color: #856823;
       }
     }
     &-image {
-      width: 80%;
+      width: 70%;
       height: auto;
-      margin: -40px 0 auto;
+      margin: -52px 0 auto;
       display: block;
+      top: 11px;
+      position: relative;
       @include media-breakpoint-only(md) {
         margin: -30px 0 auto;
+        top: 0;
       }
       @include media-breakpoint-up(md) {
+        top: 0;
         width: 90%;
       }
     }
@@ -44,7 +51,7 @@
       .winner-item__img-list {
         width: 35px;
         height: auto;
-        margin-right: 24px;
+        margin-right: 14px;
         @include media-breakpoint-only(md) {
           width: 30px;
         }
@@ -56,7 +63,7 @@
         width: 35px;
         height: 35px;
         border-radius: 20px;
-        margin-right: 24px;
+        margin-right: 10px;
         @include media-breakpoint-only(md) {
           width: 30px;
           height: 30px;
@@ -122,5 +129,12 @@
 .trophy-icon-wrapper {
   img {
     width: 50px;
+  }
+}
+
+.collections-heading {
+  width: 100%;
+  @include media-breakpoint-up(md){
+    width: 75%;
   }
 }

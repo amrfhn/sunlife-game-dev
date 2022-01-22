@@ -93,7 +93,7 @@
     &.hide {
       opacity: 0;
       left: 100%;
-      z-index: 900;
+      z-index: -900;
     }
     ul {
       position: relative;

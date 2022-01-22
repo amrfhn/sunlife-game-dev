@@ -53,14 +53,12 @@ $(function () {
             },
             contentType: "application/json",
           })
-            .done(function (res) {
-              self.user_image = res.data.user.profile_image
-              self.collection_items = res.data.collection["1"];
-              self.week_start_date = res.data.week.week_start_date;
-              self.week_end_date = res.data.week.week_end_date;
-              self.week_name = res.data.week.name;
-
-              self.calculateTime();
+            .done((res) => {
+              this.user_image = res.data.user.profile_image;
+              this.collection_items = res.data.collection["1"];
+              this.week_name = res.data.week.name;
+              console.log(this.user_image);
+              this.calculateTime();
             })
             .fail(function (res) {
               console.log("error", res);
@@ -81,6 +79,12 @@ $(function () {
             self.minute = duration.minutes();
             self.second = duration.seconds();
           }, interval);
+        },
+        logOutSession() {
+          sessionStorage.removeItem("game_token");
+          setTimeout(() => {
+            window.location.href = "/index.html";
+          }, 300);
         },
       },
     });
