@@ -93,7 +93,7 @@
       position: absolute;
       height: 40px;
       left: 10px;
-      top: 32%;
+      top: 50%;
       transform: rotate(180deg) translateX(0px);
 
       @include media-breakpoint-down(md) {
@@ -115,7 +115,7 @@
       position: absolute;
       height: 40px;
       right: 10px;
-      top: 32%;
+      top: 50%;
 
       @include media-breakpoint-down(md) {
         width: 26px;
