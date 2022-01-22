@@ -159,4 +159,9 @@ export default class Game extends Phaser.Scene {
       }
     }
   }
+
+  // destroyKey() {
+  //   sessionStorage.removeItem(game_token);
+  //   window.location.href = "/index.html";
+  // }
 }
