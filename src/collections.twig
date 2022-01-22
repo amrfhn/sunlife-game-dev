@@ -3,113 +3,156 @@
 
 {% block main %}
 	<div class="container-fluid collections-container">
-		<div class="text-center">
+		<div
+			class="text-center">
 
 			{# {% include "templates/components/background.twig" with {
-                imgSrc: 'landing-bg.jpg'
-            }%} #}
+												                imgSrc: 'landing-bg.jpg'
+												            }%} #}
 
 			<div id="collections" class="collections-wrapper pt-4 pt-md-2 pt-lg-5 mt-lg-5 position-relative">
-        {% include "templates/components/item-details.twig" %}
-        <div class="collections-heading">
-          <h5 class="collections-header">Your Collection</h5>
-          <p class="collections-description">Click to discover interesting facts about every object</p>
-        </div>
-          <div id="swiper-collections" class="swiper-container">
-            <div class="collections-weekly__container mt-md-4 swiper-wrapper">
-              <div class="collections-weekly__item-container swiper-slide">
-                <h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
-                <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-                  <div class="collections-weekly__img" v-for="item in collection_items">
-                    <a data-toggle="modal" data-target="#itemDetailsModal" v-on:click="setModalInformation(item)">
-                      <img :src="item.item_as.image" alt="thumbnail">
-                    </a>
-                    <div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="collections-weekly__item-container swiper-slide item-locked">
-                <h6 class="collections-weekly__item-heading text-capitalize">Week 2</h6>
-                <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                </div>
-              </div>
-              <div class="collections-weekly__item-container swiper-slide item-locked">
-                <h6 class="collections-weekly__item-heading text-capitalize">Week 3</h6>
-                <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                </div>
-              </div>
-              <div class="collections-weekly__item-container swiper-slide item-locked">
-                <h6 class="collections-weekly__item-heading text-capitalize">Week 4</h6>
-                <div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                  <div class="collections-weekly__img">
-                    <img src="assets/img/collection-locked.png" alt="">
-                    {# <div class="collections-weekly__img-quantity">x5</div> #}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <div class="collections-carousel-controls carousel-controls d-xl-none">
-          <div class="swiper-button-prev swiper-button-disabled arrow-previous">
-            <img src="assets/img/arrow.png" alt="arrow">
-          </div>
-          <div class="swiper-button-next arrow-next">
-            <img src="assets/img/arrow.png" alt="arrow">
-          </div>
-        </div>
-        <div class="collection-button-container mt-2 mt-md-5 pb-5 pb-md-0" data-href="https://sunlifecollectthehuat.com">
-          <button class="sunlife-buttons py-1 px-3 d-block d-md-inline-block mb-2 mb-md-0"  href="">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunlifecollectthehuat.com%2F&amp;src=sdkpreparse" target="_blank">
-              <svg class="icon d-inline-block icon-s mb-1 mx-auto">
-                <use xlink:href="assets/icons/icons.svg#sprite-icon-share" href="assets/icons/icons.svg#sprite-icon-share"></use>
-              </svg>
-              <span class="sunlife-buttons__text text-uppercase text-white">Share</span>
-            </a>
-          </button>
-          <button class="sunlife-buttons py-1 px-3 d-block d-md-inline-block">
-            <svg class="icon d-inline-block icon-s mb-1 mx-auto">
-              <use xlink:href="assets/icons/icons.svg#sprite-icon-share" href="assets/icons/icons.svg#sprite-icon-share"></use>
-            </svg>
-            <a href="/sticker.html">
-              <span class="sunlife-buttons__text download-text text-uppercase">Download Stickers</span>
-            </a>
-          </button>
-        </div>
+				{% include "templates/components/item-details.twig" %}
+				<div class="collections-heading">
+					<h5 class="collections-header">Your Collection</h5>
+					<p class="collections-description">Click to discover interesting facts about every object</p>
+				</div>
+				<div id="swiper-collections" class="swiper-container">
+					<div class="collections-weekly__container mt-md-4 swiper-wrapper">
+						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_1.length == 0 ? ' item-locked': ''">
+							<h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
+							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+								<div class="collections-weekly__img" v-for="item in collection_items_1" v-if="collection_items_1.length > 0">
+									<a data-toggle="modal" data-target="#itemDetailsModal" v-on:click="setModalInformation(item)">
+										<img :src="item.item_as.image" alt="thumbnail">
+									</a>
+									<div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_1.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_1.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_1.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+							</div>
+						</div>
+						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_2.length == 0 ? ' item-locked': ''">
+							<h6 class="collections-weekly__item-heading text-capitalize">Week 2</h6>
+							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+								<div class="collections-weekly__img" v-for="item in collection_items_2" v-if="collection_items_2.length > 0">
+									<a data-toggle="modal" data-target="#itemDetailsModal" v-on:click="setModalInformation(item)">
+										<img :src="item.item_as.image" alt="thumbnail">
+									</a>
+									<div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_2.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_2.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_2.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+							</div>
+						</div>
+						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_3.length == 0 ? ' item-locked': ''">
+							<h6 class="collections-weekly__item-heading text-capitalize">Week 3</h6>
+							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+								<div class="collections-weekly__img" v-for="item in collection_items_3" v-if="collection_items_3.length > 0">
+									<a data-toggle="modal" data-target="#itemDetailsModal" v-on:click="setModalInformation(item)">
+										<img :src="item.item_as.image" alt="thumbnail">
+									</a>
+									<div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_3.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_3.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_3.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+							</div>
+						</div>
+						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_4.length == 0 ? ' item-locked': ''">
+							<h6 class="collections-weekly__item-heading text-capitalize">Week 4</h6>
+							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
+								<div class="collections-weekly__img" v-for="item in collection_items_4" v-if="collection_items_4.length > 0">
+									<a data-toggle="modal" data-target="#itemDetailsModal" v-on:click="setModalInformation(item)">
+										<img :src="item.item_as.image" alt="thumbnail">
+									</a>
+									<div class="collections-weekly__img-quantity" v-text="`X${item.score}`"></div>
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_4.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_4.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+								<div class="collections-weekly__img" v-if="collection_items_4.length == 0">
+									<img
+									src="assets/img/collection-locked.png" alt="">
+								{# <div class="collections-weekly__img-quantity">x5</div> #}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="collections-carousel-controls carousel-controls d-xl-none">
+					<div class="swiper-button-prev swiper-button-disabled arrow-previous">
+						<img src="assets/img/arrow.png" alt="arrow">
+					</div>
+					<div class="swiper-button-next arrow-next">
+						<img src="assets/img/arrow.png" alt="arrow">
+					</div>
+				</div>
+				<div class="collection-button-container mt-2 mt-md-5 pb-5 pb-md-0" data-href="https://sunlifecollectthehuat.com">
+					<button class="sunlife-buttons py-1 px-3 d-block d-md-inline-block mb-2 mb-md-0" href="">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunlifecollectthehuat.com%2F&amp;src=sdkpreparse" target="_blank">
+							<svg class="icon d-inline-block icon-s mb-1 mx-auto">
+								<use xlink:href="assets/icons/icons.svg#sprite-icon-share" href="assets/icons/icons.svg#sprite-icon-share"></use>
+							</svg>
+							<span class="sunlife-buttons__text text-uppercase text-white">Share</span>
+						</a>
+					</button>
+					<button class="sunlife-buttons py-1 px-3 d-block d-md-inline-block">
+						<svg class="icon d-inline-block icon-s mb-1 mx-auto">
+							<use xlink:href="assets/icons/icons.svg#sprite-icon-share" href="assets/icons/icons.svg#sprite-icon-share"></use>
+						</svg>
+						<a href="/sticker.html">
+							<span class="sunlife-buttons__text download-text text-uppercase">Download Stickers</span>
+						</a>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
 	{% include "templates/components/how-to-play.twig" %}
-  {% include "templates/components/leaderboard.twig" %}
+	{% include "templates/components/leaderboard.twig" %}
 {% endblock %}

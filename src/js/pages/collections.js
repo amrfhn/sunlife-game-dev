@@ -7,7 +7,10 @@ $(function () {
     const reward = new Vue({
       el: "#collections",
       data: {
-        collection_items: [],
+        collection_items_1: [],
+        collection_items_2: [],
+        collection_items_3: [],
+        collection_items_4: [],
         modal: {
           image: "",
           name: "",
@@ -29,10 +32,20 @@ $(function () {
             },
             contentType: "application/json",
           })
-            .done(function (res) {
-              self.user_image = res.data.user.profile_image
-              self.collection_items = res.data.collection["1"];
-              // console.log("here is" , self.user_image)
+            .done((res) => {
+              this.user_image = res.data.user.profile_image;
+              if (res.data.collection["1"] !== undefined) {
+                this.collection_items_1 = res.data.collection["1"];
+              }
+              if (res.data.collection["2"] !== undefined) {
+                this.collection_items_2 = res.data.collection["2"];
+              }
+              if (res.data.collection["3"] !== undefined) {
+                this.collection_items_3 = res.data.collection["3"];
+              }
+              if (res.data.collection["4"] !== undefined) {
+                this.collection_items_4 = res.data.collection["4"];
+              }
             })
             .fail(function (res) {
               console.log(`error {res}`);
