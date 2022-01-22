@@ -16,8 +16,13 @@
   }
   
   .nav-menu-left {
-    left: -5.7% !important;
+    left: -5% !important;
     justify-content: center !important;
+
+    .btn-link {
+      border: 1px solid;
+      border-radius: 10px;
+    }
   }
 
   .nav-menu {
