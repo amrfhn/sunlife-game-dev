@@ -39,7 +39,7 @@
   }
   &__item-container {
     &:not(:last-child) {
-      margin-bottom: 34px;
+      margin-bottom: 20px;
       @include media-breakpoint-up(xl) {
         margin-right: 54px;
         margin-bottom: 0;
@@ -60,7 +60,7 @@
       margin-right: 14px;
     }
     img {
-      height: 130px;
+      height: 110px;
       width: auto;
       @include media-breakpoint-up(xl) {
         height: 170px;
