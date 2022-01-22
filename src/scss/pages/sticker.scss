@@ -10,13 +10,29 @@
 .sticker-page-container {
   width: 100%;
   position: relative;
+  @include media-breakpoint-down(lg){
+    position: absolute;
+    top: 195px;
+  }
+  @include media-breakpoint-down(md){
+    position: absolute;
+    top: -5px;
+  }
   .page-content {
     position: relative;
-    margin-top: -42%;
+    margin-top: -40%;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    @include media-breakpoint-down(lg){
+      position: relative;
+      top: 45px;
+      margin-top: 29%;
+    }
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+    }
   }
 }
