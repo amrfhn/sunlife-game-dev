@@ -56,8 +56,8 @@ $(function () {
           this.modal.name = item.item_as.name;
           this.modal.description = item.item_as.description;
         },
-        closeModal(id) {
-          $("#itemDetailsModal"+id).modal("hide");
+        closeModal() {
+          $("#itemDetailsModal").modal("hide");
         },
       },
     });
