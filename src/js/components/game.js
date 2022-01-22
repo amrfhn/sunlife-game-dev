@@ -76,6 +76,13 @@ export default class Game extends Phaser.Scene {
       // this.scene.start()
       location.reload(); //the easiest way to restart the game. Not the best approach!
     });
+
+    $("#rewardModal").keyup(function (e) {
+      if (e.keyCode == 32) {
+        $("#rewardModal").modal("hide");
+        location.reload(); //the easiest way to restart the game. Not the best approach!
+      }
+    });
   }
 
   createContainer() {
