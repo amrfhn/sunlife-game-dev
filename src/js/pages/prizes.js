@@ -10,7 +10,8 @@ $(function () {
       data: {
         item_1: "",
         item_2: "",
-        item_3: ""
+        item_3: "",
+        item_4: ""
       },
       mounted: function () {
         this.fetchPrizes();
@@ -27,10 +28,18 @@ $(function () {
             contentType: "application/json",
           })
             .done((res) => {
-              this.item_1 = res.data.prize["1"];
-              // this.item_2 = res.data.prize["2"];
-              // this.item_2 = res.data.prize["3"];
-              // console.log(this.item_2)
+              if (res.data.prize["1"] !== undefined) {
+                this.item_1 = res.data.prize["1"];
+              }
+              if (res.data.prize["2"] !== undefined) {
+                this.item_2 = res.data.prize["2"];
+              }
+              if (res.data.prize["3"] !== undefined) {
+                this.item_3 = res.data.prize["3"];
+              }
+              if (res.data.prize["4"] !== undefined) {
+                this.item_3 = res.data.prize["4"];
+              }
             })
             .fail(function (res) {
               console.log(`error {res}`);
@@ -40,7 +49,12 @@ $(function () {
     });
   }
 
-  const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false;
+  const isMobile =
+    /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+      ? true
+      : false;
   const isIPad = /iPad/i.test(navigator.userAgent) ? true : false;
 
   const $collectionsSlidesEl = $("#swiper-prizes").find(".swiper-slide");
