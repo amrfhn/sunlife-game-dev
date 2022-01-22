@@ -17,6 +17,7 @@ $(function () {
           description: "",
         },
         user_image: "",
+        isMobile:  /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false
       },
       mounted: function () {
         this.getUserCollection();
@@ -65,22 +66,6 @@ $(function () {
 });
 
 $(function () {
-  const $collectionsSlidesEl = $("#swiper-collections").find(".swiper-slide");
-  const $collectionsSlidesItemEl = $("#swiper-collections").find(
-    ".collections-weekly__item-container"
-  );
-
-  function initCollectionSwiper() {
-    if ($(window).width() < 962) {
-      $collectionsSlidesItemEl.addClass("swiper-slide");
-      // swiper.init();
-    } else {
-      $collectionsSlidesEl.removeClass("swiper-slide");
-      // swiper.destroy();
-    }
-  }
-  $(window).on("resize", initCollectionSwiper);
-  initCollectionSwiper();
   if ($("#swiper-collections").length && $(window).width() < 962) {
     const swiper = new Swiper("#swiper-collections", {
       loop: false,

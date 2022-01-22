@@ -7,8 +7,8 @@
 			class="text-center">
 
 			{# {% include "templates/components/background.twig" with {
-												                imgSrc: 'landing-bg.jpg'
-												            }%} #}
+																		                imgSrc: 'landing-bg.jpg'
+																		            }%} #}
 
 			<div id="collections" class="collections-wrapper pt-4 pt-md-2 pt-lg-5 mt-lg-5 position-relative" v-cloak>
 				{% include "templates/components/item-details.twig" %}
@@ -18,7 +18,7 @@
 				</div>
 				<div id="swiper-collections" class="swiper-container">
 					<div class="collections-weekly__container mt-md-4 swiper-wrapper">
-						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_1.length == 0 ? ' item-locked': ''">
+						<div :class="[collection_items_1.length == 0 ? ' item-locked': '', isMobile ? ' swiper-slide' : '']" class="collections-weekly__item-container">
 							<h6 class="collections-weekly__item-heading text-capitalize">Week 1</h6>
 							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
 								<div class="collections-weekly__img" v-for="item in collection_items_1" v-if="collection_items_1.length > 0">
@@ -44,7 +44,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_2.length == 0 ? ' item-locked': ''">
+						<div class="collections-weekly__item-container" :class="[collection_items_2.length == 0 ? ' item-locked': '', isMobile ? ' swiper-slide' : '']">
 							<h6 class="collections-weekly__item-heading text-capitalize">Week 2</h6>
 							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
 								<div class="collections-weekly__img" v-for="item in collection_items_2" v-if="collection_items_2.length > 0">
@@ -70,7 +70,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_3.length == 0 ? ' item-locked': ''">
+						<div class="collections-weekly__item-container" :class="[collection_items_3.length == 0 ? ' item-locked': '', isMobile ? ' swiper-slide' : '']">
 							<h6 class="collections-weekly__item-heading text-capitalize">Week 3</h6>
 							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
 								<div class="collections-weekly__img" v-for="item in collection_items_3" v-if="collection_items_3.length > 0">
@@ -96,7 +96,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="collections-weekly__item-container swiper-slide" :class="collection_items_4.length == 0 ? ' item-locked': ''">
+						<div class="collections-weekly__item-container" :class="[collection_items_4.length == 0 ? ' item-locked': '', isMobile ? ' swiper-slide' : '']">
 							<h6 class="collections-weekly__item-heading text-capitalize">Week 4</h6>
 							<div class="collections-weekly__img-list-wrapper d-flex justify-content-center">
 								<div class="collections-weekly__img" v-for="item in collection_items_4" v-if="collection_items_4.length > 0">
