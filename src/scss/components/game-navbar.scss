@@ -22,10 +22,14 @@
   .nav-menu-left {
     left: -5% !important;
     justify-content: center !important;
+    top: -54% !important;
 
     .btn-link {
-      border: 1px solid;
-      border-radius: 10px;
+      max-width: 120px !important;
+    }
+
+    .back-to-game-chevron {
+      font-size: 13px;
     }
   }
 
