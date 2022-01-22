@@ -40,13 +40,12 @@ $(function () {
               if (res.data.collection["2"] !== undefined) {
                 this.collection_items_2 = res.data.collection["2"];
               }
-              // if (res.data.collection["3"] !== undefined) {
-              //   this.collection_items_2 = res.data.collection["2"];
-              // }
-              if (res.data.collection["4"] !== undefined) {
-                this.collection_items_2 = res.data.collection["2"];
+              if (res.data.collection["3"] !== undefined) {
+                this.collection_items_3 = res.data.collection["3"];
               }
-              // console.log("here is" , self.user_image)
+              if (res.data.collection["4"] !== undefined) {
+                this.collection_items_4 = res.data.collection["4"];
+              }
             })
             .fail(function (res) {
               console.log(`error {res}`);
