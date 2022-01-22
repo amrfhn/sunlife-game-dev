@@ -13,6 +13,7 @@ $(function () {
           name: "",
           description: "",
         },
+        user_image: "",
       },
       mounted: function () {
         this.getUserCollection();
@@ -29,7 +30,9 @@ $(function () {
             contentType: "application/json",
           })
             .done(function (res) {
+              self.user_image = res.data.user.profile_image
               self.collection_items = res.data.collection["1"];
+              // console.log("here is" , self.user_image)
             })
             .fail(function (res) {
               console.log(`error {res}`);
