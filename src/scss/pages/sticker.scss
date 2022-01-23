@@ -31,8 +31,33 @@
       top: 45px;
       margin-top: 29%;
     }
+
     @include media-breakpoint-down(md) {
       margin-top: 0;
     }
+  }
+}
+
+@media screen and (width: 1194px)  {
+  .page-content {
+    margin-top: 2% !important;
+    top: 0 !important;
+  }
+
+  .comment-box .img-sticker {
+    width: 100px !important;
+  }
+
+  .speech-bubble {
+    top: 0 !important;
+    padding: 5px;
+  }
+
+  .img-dragon-wrapper {
+    margin-top: 5% !important;
+    left: -7% !important;
+  }
+  .img-dragon-wrapper img {
+    width: 190px !important;
   }
 }
