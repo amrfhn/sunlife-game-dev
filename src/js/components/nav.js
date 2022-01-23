@@ -61,7 +61,6 @@ $(function () {
               this.collection_items = res.data.collection["1"];
               this.week_name = res.data.week.name;
               this.week_end_date = res.data.week.week_end_date;
-              console.log(this.user_image);
               this.calculateTime();
             })
             .fail(function (res) {

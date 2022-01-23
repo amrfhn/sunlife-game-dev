@@ -101,7 +101,7 @@ $(function () {
               },
             },
             complete: function (res) {
-              console.log(res);
+              console.log('completed');
             },
           });
         },

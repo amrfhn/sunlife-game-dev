@@ -82,11 +82,9 @@ $(function () {
         ) {
           this.color = "#2ecc71";
           this.draw();
-          console.log("getting point");
         } else {
           this.color = "#FF0000";
           this.draw();
-          console.log("losing point");
         }
       };
     }
