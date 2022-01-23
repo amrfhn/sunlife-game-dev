@@ -8,6 +8,7 @@ $(function () {
     const prizes = new Vue({
       el: "#swiper-prizes",
       data: {
+        prizesData: [],
         item_1: "",
         item_2: "",
         item_3: "",
@@ -28,6 +29,7 @@ $(function () {
             contentType: "application/json",
           })
             .done((res) => {
+              this.prizesData = res.data.prize;
               if (res.data.prize["1"] !== undefined) {
                 this.item_1 = res.data.prize["1"];
               }

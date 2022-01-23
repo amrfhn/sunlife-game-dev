@@ -1,7 +1,7 @@
 $(function () {
   $("#fbLoginBtn").on("click", function () {
     facebookLogin();
-    // checkRegisteredUser("45678922323");
+    // checkRegisteredUser("4567892232331");
   });
 
   $("#fbLoginRegister").on("click", function () {

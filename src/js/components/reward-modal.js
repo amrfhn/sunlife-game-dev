@@ -14,8 +14,10 @@ $(function () {
         },
       },
       mounted: function () {
-        this.getScoreSubmission();
-        // $(this.$refs.vuemodal).on("show.bs.modal", this.getScoreSubmission);
+        // this.getScoreSubmission();
+        $(this.$refs.vuemodal).on("show.bs.modal", () => {
+          this.getScoreSubmission();
+        });
       },
       methods: {
         getScoreSubmission() {
@@ -27,16 +29,18 @@ $(function () {
               Authorization: `Bearer ${token.replaceAll('"', "")}`,
             },
             contentType: "application/json",
-            data: JSON.stringify({}),
-          }).done(function (res) {
-            self.score.name = res.data.score[0].name;
-            self.score.image = res.data.score[0].image;
-            self.score.description = res.data.score[0].description;
-          }).fail(function (e){
-            console.log(e)
-          });;
+            // data: JSON.stringify({}),
+          })
+            .done(function (res) {
+              self.score.name = res.data.score[0].name;
+              self.score.image = res.data.score[0].image;
+              self.score.description = res.data.score[0].description;
+            })
+            .fail(function (e) {
+              console.log(e);
+            });
         },
       },
     });
-  };
+  }
 });

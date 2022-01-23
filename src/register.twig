@@ -23,7 +23,7 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<label for="nameInputControl">Name as per NRIC</label>
-											<input type="text" name="nameInputControl" class="form-control" id="nameInputControl" maxlength="30" v-model="formData.name">
+											<input type="text" class="form-control" id="nameInputControl" maxlength="30" v-model="formData.name">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>
@@ -33,7 +33,7 @@
 									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<label for="ICInputControl">NRIC No.</label>
-											<input type="text" class="form-control" id="ICInputControl" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="12" minLength="12" v-model="formData.nric">
+											<input type="text" class="form-control" id="ICInputControl" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="12" minlength="12" v-model="formData.nric">
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>
@@ -54,15 +54,14 @@
 										<div class="form-input-wrapper mb-2">
 											<label for="emailInputControl">Email</label>
 											<input type="email" class="form-control" id="emailInputControl" maxlength="40" v-model="formData.email">
-                      <div class="text-danger" id="emailregistered-error">
-											</div>
+											<div class="text-danger" id="emailregistered-error"></div>
 											<div class="text-danger" v-if="errors.length > 0">
 												<small class="error-message" v-if="failedRules.required">This field is required</small>
 											</div>
 										</div>
 									</validation-provider>
 
-									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+									<validation-provider slim :rules="{ required: { allowFalse: false } }"  v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<div class="form-check">
 												<label class="custom-control material-checkbox">
@@ -82,7 +81,7 @@
 										</div>
 									</validation-provider>
 
-									<validation-provider slim rules="required" v-slot="{ failedRules, errors }">
+									<validation-provider slim :rules="{ required: { allowFalse: false } }" v-slot="{ failedRules, errors }">
 										<div class="form-input-wrapper mb-2">
 											<div class="form-check">
 												<label class="custom-control material-checkbox" for="checkLocalityInput">

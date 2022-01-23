@@ -15,8 +15,8 @@ $(function () {
           facebook_id: "",
           mobile_no: "",
           profile_image: "",
-          is_agree: 0, //checked
-          is_msia_citizen: 0, //checked
+          is_agree: false, //checked
+          is_msia_citizen: false, //checked
           score: 0,
         },
         generalSubmitError: "",
