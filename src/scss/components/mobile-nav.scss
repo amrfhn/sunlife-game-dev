@@ -79,12 +79,18 @@
       width: 800px;
       height: 800px;
     }
+    @media (min-width: 1024px) {
+      top: -29%;
+    }
     &.show {
       right: -50%;
       opacity: 1;
       z-index: 1005;
       @include media-breakpoint-up(sm) {
         right: -42%;
+      }
+      @media (min-width: 1024px) {
+        right: -36%;
       }
       a {
         opacity: 1;

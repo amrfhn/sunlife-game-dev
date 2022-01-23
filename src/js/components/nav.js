@@ -20,6 +20,9 @@ $(function () {
     if ($(this).attr("href") == location.pathname) {
       $(this).addClass("active");
     }
+    if($('.game-page-container').length){
+      $('#btn-backToGame').removeClass('d-lg-flex');
+    }
   });
 });
 

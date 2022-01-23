@@ -66,7 +66,9 @@ $(function () {
 });
 
 $(function () {
-  if ($("#swiper-collections").length && $(window).width() < 962) {
+  var isMobile =  /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false
+
+  if ($("#swiper-collections").length && isMobile) {
     const swiper = new Swiper("#swiper-collections", {
       loop: false,
       slidesPerView: 1,
