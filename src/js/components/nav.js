@@ -58,10 +58,23 @@ $(function () {
           })
             .done((res) => {
               this.user_image = res.data.user.profile_image;
-              this.collection_items = res.data.collection["1"];
+              // this.collection_items = res.data.collection["2"];
               this.week_name = res.data.week.name;
               this.week_end_date = res.data.week.week_end_date;
               this.calculateTime();
+
+              if (res.data.collection["1"] !== undefined) {
+                this.collection_items = res.data.collection["1"];
+              }
+              if (res.data.collection["2"] !== undefined) {
+                this.collection_items = res.data.collection["2"];
+              }
+              if (res.data.collection["3"] !== undefined) {
+                this.collection_items = res.data.collection["3"];
+              }
+              if (res.data.collection["4"] !== undefined) {
+                this.collection_items = res.data.collection["4"];
+              }
             })
             .fail(function (res) {
               console.log("error", res);
