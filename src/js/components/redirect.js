@@ -13,4 +13,14 @@ $(function () {
   if (!isValidToken && !isLoginPage) {
     window.location.href = "/index.html";
   }
+
+  let isCollection = false;
+
+  if ($('.game-page-container').length) {
+    isCollection = true;
+  }
+
+  if (isCollection) {
+    window.location.href = "/collections.html";
+  }
 });

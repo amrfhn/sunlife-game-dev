@@ -4,9 +4,9 @@
 
 <div class="game-navbar bg-gradient" id="gameNavbar" v-cloak>
 	<div class="nav-menu d-lg-flex d-none">
-		<a role="button" class="btn btn-link p-0 mr-4 cursor-pointer" data-toggle="modal" data-target="#howToPlayModal">
+		{# <a role="button" class="btn btn-link p-0 mr-4 cursor-pointer" data-toggle="modal" data-target="#howToPlayModal">
 			HOW TO PLAY
-		</a>
+		</a> #}
 		<a class="btn btn-link p-0 mr-4" href="/collections.html">
 			YOUR COLLECTION
 		</a>
@@ -24,15 +24,15 @@
 			<img class="icon d-block icon-l mb-1 mx-auto icon-profileImg" src="assets/img/fb-noPic.jpg" alt="profile-image" v-else>
 		</button>
 	</div>
-	<div class="nav-menu nav-menu-left d-lg-flex d-none align-items-center" id="btn-backToGame">
+	{# <div class="nav-menu nav-menu-left d-lg-flex d-none align-items-center" id="btn-backToGame">
 		<a class="btn btn-link p-0 mr-4" href="/game.html">
 		<i class="bi bi-chevron-left back-to-game-chevron pr-1">
         </i>
 			Back to Game
 		</a>
-	</div>
+	</div> #}
 	<div class="d-flex justify-content-around flex-lg-row flex-column w-100 mt-lg-0">
-		<div class="nav-wrapper mb-1 mb-lg-0">
+		{# <div class="nav-wrapper mb-1 mb-lg-0">
 			<div class="countdown-container mx-auto d-flex justify-content-lg-start justify-content-center align-items-center">
 				<div class="w text-nav var-small mr-3" v-text="week_name">WEEK 1</div>
 				<div class="w text-nav mr-1" v-text="day"></div>
@@ -44,14 +44,14 @@
 				<div class="w text-nav mr-1" v-text="second"></div>
 				<span class="text-nav count-unit w mr-3">SEC</span>
 			</div>
-		</div>
+		</div> #}
 
 		<div class="center-img">
 			<img src="assets/img/masthead.png" alt="masthead">
 		</div>
 
-		<div class="nav-wrapper">
-			<div class="d-block d-lg-none text-center mb-2 w text-nav var-small mr-3">YOUR SCORE</div>
+		<div class="nav-wrapper py-md-3">
+			{# <div class="d-block d-lg-none text-center mb-2 w text-nav var-small mr-3">YOUR SCORE</div>
 			<div class="score-container mx-auto d-flex justify-content-lg-end justify-content-center align-items-center mr-1">
 				<div class="d-none d-lg-block w text-nav var-small mr-3">YOUR SCORE</div>
 				<div class="score-tile d-flex justify-content-between mr-3" v-for="item in collection_items">
@@ -65,7 +65,7 @@
 																								<div class="score-tile d-flex justify-content-between mr-3">
 																									<img src="assets/img/scroll-3.png" alt="sticker">
 																									<span class="text-nav ml-1 w var-small">X252</span>
-																								</div> #}
+																								</div>
 				<div data-href="https://sunlifecollectthehuat.com">
 					<a class="ml-2 text-center d-none d-lg-block fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsunlifecollectthehuat.com%2F&amp;src=sdkpreparse">
 						<svg class="icon d-block icon-s mb-1 mx-auto">
@@ -74,7 +74,7 @@
 						<span class="d-block w text-nav var-xSmall">Share</span>
 					</a>
 				</div>
-			</div>
+			</div> #}
 		</div>
 	</div>
 </div>
