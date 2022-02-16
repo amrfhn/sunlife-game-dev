@@ -40,7 +40,7 @@ $(function () {
                 this.item_3 = res.data.prize["3"];
               }
               if (res.data.prize["4"] !== undefined) {
-                this.item_3 = res.data.prize["4"];
+                this.item_4 = res.data.prize["4"];
               }
             })
             .fail(function (res) {
